@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caddie for SOLIDWORKS — AI Design Copilot by CADvice</title>
-  <meta name="description" content="Caddie is an AI copilot that lives inside SolidWorks. It understands your model deeply, helps you design faster, and keeps itself up to date automatically.">
+  <title>Caddie for SOLIDWORKS — AI Design Copilot</title>
+  <meta name="description" content="Caddie is an AI copilot that lives inside SolidWorks. It reads your model in real time, answers your questions with context, and keeps itself updated automatically.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,101 +12,119 @@
 </head>
 <body>
 
-<!-- ─── Nav ────────────────────────────────────────────── -->
+<!-- ─── Nav ───────────────────────────────────────────────── -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="32" height="32">
-        <rect x="8" y="15" width="24" height="18" rx="4" fill="#0066CC"/>
-        <polygon points="8,15 20,9 32,15" fill="#3388EE"/>
-        <polygon points="32,15 32,33 36,30 36,12" fill="#004FA3"/>
-        <circle cx="15.5" cy="23" r="3" fill="white" opacity="0.95"/>
-        <circle cx="24.5" cy="23" r="3" fill="white" opacity="0.95"/>
-        <circle cx="16.5" cy="23.5" r="1.2" fill="#0044AA"/>
-        <circle cx="25.5" cy="23.5" r="1.2" fill="#0044AA"/>
-        <path d="M 14.5 28 Q 20 31.5 25.5 28" stroke="white" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      </svg>
+      <img src="Caddie.png" alt="Caddie mascot" height="38">
       Caddie
     </a>
     <ul class="nav-links">
+      <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#privacy">Privacy</a></li>
-      <li><a href="#download" class="nav-cta">Download</a></li>
+      <li><a href="#docs">Docs</a></li>
+      <li><a href="#download" class="nav-cta">Download Free</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- ─── Hero ────────────────────────────────────────────── -->
+<!-- ─── Hero ───────────────────────────────────────────────── -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">Developer Alpha · by CADvice</div>
+      <div class="hero-badge">Developer Alpha</div>
       <h1>Your AI copilot<br><span>inside SolidWorks</span></h1>
       <p class="subtitle">
         Caddie lives in your SolidWorks taskpane. It reads your model in real time, answers with context, and keeps itself updated automatically.
       </p>
       <div class="hero-cta-group">
         <a href="#download" class="btn-hero-primary">&#8659;&nbsp; Download Free</a>
-        <a href="#how-it-works" class="btn-hero-secondary">See How It Works</a>
+        <a href="#use-cases" class="btn-hero-secondary">See It In Action</a>
       </div>
       <p class="hero-meta">Free &nbsp;·&nbsp; v0.1 Alpha &nbsp;·&nbsp; SolidWorks 2022+</p>
     </div>
+
     <div class="hero-right">
-      <div class="hero-visual">
-        <div class="hero-visual-header">
-          <div class="wm-dot wm-dot-r"></div>
-          <div class="wm-dot wm-dot-y"></div>
-          <div class="wm-dot wm-dot-g"></div>
-          <span class="wm-title">SolidWorks 2024 — Bracket.SLDPRT</span>
+      <!-- Realistic SolidWorks window mockup -->
+      <div class="sw-window">
+        <div class="sw-titlebar">
+          <div class="wm-dots">
+            <div class="wm-dot wm-dot-r"></div>
+            <div class="wm-dot wm-dot-y"></div>
+            <div class="wm-dot wm-dot-g"></div>
+          </div>
+          <span class="sw-title">SOLIDWORKS 2024 — Bracket.SLDPRT</span>
         </div>
-        <div class="hero-visual-body">
-          <div class="hero-sw-area">
-            <div class="sw-grid-bg"></div>
-            <div class="sw-model-placeholder">
-              <svg width="120" height="80" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 60 L60 20 L100 60 Z" fill="none" stroke="#4488CC" stroke-width="1.5" opacity="0.6"/>
-                <path d="M20 60 L60 45 L100 60" fill="none" stroke="#4488CC" stroke-width="1.5" opacity="0.6"/>
-                <rect x="35" y="40" width="50" height="20" rx="2" fill="none" stroke="#66AADD" stroke-width="1" opacity="0.5"/>
-                <line x1="60" y1="20" x2="60" y2="45" stroke="#4488CC" stroke-width="1" opacity="0.4" stroke-dasharray="3,2"/>
+        <div class="sw-body">
+          <!-- 3D viewport -->
+          <div class="sw-viewport">
+            <div class="sw-grid"></div>
+            <div class="sw-model">
+              <svg width="160" height="110" viewBox="0 0 160 110" fill="none">
+                <path d="M30 85 L80 30 L130 85 Z" fill="none" stroke="#4488CC" stroke-width="1.5" opacity="0.7"/>
+                <path d="M30 85 L80 62 L130 85" fill="none" stroke="#4488CC" stroke-width="1.5" opacity="0.7"/>
+                <rect x="45" y="55" width="70" height="30" rx="2" fill="rgba(68,136,204,0.12)" stroke="#66AADD" stroke-width="1" opacity="0.8"/>
+                <line x1="80" y1="30" x2="80" y2="62" stroke="#4488CC" stroke-width="1" opacity="0.5" stroke-dasharray="3,2"/>
+                <circle cx="80" cy="30" r="3" fill="#4488CC" opacity="0.6"/>
+                <circle cx="30" cy="85" r="3" fill="#4488CC" opacity="0.6"/>
+                <circle cx="130" cy="85" r="3" fill="#4488CC" opacity="0.6"/>
               </svg>
-              <span>Flanged bracket · 14 features</span>
+              <span class="sw-model-label">Bracket.SLDPRT &nbsp;·&nbsp; 14 features</span>
             </div>
           </div>
-          <div class="hero-taskpane">
+
+          <!-- Caddie taskpane — matches real UI -->
+          <div class="sw-taskpane">
+            <!-- Header -->
             <div class="tp-header">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="16" height="16">
-                <rect x="8" y="15" width="24" height="18" rx="4" fill="#0066CC"/>
-                <polygon points="8,15 20,9 32,15" fill="#3388EE"/>
-                <circle cx="15.5" cy="23" r="3" fill="white"/>
-                <circle cx="24.5" cy="23" r="3" fill="white"/>
-              </svg>
-              Ask Caddie
-              <span class="tp-status-dot"></span>
+              <img src="Caddie.png" alt="Caddie" class="tp-mascot">
+              <span class="tp-title">Ask Caddie</span>
+              <span class="tp-status-label">ready</span>
+              <span class="tp-status-dot online"></span>
             </div>
-            <div class="tp-context-bar">
-              <span class="tp-ctx-dot"></span> Bracket.SLDPRT · 14 features captured
+            <!-- Tab bar -->
+            <div class="tp-tabs">
+              <button class="tp-tab active">Chat</button>
+              <button class="tp-tab">Teach</button>
+              <button class="tp-tab">Review</button>
+              <button class="tp-tab">History</button>
             </div>
+            <!-- Quick actions -->
+            <div class="tp-actions">
+              <button class="tp-action-btn">↻ Refresh</button>
+              <button class="tp-action-btn">🗑 Clear</button>
+              <button class="tp-action-btn">📋 Copy</button>
+            </div>
+            <!-- Context bar -->
+            <div class="tp-context">
+              <span class="tp-ctx-dot"></span>
+              Bracket.SLDPRT &nbsp;·&nbsp; 14 features
+            </div>
+            <!-- Chat messages -->
             <div class="tp-chat">
-              <div class="tp-msg tp-msg-user">
-                Why is my sketch showing dangling relations?
-              </div>
+              <div class="tp-role">YOU</div>
+              <div class="tp-msg tp-msg-user">Why is my loft failing?</div>
+              <div class="tp-role">CADDIE</div>
               <div class="tp-msg tp-msg-ai">
-                <strong>In your Extrude-Boss1 sketch</strong>, the top edge is referencing a plane that was renamed. Fix:
-                <br><br>
-                1. Edit Sketch3 → right-click dangling relation → Delete<br>
-                2. Re-add coincident to <em>Top Plane</em>
+                The guide curve in <strong>Loft1</strong> isn't piercing both profiles — that's what's causing the failure.<br><br>
+                Fix: Edit <em>Sketch4</em> → select the guide curve endpoint → Add Relation → <strong>Pierce</strong>.
               </div>
-              <div class="tp-msg tp-msg-user">
-                How do I add a K-factor override?
-              </div>
-              <div class="tp-msg tp-msg-typing">
+              <div class="tp-role">YOU</div>
+              <div class="tp-msg tp-msg-user">How do I add a fillet to the sharp edge?</div>
+              <div class="tp-msg tp-typing">
                 <span></span><span></span><span></span>
               </div>
             </div>
-            <div class="tp-input">
-              <div class="tp-input-box">Ask about your model…</div>
-              <button class="tp-send">➤</button>
+            <!-- Input -->
+            <div class="tp-input-area">
+              <div class="tp-ctx-bar">
+                <span class="tp-ctx-dot"></span> Bracket.SLDPRT
+              </div>
+              <div class="tp-input-row">
+                <div class="tp-input-box">Ask about your model…</div>
+                <button class="tp-send-btn">➤</button>
+              </div>
             </div>
           </div>
         </div>
@@ -115,36 +133,72 @@
   </div>
 </div>
 
-<!-- ─── Three Pillars ─────────────────────────────────── -->
+<!-- ─── Use Cases ──────────────────────────────────────────── -->
+<section id="use-cases">
+  <div class="container">
+    <div class="section-label">Use Cases</div>
+    <h2 class="section-title">See Caddie in action.</h2>
+    <p class="section-subtitle">Real scenarios SolidWorks engineers face every day.</p>
+
+    <div class="use-case-grid">
+      <div class="use-case-card">
+        <div class="use-case-icon">🔧</div>
+        <div class="use-case-tag">Debugging</div>
+        <h3>Stop searching forums.</h3>
+        <p>Your sketch shows dangling relations after renaming a reference plane. Instead of searching StackOverflow for an hour, ask Caddie — it sees your feature tree and tells you exactly which relation to delete and what to replace it with.</p>
+        <div class="use-case-chat">
+          <div class="uc-msg uc-user">My sketch has a dangling relation after I renamed Top Plane</div>
+          <div class="uc-msg uc-ai"><strong>In Boss-Extrude1 sketch</strong>, the coincident relation on line 3 references the old plane name. Right-click it → Delete Relation → re-add Coincident to <em>Top Plane</em>.</div>
+        </div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">🎓</div>
+        <div class="use-case-tag">Certification</div>
+        <h3>Study with your model open.</h3>
+        <p>Working toward CSWP certification? Caddie walks you through practice exercises step by step, referencing your actual model. Ask it to explain why a feature was built a certain way and get exam-level answers.</p>
+        <div class="use-case-chat">
+          <div class="uc-msg uc-user">Walk me through this lofted feature for my CSWP prep</div>
+          <div class="uc-msg uc-ai">Your Loft1 uses 3 profiles and 1 guide curve — a common CSWP question type. The key constraint examiners test: guide curves must <strong>pierce</strong> all profiles, not just intersect.</div>
+        </div>
+      </div>
+
+      <div class="use-case-card">
+        <div class="use-case-icon">🔍</div>
+        <div class="use-case-tag">Model Review</div>
+        <h3>Catch issues before your supervisor does.</h3>
+        <p>One click runs a full model review — rebuild errors, naming conventions, dangling references, and design intent issues — all prioritized by severity so you know what to fix first.</p>
+        <div class="use-case-chat">
+          <div class="uc-msg uc-user">Review my model for issues before I send it to the team</div>
+          <div class="uc-msg uc-ai"><strong>3 issues found:</strong><br>🔴 Sketch3 has external ref to deleted edge<br>🟡 5 features use default names (Extrude1…)<br>🟢 Configuration naming looks good</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Three Pillars ──────────────────────────────────────── -->
 <section id="features">
   <div class="container">
     <div class="section-label">Why Caddie</div>
     <h2 class="section-title">Designed for how engineers actually work.</h2>
-    <p class="section-subtitle">
-      Caddie is built around three principles that most AI tools miss entirely.
-    </p>
+    <p class="section-subtitle">Three principles that most AI tools miss entirely.</p>
 
     <div class="pillar-grid">
       <div class="pillar-card">
         <div class="pillar-icon">📊</div>
         <div class="pillar-title">Context-Aware AI</div>
-        <p class="pillar-desc">
-          Before answering, Caddie reads your feature tree, active configuration, selection state, rebuild errors, and takes a live viewport screenshot. Every answer references your actual model — not a textbook example.
-        </p>
+        <p class="pillar-desc">Before answering, Caddie reads your feature tree, active configuration, selection state, rebuild errors, and takes a live viewport screenshot. Every answer references your actual model — not a textbook example.</p>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🔄</div>
         <div class="pillar-title">Always Up to Date</div>
-        <p class="pillar-desc">
-          Caddie notifies you inside SolidWorks when a new version is ready. One download, ten seconds to apply — no re-registration needed. You never need to check a website.
-        </p>
+        <p class="pillar-desc">Caddie notifies you inside SolidWorks when a new version is ready. One download, ten seconds to apply — no re-registration needed. You never need to check a website.</p>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🔒</div>
         <div class="pillar-title">Private by Default</div>
-        <p class="pillar-desc">
-          All conversation history, notes, and preferences are stored in SQLite on your PC. No account needed, no telemetry, no analytics — confidential designs stay confidential.
-        </p>
+        <p class="pillar-desc">All conversation history, notes, and preferences are stored in SQLite on your PC. No account needed, no telemetry, no analytics — confidential designs stay confidential.</p>
       </div>
     </div>
 
@@ -152,43 +206,33 @@
       <div class="feature-card">
         <div class="feature-icon">💬</div>
         <div class="feature-title">Smart Chat</div>
-        <p class="feature-desc">
-          Ask anything: "Why does my loft fail?", "Add K-factor to sheet metal", "Review my feature tree." Caddie answers specifically about your model.
-        </p>
+        <p class="feature-desc">Ask anything about your model. Caddie answers with specific references to your feature names, sketches, and mates.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎓</div>
         <div class="feature-title">CSWP → CSWE Training</div>
-        <p class="feature-desc">
-          Structured exercises, step-by-step guidance, and review rubrics aligned with Dassault's certification syllabi.
-        </p>
+        <p class="feature-desc">Structured exercises and step-by-step guidance aligned with Dassault's certification syllabi.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🖼</div>
         <div class="feature-title">Teach Me From Image</div>
-        <p class="feature-desc">
-          Drop a screenshot of any model and Caddie generates a complete SolidWorks build plan with ordered feature steps.
-        </p>
+        <p class="feature-desc">Drop a screenshot of any model and Caddie generates a complete SolidWorks build plan.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">🔍</div>
-        <div class="feature-title">Model Review</div>
-        <p class="feature-desc">
-          One-click review surfaces rebuild errors, naming issues, dangling references, and design intent improvements — prioritized by severity.
-        </p>
+        <div class="feature-icon">🧠</div>
+        <div class="feature-title">Persistent Memory</div>
+        <p class="feature-desc">Caddie remembers your modeling style and project notes — all stored locally on your machine.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── How It Works ─────────────────────────────────────── -->
+<!-- ─── How It Works ───────────────────────────────────────── -->
 <section id="how-it-works">
   <div class="container">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">SolidWorks-native. No tab switching.</h2>
-    <p class="section-subtitle">
-      Caddie runs entirely inside SolidWorks as a native taskpane add-in. Your data stays local. There's no browser, no copy-paste.
-    </p>
+    <h2 class="section-title">Up and running in under 5 minutes.</h2>
+    <p class="section-subtitle">Caddie runs entirely inside SolidWorks as a native taskpane add-in. No browser, no copy-paste, no context switching.</p>
 
     <div class="steps-row">
       <div class="step">
@@ -203,7 +247,7 @@
         <div class="step-num">2</div>
         <div class="step-content">
           <h3>Open your model</h3>
-          <p>Open any part, assembly, or drawing. Caddie automatically captures a context snapshot — feature tree, configuration, selection, and viewport.</p>
+          <p>Open any part, assembly, or drawing. Caddie automatically captures your feature tree, configuration, and a viewport screenshot.</p>
         </div>
       </div>
       <div class="steps-connector"></div>
@@ -218,7 +262,83 @@
   </div>
 </section>
 
-<!-- ─── Roadmap ───────────────────────────────────────────── -->
+<!-- ─── Testimonials ───────────────────────────────────────── -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Alpha Feedback</div>
+    <h2 class="section-title">What engineers are saying.</h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"Caddie saved me 45 minutes on a loft failure I'd been fighting all morning. It saw exactly which sketch had the broken guide curve."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MR</div>
+          <div>
+            <div class="testimonial-name">Marco R.</div>
+            <div class="testimonial-role">Mechanical Engineer · 8 yrs SW</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"I'm studying for my CSWP and having an AI that can actually see my model is a completely different experience. It's like having a senior engineer on call."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ST</div>
+          <div>
+            <div class="testimonial-name">Sarah T.</div>
+            <div class="testimonial-role">Design Engineer · CSWP candidate</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">"The model review caught a dangling reference I'd missed for two days. One click, instant answer, zero digging through the feature tree manually."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">JK</div>
+          <div>
+            <div class="testimonial-name">James K.</div>
+            <div class="testimonial-role">Product Designer · Manufacturing</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Documentation ──────────────────────────────────────── -->
+<section id="docs">
+  <div class="container">
+    <div class="section-label">Resources</div>
+    <h2 class="section-title">Everything you need to get started.</h2>
+
+    <div class="docs-grid">
+      <a href="docs/FRIEND_QUICKSTART.md" class="docs-card">
+        <div class="docs-icon">🚀</div>
+        <div class="docs-title">Quick Start Guide</div>
+        <p class="docs-desc">Install Caddie, enable the add-in, and have your first conversation in under 5 minutes.</p>
+        <span class="docs-link">Read guide →</span>
+      </a>
+      <a href="#how-it-works" class="docs-card">
+        <div class="docs-icon">⚙️</div>
+        <div class="docs-title">How Caddie Works</div>
+        <p class="docs-desc">Understand how Caddie captures context, routes requests, and keeps your data private.</p>
+        <span class="docs-link">Learn more →</span>
+      </a>
+      <a href="#roadmap" class="docs-card">
+        <div class="docs-icon">🗺</div>
+        <div class="docs-title">Roadmap</div>
+        <p class="docs-desc">See what's shipping now, what's next, and where Caddie is headed in future milestones.</p>
+        <span class="docs-link">View roadmap →</span>
+      </a>
+      <a href="#privacy" class="docs-card">
+        <div class="docs-icon">🔒</div>
+        <div class="docs-title">Privacy & Data</div>
+        <p class="docs-desc">Everything stored locally. No telemetry. No account. Your CAD data never leaves your machine.</p>
+        <span class="docs-link">Read policy →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Roadmap ─────────────────────────────────────────────── -->
 <section id="roadmap">
   <div class="container">
     <div class="section-label">Roadmap</div>
@@ -242,8 +362,8 @@
       <div class="roadmap-item">
         <div class="roadmap-tag tag-soon">Soon</div>
         <div class="roadmap-content">
-          <h3>M3 — Context-aware AI + Modeling Plans</h3>
-          <p>Structured response formats: Plan → Why → Check → Alternatives. Review tab powered by AI analysis.</p>
+          <h3>M3 — Structured AI Responses + Model Plans</h3>
+          <p>Plan → Why → Check → Alternatives response format. Review tab powered by AI analysis.</p>
         </div>
       </div>
       <div class="roadmap-item">
@@ -271,14 +391,12 @@
   </div>
 </section>
 
-<!-- ─── Privacy ──────────────────────────────────────────── -->
+<!-- ─── Privacy ─────────────────────────────────────────────── -->
 <section id="privacy">
   <div class="container">
     <div class="section-label">Privacy First</div>
     <h2 class="section-title">Your CAD data stays on your machine.</h2>
-    <p class="section-subtitle">
-      Caddie is built for engineers who work on confidential designs. We take data security seriously by default.
-    </p>
+    <p class="section-subtitle">Caddie is built for engineers who work on confidential designs. We take data security seriously by default.</p>
 
     <div class="privacy-grid">
       <div class="privacy-card">
@@ -305,13 +423,14 @@
   </div>
 </section>
 
-<!-- ─── Download ─────────────────────────────────────────── -->
+<!-- ─── Download ─────────────────────────────────────────────── -->
 <div id="download" class="download-section">
   <div class="download-inner">
+    <img src="Caddie.png" alt="Caddie" class="download-mascot">
     <div class="hero-badge" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:white;margin-bottom:20px">
       Developer Alpha &middot; v0.1
     </div>
-    <h2 class="section-title" style="color:white">Download Caddie Alpha</h2>
+    <h2 class="section-title" style="color:white">Download Caddie</h2>
     <p class="section-subtitle" style="color:rgba(255,255,255,0.85);margin:0 auto 36px">
       Ready to run inside SolidWorks 2022+. Extract the zip, run the installer, and you're chatting with your models in under 5 minutes.
     </p>
@@ -319,54 +438,50 @@
     <a href="CaddieAlpha.zip" class="btn-download" download="CaddieAlpha.zip">
       &#8659;&nbsp; Download CaddieAlpha.zip
     </a>
-    <p class="download-note">Windows 10 / 11 &nbsp;&middot;&nbsp; 64-bit &nbsp;&middot;&nbsp; SolidWorks 2022 or newer &nbsp;&middot;&nbsp; free during alpha</p>
+    <p class="download-note">Windows 10 / 11 &nbsp;·&nbsp; 64-bit &nbsp;·&nbsp; SolidWorks 2022+ &nbsp;·&nbsp; Free during alpha</p>
 
     <div class="install-steps">
       <div class="install-step">
         <div class="install-num">1</div>
         <div class="install-text">
-          <strong>Extract</strong> the zip to a permanent folder &mdash; e.g. <code>C:\Caddie\</code>
-          <br><span class="install-note">Don&rsquo;t leave it in Downloads; the DLL path must stay fixed.</span>
+          <strong>Extract</strong> the zip to a permanent folder — e.g. <code>C:\Caddie\</code>
+          <span class="install-note">Don't leave it in Downloads — the DLL path must stay fixed.</span>
         </div>
       </div>
       <div class="install-step">
         <div class="install-num">2</div>
         <div class="install-text">
-          Right-click <strong>install.bat &rarr; Run as Administrator</strong>
-          <br><span class="install-note">Click Yes on the UAC prompt. You&rsquo;ll see &ldquo;SUCCESS: Caddie registered.&rdquo;</span>
+          Right-click <strong>install.bat → Run as Administrator</strong>
+          <span class="install-note">Click Yes on the UAC prompt. You'll see "SUCCESS: Caddie registered."</span>
         </div>
       </div>
       <div class="install-step">
         <div class="install-num">3</div>
         <div class="install-text">
-          In SolidWorks: <strong>Tools &rarr; Add-Ins &rarr; Caddie &rarr; check Active &amp; Start Up &rarr; OK</strong>
-          <br><span class="install-note">The &ldquo;Ask Caddie&rdquo; panel appears on the right. Open any model and start chatting.</span>
+          In SolidWorks: <strong>Tools → Add-Ins → Caddie → check Active &amp; Start Up → OK</strong>
+          <span class="install-note">The "Ask Caddie" panel appears on the right. Open any model and start chatting.</span>
         </div>
       </div>
     </div>
 
-    <a href="../docs/FRIEND_QUICKSTART.md" class="install-guide-link">Full install guide &rarr;</a>
+    <a href="docs/FRIEND_QUICKSTART.md" class="install-guide-link">Full install guide →</a>
   </div>
 </div>
 
-<!-- ─── Footer ───────────────────────────────────────────── -->
+<!-- ─── Footer ───────────────────────────────────────────────── -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="22" height="22">
-        <rect x="8" y="15" width="24" height="18" rx="4" fill="#0066CC"/>
-        <polygon points="8,15 20,9 32,15" fill="#3388EE"/>
-        <circle cx="15.5" cy="23" r="3" fill="white"/>
-        <circle cx="24.5" cy="23" r="3" fill="white"/>
-      </svg>
+      <img src="Caddie.png" alt="Caddie" height="32">
       Caddie for SOLIDWORKS
     </div>
     <div class="footer-links">
       <a href="#download">Download</a>
+      <a href="#docs">Docs</a>
       <a href="#privacy">Privacy</a>
-      <a href="mailto:hello@cadvice.app">Contact</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
-    <p class="footer-copy">© 2025 CADvice. SOLIDWORKS® is a registered trademark of Dassault Systèmes.</p>
+    <p class="footer-copy">© 2025 Ask Caddie. SOLIDWORKS® is a registered trademark of Dassault Systèmes.</p>
   </div>
 </footer>
 
