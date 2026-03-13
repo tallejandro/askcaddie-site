@@ -43,7 +43,7 @@ nav {
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
   height: 64px;
@@ -64,7 +64,7 @@ nav {
 }
 
 .nav-logo img {
-  height: 38px;
+  height: 30px;
   width: auto;
   object-fit: contain;
 }
@@ -97,7 +97,7 @@ nav {
 
 /* ─── Container ──────────────────────────────────────────── */
 .container {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -109,7 +109,7 @@ nav {
 }
 
 .hero-inner {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -161,6 +161,86 @@ nav {
   font-size: 13px;
   color: var(--text2);
   opacity: 0.75;
+}
+
+/* ─── Hero mascot intro ──────────────────────────────────── */
+.hero-intro {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.hero-mascot {
+  height: 130px;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(0,102,204,0.18));
+}
+
+.hero-speech {
+  background: white;
+  border: 2px solid var(--blue);
+  border-radius: 18px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0,102,204,0.12);
+  max-width: 280px;
+}
+
+/* speech bubble tail pointing left toward mascot */
+.hero-speech::before {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 8px solid transparent;
+  border-right-color: var(--blue);
+  border-left: 0;
+}
+
+.hero-speech::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-right-color: white;
+  border-left: 0;
+}
+
+/* ─── CAD compatibility badges ───────────────────────────── */
+.cad-compat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.compat-now {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #005C35;
+  background: #D3F9E0;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid #A8E8C4;
+}
+
+.compat-soon {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #7A4800;
+  background: #FFF0D4;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid #FFD98A;
 }
 
 .btn-hero-primary {
@@ -962,7 +1042,7 @@ footer {
 }
 
 .footer-inner {
-  max-width: 1100px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -1033,4 +1113,8 @@ footer {
   .sw-taskpane { width: 100%; border-left: none; border-top: 1px solid var(--border); }
   .docs-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; text-align: center; }
+  .hero-intro { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .hero-mascot { height: 90px; }
+  .hero-speech::before,
+  .hero-speech::after { display: none; }
 }
