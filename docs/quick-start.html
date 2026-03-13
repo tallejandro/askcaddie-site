@@ -79,39 +79,27 @@
       <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit only)</li>
       <li><strong>CAD Software:</strong> SolidWorks 2022 or later</li>
       <li><strong>.NET Framework:</strong> 4.8 &mdash; already installed on most Windows 10/11 machines</li>
-      <li><strong>Internet:</strong> Required for AI responses (all requests go through a secure proxy &mdash; see <a href="../#privacy">Privacy</a>)</li>
-      <li><strong>Disk space:</strong> ~15 MB for the add-in, plus space for local conversation history</li>
+      <li><strong>Internet:</strong> Required for AI responses (requests go through a secure HTTPS proxy &mdash; see <a href="../#privacy">Privacy</a>)</li>
+      <li><strong>Disk space:</strong> ~20 MB installed, plus space for local conversation history</li>
     </ul>
 
     <!-- Step 1 -->
-    <h2>Step 1 &mdash; Download &amp; Extract</h2>
+    <h2>Step 1 &mdash; Download &amp; Install</h2>
     <ol class="doc-steps">
       <li>
-        <strong>Download CaddieAlpha.zip</strong> from the <a href="../#download">download section</a>.
+        <strong>Download CaddieSetup.exe</strong> from the <a href="../#download">download section</a>.
       </li>
       <li>
-        <strong>Extract to a permanent folder</strong> &mdash; for example <code>C:\Caddie\</code> or <code>C:\Program Files\Caddie\</code>.
-        <div class="doc-note">&#9888; Do <strong>not</strong> leave the files in your Downloads folder or on your Desktop. The DLL registration path is fixed &mdash; if you move the files later you will need to re-run the installer.</div>
+        <strong>Run CaddieSetup.exe.</strong>
+        <div class="doc-note">&#9888; Windows SmartScreen may show a warning because the installer is not yet code-signed. Click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. This is normal for indie software during alpha.</div>
       </li>
-      <li>
-        Confirm the extracted folder contains: <code>Caddie.SwAddin.dll</code>, <code>install.bat</code>, <code>unregister.bat</code>, <code>update.bat</code>, and a <code>ui\</code> subfolder.
-      </li>
+      <li>Click through the setup wizard. The default install location (<code>C:\Program Files\Caddie\</code>) is recommended.</li>
+      <li>If SolidWorks is running, the installer will ask you to close it first &mdash; this is required so the DLL can be written.</li>
+      <li>Click <strong>Finish</strong>. Caddie is now installed and registered.</li>
     </ol>
 
     <!-- Step 2 -->
-    <h2>Step 2 &mdash; Register the Add-In</h2>
-    <ol class="doc-steps">
-      <li>Open the extracted folder in File Explorer.</li>
-      <li>Right-click <strong>install.bat</strong> &rarr; select <strong>Run as Administrator</strong>.</li>
-      <li>Click <strong>Yes</strong> on the UAC (User Account Control) prompt.</li>
-      <li>A command window will open briefly. You should see:
-        <div class="doc-code-block">SUCCESS: Caddie registered.</div>
-        If you see an error instead, see <a href="#troubleshooting">Troubleshooting</a> below.
-      </li>
-    </ol>
-
-    <!-- Step 3 -->
-    <h2>Step 3 &mdash; Enable in SolidWorks</h2>
+    <h2>Step 2 &mdash; Enable in SolidWorks</h2>
     <ol class="doc-steps">
       <li>Open SolidWorks (or restart it if it was already running).</li>
       <li>Go to <strong>Tools &rarr; Add-Ins&hellip;</strong></li>
@@ -121,8 +109,8 @@
       <li>The <strong>Ask Caddie</strong> panel will appear on the right side of your SolidWorks window.</li>
     </ol>
 
-    <!-- Step 4 -->
-    <h2>Step 4 &mdash; Start a Conversation</h2>
+    <!-- Step 3 -->
+    <h2>Step 3 &mdash; Start a Conversation</h2>
     <ol class="doc-steps">
       <li>Open any part, assembly, or drawing in SolidWorks.</li>
       <li>
@@ -143,21 +131,20 @@
 
     <!-- Updating -->
     <h2>Updating Caddie</h2>
-    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When a new version is released, Caddie will show an update banner inside SolidWorks automatically. To apply the update:</p>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When a new version is released, Caddie will show an update banner inside SolidWorks automatically. Updating takes about 30 seconds:</p>
     <ol class="doc-steps">
-      <li>Close SolidWorks.</li>
-      <li>Download the new <code>CaddieAlpha.zip</code> and extract it.</li>
-      <li>In the new folder, right-click <strong>update.bat</strong> &rarr; <strong>Run as Administrator</strong>. This copies the new files to your install directory without requiring re-registration.</li>
-      <li>Reopen SolidWorks &mdash; the updated version loads automatically.</li>
+      <li>Click the <strong>Download</strong> link in the update banner, or visit the <a href="../#download">download page</a>.</li>
+      <li>Run the new <strong>CaddieSetup.exe</strong> &mdash; it detects your existing installation and upgrades automatically.</li>
+      <li>Reopen SolidWorks. The updated version loads automatically.</li>
     </ol>
 
     <!-- Uninstalling -->
     <h2>Uninstalling</h2>
     <ol class="doc-steps">
       <li>Close SolidWorks.</li>
-      <li>Right-click <strong>unregister.bat</strong> &rarr; <strong>Run as Administrator</strong>.</li>
-      <li>Delete the <code>C:\Caddie\</code> folder (or wherever you extracted it).</li>
-      <li>Optionally delete the app data folder: <code>%AppData%\CaddieAddin\</code> (contains your conversation history and settings).</li>
+      <li>Open <strong>Windows Settings &rarr; Apps</strong> (or Control Panel &rarr; Programs).</li>
+      <li>Find <strong>Caddie for SOLIDWORKS</strong> in the list and click <strong>Uninstall</strong>.</li>
+      <li>Optionally delete the app data folder to remove conversation history and settings: <code>%AppData%\CaddieAddin\</code></li>
     </ol>
 
     <!-- Troubleshooting -->
