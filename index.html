@@ -28,8 +28,7 @@
 
 <!-- ─── Hero ───────────────────────────────────────────────── -->
 <div class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
+  <div class="hero-center">
       <div class="hero-intro">
         <img src="Caddie.png" alt="Caddie" class="hero-mascot">
         <div class="hero-speech">Hi! I'm Caddie — your AI copilot for CAD.</div>
@@ -37,7 +36,7 @@
       <div class="hero-badge">Developer Alpha</div>
       <h1>Get unstuck.<br><span>Design faster.</span></h1>
       <p class="subtitle">
-        Caddie lives inside your CAD software, reads your design in real time, and gives specific answers. No copy-pasting, no tab switching, no generic advice.
+        Caddie lives inside your CAD software, reads your design in real time, and gives specific answers referencing your actual feature names, sketches, and mates. No copy-pasting. No tab switching.
       </p>
       <div class="cad-compat">
         <span class="compat-now">&#10003; SolidWorks 2022+</span>
@@ -49,10 +48,19 @@
         <a href="#use-cases" class="btn-hero-secondary">See It In Action</a>
       </div>
       <p class="hero-meta">Free &nbsp;·&nbsp; v0.1 Alpha &nbsp;·&nbsp; Windows 10/11 64-bit</p>
-    </div>
 
-    <div class="hero-right">
-      <!-- Realistic SolidWorks window mockup -->
+      <div class="hero-chips">
+        <div class="hero-chip-label">Try asking Caddie</div>
+        <div class="hero-chip-row">
+          <span class="hero-chip">"Why is my loft failing?"</span>
+          <span class="hero-chip">"Review this part before machining"</span>
+          <span class="hero-chip">"How do I mate for single-axis rotation?"</span>
+          <span class="hero-chip">"Walk me through CSWA prep on this sketch"</span>
+          <span class="hero-chip">"What does Boss-Extrude3 do?"</span>
+        </div>
+      </div>
+
+    <div class="hero-right" style="display:none">
       <div class="sw-window">
         <div class="sw-titlebar">
           <div class="wm-dots">
@@ -210,7 +218,6 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 
@@ -237,10 +244,10 @@
         <div class="use-case-icon">🎓</div>
         <div class="use-case-tag">Certification</div>
         <h3>Study with your model open.</h3>
-        <p>Working toward CSWP certification? Caddie walks you through practice exercises step by step, referencing your actual model. Ask it to explain why a feature was built a certain way and get exam-level answers.</p>
+        <p>Wherever you are — starting from scratch, preparing for CSWA, advancing to CSWP, tackling a CSWPA specialty, or aiming for CSWE — Caddie walks you through exercises step by step with your actual model in context. Works for every supported CAD platform.</p>
         <div class="use-case-chat">
-          <div class="uc-msg uc-user">Walk me through this lofted feature for my CSWP prep</div>
-          <div class="uc-msg uc-ai">Your Loft1 uses 3 profiles and 1 guide curve — a common CSWP question type. The key constraint examiners test: guide curves must <strong>pierce</strong> all profiles, not just intersect.</div>
+          <div class="uc-msg uc-user">I'm starting CSWA prep — what should I practice first?</div>
+          <div class="uc-msg uc-ai">Start with fully-defined sketches — they're the foundation of every CSWA question. Open a part, constrain a profile sketch, and I'll check your work as you go.</div>
         </div>
       </div>
 
@@ -291,8 +298,8 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎓</div>
-        <div class="feature-title">CSWP → CSWE Training</div>
-        <p class="feature-desc">Structured exercises and step-by-step guidance aligned with Dassault's certification syllabi.</p>
+        <div class="feature-title">Full Certification Path</div>
+        <p class="feature-desc">From zero to expert — CSWA → CSWP → CSWPA → CSWE, and equivalent paths for every supported CAD platform.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🖼</div>
