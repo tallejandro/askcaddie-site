@@ -1147,7 +1147,22 @@ footer {
   margin-bottom: 28px;
 }
 
-.doc-list li { font-size: 15px; color: var(--text); line-height: 1.65; }
+.doc-list li {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.65;
+  padding-left: 18px;
+  position: relative;
+}
+
+.doc-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 16px;
+}
 
 .doc-steps {
   list-style: none;
@@ -1180,9 +1195,8 @@ footer {
   border-radius: 50%;
   font-size: 13px;
   font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 28px;
+  text-align: center;
 }
 
 .doc-note {

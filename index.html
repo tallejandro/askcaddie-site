@@ -60,68 +60,79 @@
             <div class="wm-dot wm-dot-y"></div>
             <div class="wm-dot wm-dot-g"></div>
           </div>
-          <span class="sw-title">Bracket.sldprt</span>
+          <span class="sw-title">FlangeCouplingHub.sldprt</span>
         </div>
         <div class="sw-body">
           <!-- 3D viewport -->
           <div class="sw-viewport">
             <div class="sw-grid"></div>
             <div class="sw-model">
-              <!-- Isometric L-bracket — dark modern CAD viewport -->
+              <!-- Flanged Coupling Hub — isometric view, white background -->
               <svg width="200" height="140" viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                  <linearGradient id="tF" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#D8E8F4"/><stop offset="100%" stop-color="#B4CAD8"/>
+                  <linearGradient id="gFT" x1="20%" y1="0%" x2="80%" y2="100%">
+                    <stop offset="0%" stop-color="#EEF4FA"/>
+                    <stop offset="100%" stop-color="#C0D2E4"/>
                   </linearGradient>
-                  <linearGradient id="fF" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#8AAEC0"/><stop offset="100%" stop-color="#6888A0"/>
+                  <linearGradient id="gHT" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#DCE8F4"/>
+                    <stop offset="100%" stop-color="#B8CCE0"/>
                   </linearGradient>
-                  <linearGradient id="wT" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stop-color="#EAF4FF"/><stop offset="100%" stop-color="#C8DEEE"/>
+                  <linearGradient id="gHF" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#7A90A8"/>
+                    <stop offset="42%" stop-color="#C8DCF0"/>
+                    <stop offset="72%" stop-color="#D8EAF8"/>
+                    <stop offset="100%" stop-color="#A8BED2"/>
                   </linearGradient>
-                  <linearGradient id="wF" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#7898B0"/><stop offset="100%" stop-color="#587090"/>
+                  <linearGradient id="gRR" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#AABFCF"/>
+                    <stop offset="100%" stop-color="#7A96AA"/>
                   </linearGradient>
-                  <radialGradient id="glow" cx="50%" cy="60%" r="50%">
-                    <stop offset="0%" stop-color="#90B8D8" stop-opacity="0.15"/>
-                    <stop offset="100%" stop-color="#90B8D8" stop-opacity="0"/>
-                  </radialGradient>
+                  <linearGradient id="gRL" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#8898A8"/>
+                    <stop offset="100%" stop-color="#607080"/>
+                  </linearGradient>
                 </defs>
 
-                <!-- ambient glow -->
-                <ellipse cx="100" cy="75" rx="80" ry="50" fill="url(#glow)"/>
                 <!-- ground shadow -->
-                <ellipse cx="97" cy="120" rx="60" ry="6" fill="rgba(100,130,160,0.18)"/>
+                <ellipse cx="100" cy="123" rx="43" ry="4" fill="rgba(60,80,100,0.11)"/>
 
-                <!-- BASE PLATE -->
-                <polygon points="148,97 120,113 120,105 148,89" fill="#5A7890"/>
-                <polygon points="74,57 148,97 148,89 74,49" fill="url(#fF)"/>
-                <polygon points="74,49 148,89 120,105 46,65" fill="url(#tF)"/>
+                <!-- flange rim left quarter (shadow side) -->
+                <path d="M 60,92 A 40,20 0 0,1 100,112 L 100,122 A 40,20 0 0,0 60,102 Z" fill="url(#gRL)"/>
+                <!-- flange rim right quarter (lit side) -->
+                <path d="M 100,112 A 40,20 0 0,1 140,92 L 140,102 A 40,20 0 0,0 100,122 Z" fill="url(#gRR)"/>
 
-                <!-- counterbores -->
-                <ellipse cx="113" cy="86" rx="7.5" ry="4.3" fill="#1A2A38" stroke="#6898B8" stroke-width="0.9"/>
-                <ellipse cx="113" cy="86" rx="3.8" ry="2.2" fill="#0E1A28"/>
-                <ellipse cx="84" cy="70" rx="7.5" ry="4.3" fill="#1A2A38" stroke="#6898B8" stroke-width="0.9"/>
-                <ellipse cx="84" cy="70" rx="3.8" ry="2.2" fill="#0E1A28"/>
+                <!-- flange top face -->
+                <ellipse cx="100" cy="92" rx="40" ry="20" fill="url(#gFT)" stroke="#A8C0D4" stroke-width="0.7"/>
 
-                <!-- VERTICAL WALL -->
-                <polygon points="148,89 138,95 138,62 148,56" fill="#3E6070"/>
-                <polygon points="74,17 148,56 138,62 64,23" fill="url(#wT)"/>
-                <polygon points="74,49 148,89 148,56 74,17" fill="url(#wF)"/>
+                <!-- hub cylinder front face (front-bottom arcs of top and bottom ellipses) -->
+                <path d="M 86,60 A 14,7 0 0,1 114,60 L 114,92 A 14,7 0 0,1 86,92 Z" fill="url(#gHF)"/>
+                <!-- hub-flange junction — simulates fillet -->
+                <ellipse cx="100" cy="92" rx="14" ry="7" fill="url(#gFT)" stroke="#B0C8DC" stroke-width="1"/>
 
-                <!-- wall holes -->
-                <ellipse cx="126" cy="62" rx="6.5" ry="3.8" transform="rotate(-60,126,62)" fill="#1A2A38" stroke="#6898B8" stroke-width="0.9"/>
-                <ellipse cx="126" cy="62" rx="3.3" ry="1.9" transform="rotate(-60,126,62)" fill="#0E1A28"/>
-                <ellipse cx="100" cy="47" rx="6.5" ry="3.8" transform="rotate(-60,100,47)" fill="#1A2A38" stroke="#6898B8" stroke-width="0.9"/>
-                <ellipse cx="100" cy="47" rx="3.3" ry="1.9" transform="rotate(-60,100,47)" fill="#0E1A28"/>
+                <!-- hub top face -->
+                <ellipse cx="100" cy="60" rx="14" ry="7" fill="url(#gHT)" stroke="#98B4CC" stroke-width="0.8"/>
 
-                <!-- silhouette edges -->
-                <polyline points="74,17 74,49 74,57" stroke="#7AAAC0" stroke-width="0.9" fill="none"/>
-                <polyline points="148,56 148,89 148,97" stroke="#5A8AA0" stroke-width="0.8" fill="none"/>
-                <line x1="46" y1="65" x2="46" y2="73" stroke="#7AAAC0" stroke-width="0.6"/>
+                <!-- hub central bore (two rings for depth effect) -->
+                <ellipse cx="100" cy="60" rx="5.5" ry="2.75" fill="#6A7E90" stroke="#4A6070" stroke-width="0.7"/>
+                <ellipse cx="100" cy="60" rx="2.7" ry="1.35" fill="#243040"/>
 
-                <!-- ViewCube — top-right (light theme) -->
-                <g transform="translate(174, 20)">
+                <!-- bolt holes — 4 visible on front semicircle of flange -->
+                <!-- 0° right -->
+                <ellipse cx="127" cy="92" rx="4" ry="2" fill="#9CB4C8" stroke="#7090A8" stroke-width="0.7"/>
+                <ellipse cx="127" cy="92" rx="2.1" ry="1.05" fill="#3A5060"/>
+                <!-- 60° front-right -->
+                <ellipse cx="113.5" cy="103.7" rx="4" ry="2" fill="#9CB4C8" stroke="#7090A8" stroke-width="0.7"/>
+                <ellipse cx="113.5" cy="103.7" rx="2.1" ry="1.05" fill="#3A5060"/>
+                <!-- 120° front-left -->
+                <ellipse cx="86.5" cy="103.7" rx="4" ry="2" fill="#9CB4C8" stroke="#7090A8" stroke-width="0.7"/>
+                <ellipse cx="86.5" cy="103.7" rx="2.1" ry="1.05" fill="#3A5060"/>
+                <!-- 180° left -->
+                <ellipse cx="73" cy="92" rx="4" ry="2" fill="#90A8BC" stroke="#608098" stroke-width="0.7"/>
+                <ellipse cx="73" cy="92" rx="2.1" ry="1.05" fill="#3A5060"/>
+
+                <!-- ViewCube — top-right -->
+                <g transform="translate(178, 20)">
                   <polygon points="0,-11 10,-5.5 0,0 -10,-5.5" fill="#D8E8F4" stroke="#A8C0D0" stroke-width="0.7"/>
                   <polygon points="10,-5.5 10,5.5 0,11 0,0" fill="#B0C8D8" stroke="#A8C0D0" stroke-width="0.7"/>
                   <polygon points="0,0 0,11 -10,5.5 -10,-5.5" fill="#90A8B8" stroke="#A8C0D0" stroke-width="0.7"/>
@@ -140,7 +151,7 @@
                   <text x="-22" y="-8" font-size="6" fill="#2060D0" font-family="Inter,sans-serif" font-weight="700">Z</text>
                 </g>
               </svg>
-              <span class="sw-model-label">Bracket.SLDPRT &nbsp;·&nbsp; 14 features</span>
+              <span class="sw-model-label">FlangeCouplingHub.SLDPRT &nbsp;·&nbsp; 18 features</span>
             </div>
           </div>
 
@@ -169,20 +180,20 @@
             <!-- Context bar -->
             <div class="tp-context">
               <span class="tp-ctx-dot"></span>
-              Bracket.SLDPRT &nbsp;·&nbsp; 14 features
+              FlangeCouplingHub.SLDPRT &nbsp;·&nbsp; 18 features
             </div>
             <!-- Chat messages -->
             <div class="tp-chat">
               <div class="tp-role">YOU</div>
-              <div class="tp-msg tp-msg-user">Review this bracket before I send it to manufacturing</div>
+              <div class="tp-msg tp-msg-user">Review this flange hub before I send it for machining</div>
               <div class="tp-role">CADDIE</div>
               <div class="tp-msg tp-msg-ai">
                 <strong>2 issues found:</strong><br>
-                🔴 Fillet on <em>Fillet3</em> is R0.25mm — below standard end-mill minimum. Use R1.0mm+<br>
-                🟡 Counterbores sized for M5, but <em>Boss-Extrude2</em> wall is only 3.8mm thick
+                🔴 <em>Boss-Extrude1</em> bore is ⌀22mm — shaft spec requires ⌀25mm<br>
+                🟡 <em>Fillet1</em> at hub-flange junction is R0.5mm — increase to R2.0mm for fatigue life
               </div>
               <div class="tp-role">YOU</div>
-              <div class="tp-msg tp-msg-user">Fix the fillet and tell me the right wall thickness</div>
+              <div class="tp-msg tp-msg-user">Fix the bore and update the fillet radius</div>
               <div class="tp-msg tp-typing">
                 <span></span><span></span><span></span>
               </div>
@@ -190,7 +201,7 @@
             <!-- Input -->
             <div class="tp-input-area">
               <div class="tp-ctx-bar">
-                <span class="tp-ctx-dot"></span> Bracket.SLDPRT
+                <span class="tp-ctx-dot"></span> FlangeCouplingHub.SLDPRT
               </div>
               <div class="tp-input-row">
                 <div class="tp-input-box">Ask about your model…</div>
