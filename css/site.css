@@ -86,6 +86,73 @@ nav {
 
 .nav-cta:hover { background: var(--blue-dk) !important; text-decoration: none !important; }
 
+/* ─── Hamburger button (hidden on desktop) ───────────────── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── Mobile dropdown menu ───────────────────────────────── */
+.nav-mobile {
+  display: none;
+  background: white;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.nav-mobile.open { display: block; }
+
+.nav-mobile ul {
+  list-style: none;
+  padding: 6px 0 10px;
+  margin: 0;
+}
+
+.nav-mobile li a {
+  display: block;
+  padding: 13px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.12s;
+}
+
+.nav-mobile li a:hover { background: var(--bg2); text-decoration: none; }
+.nav-mobile li:last-child a { border-bottom: none; }
+
+.nav-mobile-cta {
+  color: var(--blue) !important;
+  font-weight: 700 !important;
+  background: var(--blue-lt);
+  margin: 8px 12px 4px !important;
+  border-radius: var(--radius);
+  border: none !important;
+  text-align: center;
+}
+
 /* ─── Container ──────────────────────────────────────────── */
 .container {
   max-width: 1280px;
@@ -1419,9 +1486,10 @@ body { overflow-x: hidden; }
   section { padding: 48px 16px; }
   .hero   { padding: 44px 16px 60px; }
 
-  .nav-inner  { padding: 0 16px; }
-  .nav-links  { display: none; }
-  .container  { padding: 0 16px; }
+  .nav-inner       { padding: 0 16px; }
+  .nav-links       { display: none; }
+  .nav-hamburger   { display: flex; }
+  .container       { padding: 0 16px; }
 
   /* Hero — centered layout */
   .hero-center { text-align: center; }

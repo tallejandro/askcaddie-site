@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<nav>
+<nav id="mainNav">
   <div class="nav-inner">
     <a class="nav-logo" href="..">Caddie</a>
     <ul class="nav-links">
@@ -21,6 +21,18 @@
       <li><a href="../#roadmap">Roadmap</a></li>
       <li><a href="quick-start.html" style="color:var(--blue);font-weight:700">Docs</a></li>
       <li><a href="../#download" class="nav-cta">Download Free</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <ul>
+      <li><a href="../#use-cases">Use Cases</a></li>
+      <li><a href="../#features">Features</a></li>
+      <li><a href="../#roadmap">Roadmap</a></li>
+      <li><a href="quick-start.html">Docs</a></li>
+      <li><a href="../#download" class="nav-mobile-cta">&#8659;&nbsp; Download Free</a></li>
     </ul>
   </div>
 </nav>
@@ -205,5 +217,21 @@
   </div>
 </footer>
 
+<script>
+const navToggle = document.getElementById('navToggle');
+const navMobile = document.getElementById('navMobile');
+navToggle.addEventListener('click', () => {
+  const isOpen = navToggle.classList.toggle('open');
+  navMobile.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', isOpen);
+  navMobile.setAttribute('aria-hidden', !isOpen);
+});
+navMobile.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navToggle.classList.remove('open');
+    navMobile.classList.remove('open');
+  });
+});
+</script>
 </body>
 </html>
