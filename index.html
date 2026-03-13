@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
       <span></span><span></span><span></span>
     </button>
   </div>
-  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+  <div class="nav-mobile" id="navMobile" aria-hidden="true" style="display:none">
     <ul>
       <li><a href="#use-cases">Use Cases</a></li>
       <li><a href="#features">Features</a></li>
@@ -598,21 +598,25 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 const navToggle = document.getElementById('navToggle');
 const navMobile = document.getElementById('navMobile');
 
+function openMenu() {
+  navToggle.classList.add('open');
+  navMobile.style.display = 'block';
+  navToggle.setAttribute('aria-expanded', 'true');
+  navMobile.setAttribute('aria-hidden', 'false');
+}
+function closeMenu() {
+  navToggle.classList.remove('open');
+  navMobile.style.display = 'none';
+  navToggle.setAttribute('aria-expanded', 'false');
+  navMobile.setAttribute('aria-hidden', 'true');
+}
+
 navToggle.addEventListener('click', () => {
-  const isOpen = navToggle.classList.toggle('open');
-  navMobile.classList.toggle('open', isOpen);
-  navToggle.setAttribute('aria-expanded', isOpen);
-  navMobile.setAttribute('aria-hidden', !isOpen);
+  navMobile.style.display === 'none' ? openMenu() : closeMenu();
 });
 
-// Close menu when any mobile link is clicked
 navMobile.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    navToggle.classList.remove('open');
-    navMobile.classList.remove('open');
-    navToggle.setAttribute('aria-expanded', 'false');
-    navMobile.setAttribute('aria-hidden', 'true');
-  });
+  a.addEventListener('click', closeMenu);
 });
 </script>
 
