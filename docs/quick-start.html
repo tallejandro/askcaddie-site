@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Start Guide — Caddie</title>
+  <meta name="description" content="Install Caddie inside SolidWorks in under 5 minutes. Step-by-step guide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="..">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="../#use-cases">Use Cases</a></li>
+      <li><a href="../#features">Features</a></li>
+      <li><a href="../#roadmap">Roadmap</a></li>
+      <li><a href="quick-start.html" style="color:var(--blue);font-weight:700">Docs</a></li>
+      <li><a href="../#download" class="nav-cta">Download Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="doc-wrap">
+
+  <!-- Sidebar -->
+  <aside class="doc-sidebar">
+    <div class="doc-sidebar-section">
+      <div class="doc-sidebar-label">Getting Started</div>
+      <ul>
+        <li><a href="quick-start.html" class="active">Quick Start Guide</a></li>
+      </ul>
+    </div>
+    <div class="doc-sidebar-section">
+      <div class="doc-sidebar-label">Reference</div>
+      <ul>
+        <li><a href="../#features">Features Overview</a></li>
+        <li><a href="../#roadmap">Roadmap</a></li>
+        <li><a href="../#privacy">Privacy &amp; Data</a></li>
+      </ul>
+    </div>
+    <div class="doc-sidebar-section">
+      <div class="doc-sidebar-label">Support</div>
+      <ul>
+        <li><a href="mailto:hello@askcaddie.app">Email Support</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="doc-content">
+    <div class="doc-breadcrumb"><a href="..">Home</a> &rsaquo; Quick Start Guide</div>
+    <h1 class="doc-h1">Quick Start Guide</h1>
+    <p class="doc-lead">Get Caddie running inside your CAD software in under 5 minutes.</p>
+
+    <div class="doc-callout">
+      <strong>Alpha release</strong> &mdash; Caddie is under active development. SolidWorks 2022+ is fully supported today. Fusion 360 and Onshape integrations are on the <a href="../#roadmap">roadmap</a>.
+    </div>
+
+    <!-- Requirements -->
+    <h2>System Requirements</h2>
+    <ul class="doc-list">
+      <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit only)</li>
+      <li><strong>CAD Software:</strong> SolidWorks 2022 or later</li>
+      <li><strong>.NET Framework:</strong> 4.8 &mdash; already installed on most Windows 10/11 machines</li>
+      <li><strong>Internet:</strong> Required for AI responses (all requests go through a secure proxy &mdash; see <a href="../#privacy">Privacy</a>)</li>
+      <li><strong>Disk space:</strong> ~15 MB for the add-in, plus space for local conversation history</li>
+    </ul>
+
+    <!-- Step 1 -->
+    <h2>Step 1 &mdash; Download &amp; Extract</h2>
+    <ol class="doc-steps">
+      <li>
+        <strong>Download CaddieAlpha.zip</strong> from the <a href="../#download">download section</a>.
+      </li>
+      <li>
+        <strong>Extract to a permanent folder</strong> &mdash; for example <code>C:\Caddie\</code> or <code>C:\Program Files\Caddie\</code>.
+        <div class="doc-note">&#9888; Do <strong>not</strong> leave the files in your Downloads folder or on your Desktop. The DLL registration path is fixed &mdash; if you move the files later you will need to re-run the installer.</div>
+      </li>
+      <li>
+        Confirm the extracted folder contains: <code>Caddie.SwAddin.dll</code>, <code>install.bat</code>, <code>unregister.bat</code>, <code>update.bat</code>, and a <code>ui\</code> subfolder.
+      </li>
+    </ol>
+
+    <!-- Step 2 -->
+    <h2>Step 2 &mdash; Register the Add-In</h2>
+    <ol class="doc-steps">
+      <li>Open the extracted folder in File Explorer.</li>
+      <li>Right-click <strong>install.bat</strong> &rarr; select <strong>Run as Administrator</strong>.</li>
+      <li>Click <strong>Yes</strong> on the UAC (User Account Control) prompt.</li>
+      <li>A command window will open briefly. You should see:
+        <div class="doc-code-block">SUCCESS: Caddie registered.</div>
+        If you see an error instead, see <a href="#troubleshooting">Troubleshooting</a> below.
+      </li>
+    </ol>
+
+    <!-- Step 3 -->
+    <h2>Step 3 &mdash; Enable in SolidWorks</h2>
+    <ol class="doc-steps">
+      <li>Open SolidWorks (or restart it if it was already running).</li>
+      <li>Go to <strong>Tools &rarr; Add-Ins&hellip;</strong></li>
+      <li>Find <strong>Caddie</strong> in the list of available add-ins.</li>
+      <li>Check the <strong>Active</strong> checkbox to load it now, and check <strong>Start Up</strong> so it loads automatically every time SolidWorks opens.</li>
+      <li>Click <strong>OK</strong>.</li>
+      <li>The <strong>Ask Caddie</strong> panel will appear on the right side of your SolidWorks window.</li>
+    </ol>
+
+    <!-- Step 4 -->
+    <h2>Step 4 &mdash; Start a Conversation</h2>
+    <ol class="doc-steps">
+      <li>Open any part, assembly, or drawing in SolidWorks.</li>
+      <li>
+        Caddie automatically captures your context &mdash; the feature tree, active configuration, rebuild errors, and a viewport screenshot. The context bar at the top of the chat panel will show your file name and feature count.
+      </li>
+      <li>Type your question in the input box and press <strong>Enter</strong> or click the send button <strong>&rsaquo;</strong>.</li>
+      <li>Caddie streams back a response referencing your specific feature names, sketches, and mates.</li>
+    </ol>
+
+    <div class="doc-callout doc-callout-tip">
+      <strong>&#128161; What to ask</strong><br>
+      Caddie gives the best answers when questions are specific. Try:<br>
+      <em>"Why is my loft failing?"</em> &nbsp;&bull;&nbsp;
+      <em>"Review this bracket for manufacturing issues"</em> &nbsp;&bull;&nbsp;
+      <em>"How do I mate this part so it can only rotate on one axis?"</em> &nbsp;&bull;&nbsp;
+      <em>"What does Boss-Extrude3 do and why was it built this way?"</em>
+    </div>
+
+    <!-- Updating -->
+    <h2>Updating Caddie</h2>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When a new version is released, Caddie will show an update banner inside SolidWorks automatically. To apply the update:</p>
+    <ol class="doc-steps">
+      <li>Close SolidWorks.</li>
+      <li>Download the new <code>CaddieAlpha.zip</code> and extract it.</li>
+      <li>In the new folder, right-click <strong>update.bat</strong> &rarr; <strong>Run as Administrator</strong>. This copies the new files to your install directory without requiring re-registration.</li>
+      <li>Reopen SolidWorks &mdash; the updated version loads automatically.</li>
+    </ol>
+
+    <!-- Uninstalling -->
+    <h2>Uninstalling</h2>
+    <ol class="doc-steps">
+      <li>Close SolidWorks.</li>
+      <li>Right-click <strong>unregister.bat</strong> &rarr; <strong>Run as Administrator</strong>.</li>
+      <li>Delete the <code>C:\Caddie\</code> folder (or wherever you extracted it).</li>
+      <li>Optionally delete the app data folder: <code>%AppData%\CaddieAddin\</code> (contains your conversation history and settings).</li>
+    </ol>
+
+    <!-- Troubleshooting -->
+    <h2 id="troubleshooting">Troubleshooting</h2>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">The add-in doesn't appear in Tools &rarr; Add-Ins</div>
+      <div class="doc-faq-a">
+        Make sure you right-clicked <code>install.bat</code> and chose <strong>Run as Administrator</strong> &mdash; not just double-clicked it. After registering, restart SolidWorks completely (close and reopen). If it still doesn't appear, open Command Prompt as Administrator and run:<br>
+        <code>regsvr32 "C:\Caddie\Caddie.SwAddin.dll"</code><br>
+        Replace <code>C:\Caddie\</code> with your actual install path.
+      </div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">Caddie loads but can't connect to AI</div>
+      <div class="doc-faq-a">Check your internet connection. Caddie routes AI requests through a secure HTTPS proxy &mdash; make sure your firewall or corporate network isn't blocking outbound connections to <code>*.workers.dev</code>. If you're on a VPN, try disabling it temporarily to test.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">The taskpane is blank or stuck on "Loading…"</div>
+      <div class="doc-faq-a">This usually means the <code>ui\</code> folder is missing or in the wrong location. Make sure a <code>ui\</code> folder exists in the same directory as <code>Caddie.SwAddin.dll</code>, and that it contains <code>index.html</code>. Re-extract the zip if needed. You can also check the log at <code>%AppData%\CaddieAddin\caddie.log</code> for error details.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">Context isn't updating when I open a new model</div>
+      <div class="doc-faq-a">Click the <strong>&#8635; Refresh</strong> button in the taskpane to manually trigger a context capture. Auto-capture fires on document open, switch, and save &mdash; but a manual refresh is the fastest way to force an update after making changes.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">I get an error: "The type name HttpClient could not be found"</div>
+      <div class="doc-faq-a">This is a build-time error, not a runtime error &mdash; only relevant if you're building from source. The fix is to add <code>&lt;Reference Include="System.Net.Http" /&gt;</code> to the <code>Caddie.SwAddin.csproj</code> file. Pre-built releases don't have this issue.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">SolidWorks shows "Add-in failed to load" on startup</div>
+      <div class="doc-faq-a">This typically means a DLL dependency is missing. Make sure all DLLs from the zip are in the same folder (don't move just <code>Caddie.SwAddin.dll</code> on its own). If you recently updated Windows, try repairing .NET Framework 4.8 via Windows Update or the Microsoft download page.</div>
+    </div>
+
+    <div class="doc-contact">
+      Still stuck? Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a> &mdash; we respond quickly during the alpha.
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Caddie</div>
+    <div class="footer-links">
+      <a href="../#download">Download</a>
+      <a href="quick-start.html">Docs</a>
+      <a href="../#privacy">Privacy</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2025 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
+  </div>
+</footer>
+
+</body>
+</html>
