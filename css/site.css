@@ -1500,50 +1500,48 @@ body { overflow-x: hidden; }
   .hero-intro {
     display: block;
     position: relative;
-    height: 210px;
-    margin-bottom: 20px;
+    height: 185px;
+    margin-bottom: 24px;
   }
   .hero-mascot {
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 180px;
+    height: 175px;
     width: auto;
   }
   .hero-speech {
     position: absolute;
-    top: 0;
-    left: 130px;
+    top: 6px;
+    left: 118px;
     right: 0;
     max-width: none;
     font-size: 13px;
     padding: 10px 14px;
   }
 
-  /* Tail: exits bottom-left of bubble, points down-left toward mascot's head */
+  /* Left-pointing tail near bubble bottom — aligns with mascot face level */
   .hero-speech::before,
   .hero-speech::after { display: block; }
 
   .hero-speech::before {
-    left: 20px;
-    bottom: -10px;
+    left: -14px;
+    bottom: 16px;
     top: auto;
     transform: none;
-    border: 9px solid transparent;
-    border-top-color: var(--blue);
-    border-bottom: 0;
-    border-right-color: transparent;
+    border: 8px solid transparent;
+    border-right-color: var(--blue);
+    border-left: 0;
   }
 
   .hero-speech::after {
-    left: 22px;
-    bottom: -7px;
+    left: -10px;
+    bottom: 18px;
     top: auto;
     transform: none;
-    border: 7px solid transparent;
-    border-top-color: white;
-    border-bottom: 0;
-    border-right-color: transparent;
+    border: 6px solid transparent;
+    border-right-color: white;
+    border-left: 0;
   }
 
   .cad-compat { justify-content: center; flex-direction: column; align-items: center; }
