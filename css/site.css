@@ -1496,33 +1496,35 @@ body { overflow-x: hidden; }
   .hero-center h1 { font-size: clamp(34px, 9vw, 44px); letter-spacing: -1.5px; }
   .hero-center .subtitle { font-size: 16px; }
 
-  /* Keep mascot + bubble side-by-side (same as desktop), just scaled down */
-  .hero-intro { gap: 12px; }
-  .hero-mascot { height: 80px; }
-  .hero-speech { max-width: 210px; font-size: 13px; padding: 10px 14px; }
+  /* Mascot as large as possible, tight bubble, comic-style tail */
+  .hero-intro { gap: 10px; align-items: flex-end; }
+  .hero-mascot { height: 120px; }
+  .hero-speech { font-size: 13px; padding: 8px 12px; max-width: 190px; margin-bottom: 18px; }
 
-  /* Re-enable the left-pointing tail (same direction as desktop) */
+  /* Comic tail: exits from the bottom-left corner of the speech bubble */
   .hero-speech::before,
   .hero-speech::after { display: block; }
 
   .hero-speech::before {
-    left: -14px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 16px;
+    bottom: -10px;
+    top: auto;
+    transform: none;
     border: 8px solid transparent;
-    border-right-color: var(--blue);
-    border-left: 0;
-    border-bottom-color: transparent;
+    border-top-color: var(--blue);
+    border-bottom: 0;
+    border-right-color: transparent;
   }
 
   .hero-speech::after {
-    left: -10px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 18px;
+    bottom: -7px;
+    top: auto;
+    transform: none;
     border: 6px solid transparent;
-    border-right-color: white;
-    border-left: 0;
-    border-bottom-color: transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    border-right-color: transparent;
   }
 
   .cad-compat { justify-content: center; flex-direction: column; align-items: center; }
