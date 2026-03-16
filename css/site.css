@@ -1496,32 +1496,51 @@ body { overflow-x: hidden; }
   .hero-center h1 { font-size: clamp(34px, 9vw, 44px); letter-spacing: -1.5px; }
   .hero-center .subtitle { font-size: 16px; }
 
-  /* Mascot as large as possible, tight bubble, comic-style tail */
-  .hero-intro { gap: 10px; align-items: flex-end; }
-  .hero-mascot { height: 120px; }
-  .hero-speech { font-size: 13px; padding: 8px 12px; max-width: 190px; margin-bottom: 18px; }
+  /* Comic-book layout: mascot anchored bottom-left, speech bubble floats upper-right */
+  .hero-intro {
+    display: block;
+    position: relative;
+    height: 210px;
+    margin-bottom: 20px;
+  }
+  .hero-mascot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 180px;
+    width: auto;
+  }
+  .hero-speech {
+    position: absolute;
+    top: 0;
+    left: 130px;
+    right: 0;
+    max-width: none;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
 
-  /* Comic tail: exits from the bottom-left corner of the speech bubble */
+  /* Tail: exits bottom-left of bubble, points down-left toward mascot's head */
   .hero-speech::before,
   .hero-speech::after { display: block; }
 
   .hero-speech::before {
-    left: 16px;
+    left: 20px;
     bottom: -10px;
     top: auto;
     transform: none;
-    border: 8px solid transparent;
+    border: 9px solid transparent;
     border-top-color: var(--blue);
     border-bottom: 0;
     border-right-color: transparent;
   }
 
   .hero-speech::after {
-    left: 18px;
+    left: 22px;
     bottom: -7px;
     top: auto;
     transform: none;
-    border: 6px solid transparent;
+    border: 7px solid transparent;
     border-top-color: white;
     border-bottom: 0;
     border-right-color: transparent;
