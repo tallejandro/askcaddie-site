@@ -13,8 +13,8 @@
   --border:  #E2E8F0;
   --bg:      #FFFFFF;
   --bg2:     #F8FAFC;
-  --hero-bg: #080D1A;
-  --hero-bg2:#0D1630;
+  --hero-bg: #F0F6FF;
+  --hero-bg2:#FFFFFF;
   --footer-bg: #0F172A;
   --radius:  10px;
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
@@ -41,35 +41,17 @@ img { max-width: 100%; display: block; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: transparent;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  transition: background 0.3s, border-color 0.3s;
+  background: rgba(240,246,255,0.85);
+  border-bottom: 1px solid rgba(37,99,235,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 
 #mainNav.scrolled {
   background: rgba(255,255,255,0.97);
   border-bottom-color: var(--border);
-  backdrop-filter: blur(12px);
-}
-
-/* Nav text: white when at top, dark when scrolled */
-#mainNav:not(.scrolled) .nav-logo,
-#mainNav:not(.scrolled) .nav-links a {
-  color: rgba(255,255,255,0.9);
-}
-
-#mainNav:not(.scrolled) .nav-links a:hover {
-  color: white;
-}
-
-#mainNav:not(.scrolled) .nav-cta {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-  color: white !important;
-}
-
-#mainNav:not(.scrolled) .nav-hamburger span {
-  background: rgba(255,255,255,0.9);
+  box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
 
 .nav-inner {
@@ -201,21 +183,21 @@ img { max-width: 100%; display: block; }
 /* ─── Hero ───────────────────────────────────────────────── */
 .hero {
   padding: 80px 24px 100px;
-  background: linear-gradient(160deg, var(--hero-bg) 0%, var(--hero-bg2) 100%);
+  background: linear-gradient(155deg, #EEF4FF 0%, #F5F8FF 35%, #FFFFFF 75%);
   position: relative;
   overflow: hidden;
 }
 
-/* Subtle radial highlight */
+/* Subtle dot-grid background — engineering paper feel */
 .hero::before {
   content: '';
   position: absolute;
-  top: -20%;
-  left: 30%;
-  width: 60%;
-  height: 80%;
-  background: radial-gradient(ellipse at center, rgba(37,99,235,0.18) 0%, transparent 70%);
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(37,99,235,0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
   pointer-events: none;
+  mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, black 0%, transparent 70%);
 }
 
 /* Two-column layout */
@@ -236,12 +218,12 @@ img { max-width: 100%; display: block; }
   font-weight: 900;
   letter-spacing: -2.5px;
   line-height: 1.03;
-  color: white;
+  color: var(--text);
   margin-bottom: 22px;
 }
 
 .hero-left h1 span {
-  background: linear-gradient(90deg, #60A5FA, #93C5FD);
+  background: linear-gradient(90deg, #2563EB, #3B82F6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -249,7 +231,7 @@ img { max-width: 100%; display: block; }
 
 .hero-left .subtitle {
   font-size: 17px;
-  color: rgba(255,255,255,0.7);
+  color: var(--text2);
   line-height: 1.65;
   margin-bottom: 32px;
   max-width: 480px;
@@ -257,22 +239,23 @@ img { max-width: 100%; display: block; }
 
 .hero-meta {
   font-size: 13px;
-  color: rgba(255,255,255,0.45);
+  color: var(--text2);
+  opacity: 0.65;
   margin-top: 14px;
 }
 
 /* ─── Hero badge ─────────────────────────────────────────── */
 .hero-badge {
   display: inline-block;
-  background: rgba(245,158,11,0.15);
-  color: #F59E0B;
+  background: #FEF3C7;
+  color: #92400E;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   padding: 4px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(245,158,11,0.35);
+  border: 1px solid #FCD34D;
   margin-bottom: 20px;
 }
 
@@ -290,7 +273,8 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.9px;
-  color: rgba(255,255,255,0.4);
+  color: var(--text2);
+  opacity: 0.65;
 }
 
 .hero-chip-row {
@@ -300,21 +284,22 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-chip {
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.15);
+  background: white;
+  border: 1.5px solid var(--border);
   border-radius: 22px;
   padding: 8px 16px;
   font-size: 13px;
-  color: rgba(255,255,255,0.65);
+  color: var(--text2);
   font-style: italic;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.15s, color 0.15s, box-shadow 0.15s;
   cursor: default;
 }
 
 .hero-chip:hover {
-  border-color: rgba(96,165,250,0.5);
-  color: rgba(255,255,255,0.9);
-  background: rgba(255,255,255,0.12);
+  border-color: var(--blue);
+  color: var(--blue);
+  box-shadow: 0 2px 10px rgba(37,99,235,0.12);
 }
 
 /* ─── Hero mascot intro ──────────────────────────────────── */
@@ -329,20 +314,21 @@ img { max-width: 100%; display: block; }
   height: 100px;
   width: auto;
   flex-shrink: 0;
-  filter: drop-shadow(0 4px 16px rgba(37,99,235,0.4));
+  filter: drop-shadow(0 4px 12px rgba(37,99,235,0.18));
 }
 
 .hero-speech {
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(96,165,250,0.4);
+  background: white;
+  border: 2px solid var(--blue);
   border-radius: 18px;
   padding: 12px 18px;
   font-size: 15px;
   font-weight: 600;
-  color: rgba(255,255,255,0.9);
+  color: var(--text);
   line-height: 1.45;
   position: relative;
   max-width: 260px;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.12);
 }
 
 /* speech bubble tail pointing left toward mascot */
@@ -353,7 +339,7 @@ img { max-width: 100%; display: block; }
   top: 50%;
   transform: translateY(-50%);
   border: 8px solid transparent;
-  border-right-color: rgba(96,165,250,0.4);
+  border-right-color: var(--blue);
   border-left: 0;
 }
 
@@ -364,7 +350,7 @@ img { max-width: 100%; display: block; }
   top: 50%;
   transform: translateY(-50%);
   border: 6px solid transparent;
-  border-right-color: rgba(18,28,55,0.9);
+  border-right-color: white;
   border-left: 0;
 }
 
@@ -389,8 +375,8 @@ img { max-width: 100%; display: block; }
 .compat-soon {
   font-size: 12.5px;
   font-weight: 500;
-  color: rgba(255,255,255,0.45);
-  background: rgba(255,255,255,0.06);
+  color: #7A4800;
+  background: #FFF0D4;
   padding: 4px 12px;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
@@ -454,19 +440,21 @@ img { max-width: 100%; display: block; }
   border-radius: 12px;
   overflow: hidden;
   box-shadow:
-    0 0 80px rgba(37,99,235,0.25),
-    0 24px 64px rgba(0,0,0,0.4);
-  transform: perspective(1200px) rotateY(-6deg) rotateX(2deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    0 0 0 1px rgba(37,99,235,0.08),
+    0 8px 32px rgba(37,99,235,0.12),
+    0 24px 64px rgba(0,0,0,0.12);
+  transform: perspective(1200px) rotateY(-5deg) rotateX(2deg);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   width: 100%;
   max-width: 540px;
 }
 
 .sw-window:hover {
-  transform: perspective(1200px) rotateY(-3deg) rotateX(1deg);
+  transform: perspective(1200px) rotateY(-2deg) rotateX(1deg);
   box-shadow:
-    0 0 100px rgba(37,99,235,0.3),
-    0 32px 80px rgba(0,0,0,0.45);
+    0 0 0 1px rgba(37,99,235,0.1),
+    0 12px 40px rgba(37,99,235,0.15),
+    0 32px 80px rgba(0,0,0,0.14);
 }
 
 .sw-titlebar {
@@ -504,6 +492,24 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Real SolidWorks model screenshot */
+.sw-model-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.sw-viewport .sw-model-label {
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .sw-grid {
