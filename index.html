@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=3">
+  <link rel="stylesheet" href="css/site.css?v=4">
 </head>
 <body>
 
@@ -40,13 +40,15 @@
 
 <!-- ─── Hero ───────────────────────────────────────────────── -->
 <div class="hero">
-  <div class="hero-center">
+  <div class="hero-inner">
+
+    <div class="hero-left">
       <div class="hero-intro">
         <img src="Caddie.png" alt="Caddie" class="hero-mascot">
         <div class="hero-speech">Hi! I'm Caddie — your AI copilot for CAD.</div>
       </div>
-      <div class="hero-badge">Developer Alpha</div>
-      <h1>Get unstuck.<br><span>Design faster.</span></h1>
+      <div class="hero-badge">Developer Alpha &mdash; Free</div>
+      <h1>The AI copilot<br><span>inside SolidWorks.</span></h1>
       <p class="subtitle">
         Caddie lives inside your CAD software, reads your design in real time, and gives specific answers referencing your actual feature names, sketches, and mates. No copy-pasting. No tab switching.
       </p>
@@ -59,7 +61,7 @@
         <a href="#download" class="btn-hero-primary">&#8659;&nbsp; Download Free</a>
         <a href="#use-cases" class="btn-hero-secondary">See It In Action</a>
       </div>
-      <p class="hero-meta">Free &nbsp;·&nbsp; v0.1 Alpha &nbsp;·&nbsp; Windows 10/11 64-bit</p>
+      <p class="hero-meta">Free during Alpha &nbsp;·&nbsp; v0.1 &nbsp;·&nbsp; Windows 10/11 64-bit</p>
 
       <div class="hero-chips">
         <div class="hero-chip-label">Try asking Caddie</div>
@@ -71,9 +73,10 @@
           <span class="hero-chip">"What does Boss-Extrude3 do?"</span>
         </div>
       </div>
+    </div>
 
-    <div class="hero-right" style="display:none">
-      <div class="sw-window">
+    <div class="hero-right">
+      <div class="sw-window" style="pointer-events:none">
         <div class="sw-titlebar">
           <div class="wm-dots">
             <div class="wm-dot wm-dot-r"></div>
@@ -230,6 +233,18 @@
           </div>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── Stats Strip ────────────────────────────────────────── -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">SolidWorks 2022+</span><span class="stat-label">Supported versions</span></div>
+    <div class="stat"><span class="stat-num">&lt; 5 min</span><span class="stat-label">Time to install</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Local data storage</span></div>
+    <div class="stat"><span class="stat-num">Free</span><span class="stat-label">During Alpha</span></div>
   </div>
 </div>
 
@@ -339,15 +354,15 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <h3>Install the add-in</h3>
-          <p>Run <strong>CaddieSetup.exe</strong> and click through the wizard. Enable Caddie under <strong>Tools → Add-Ins</strong>. No account needed.</p>
+          <p>Run <strong>CaddieSetup.exe</strong> and click through the wizard. No account needed.</p>
         </div>
       </div>
       <div class="steps-connector"></div>
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-content">
-          <h3>Open your model</h3>
-          <p>Open any part, assembly, or drawing. Caddie automatically captures your feature tree, configuration, and a viewport screenshot.</p>
+          <h3>Open SolidWorks</h3>
+          <p>Caddie appears automatically in the taskpane — no manual add-in steps required. Open any part, assembly, or drawing.</p>
         </div>
       </div>
       <div class="steps-connector"></div>
@@ -538,7 +553,7 @@
     <a href="CaddieSetup.exe" class="btn-download" download>
       &#8659;&nbsp; Download CaddieSetup.exe
     </a>
-    <p class="download-note">Free during alpha &nbsp;·&nbsp; Windows 10/11 64-bit &nbsp;·&nbsp; SolidWorks 2022+ &nbsp;·&nbsp; ~2 MB</p>
+    <p class="download-note">Free during alpha &nbsp;·&nbsp; Windows 10/11 64-bit &nbsp;·&nbsp; SolidWorks 2022+ &nbsp;·&nbsp; ~3.5 MB</p>
 
     <div class="install-steps">
       <div class="install-step">
@@ -551,7 +566,7 @@
       <div class="install-step">
         <div class="install-num">2</div>
         <div class="install-text">
-          In SolidWorks: <strong>Tools → Add-Ins → Caddie → check Active &amp; Start Up → OK</strong>
+          <strong>Open SolidWorks</strong> — Caddie appears automatically in the taskpane
           <span class="install-note">The "Ask Caddie" panel appears on the right. Open any model and start chatting. To update later, just run the new installer — it upgrades automatically.</span>
         </div>
       </div>
@@ -574,7 +589,7 @@
       <a href="#privacy">Privacy</a>
       <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
-    <p class="footer-copy">© 2025 Ask Caddie. SOLIDWORKS® is a registered trademark of Dassault Systèmes.</p>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS® is a registered trademark of Dassault Systèmes.</p>
   </div>
 </footer>
 
@@ -610,6 +625,12 @@ navToggle.addEventListener('click', () => {
 
 navMobile.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', closeMenu);
+});
+
+// Nav scroll behavior
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
 });
 </script>
 
