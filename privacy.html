@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy and Data — Caddie</title>
+  <meta name="description" content="What Caddie sends to answer you, what stays on your PC, and how to control it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=3">
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href=".">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="./#use-cases">Use Cases</a></li>
+      <li><a href="./#features">Features</a></li>
+      <li><a href="./#roadmap">Roadmap</a></li>
+      <li><a href="docs/quick-start.html">Docs</a></li>
+      <li><a href="./#download" class="nav-cta">Download Free</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="doc-wrap">
+  <main class="doc-content" style="max-width:760px;margin:0 auto">
+    <div class="doc-breadcrumb"><a href=".">Home</a> &rsaquo; Privacy and Data</div>
+    <h1 class="doc-h1">Privacy and Data</h1>
+    <p class="doc-lead">Caddie is built for engineers who work on confidential designs. This page says exactly where your data goes.</p>
+
+    <h2>What stays on your PC</h2>
+    <ul class="doc-list">
+      <li><strong>Conversation history</strong>, kept for the History tab in <code>%AppData%\CaddieAddin</code>. You can turn it off, or delete all of it, in Settings.</li>
+      <li><strong>Your standards and file notes</strong>, the "How you work" setting and anything Caddie remembers about a file.</li>
+      <li><strong>Answers you rate</strong>. They're only shared if you copy a problem report and send it yourself.</li>
+      <li><strong>Your SolidWorks files.</strong> Caddie never uploads them.</li>
+    </ul>
+
+    <h2>What is sent to answer you</h2>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:12px;line-height:1.65">Each time you ask something, Caddie sends these to OpenAI through Caddie's relay, a small service that forwards requests and adds the API key:</p>
+    <ul class="doc-list">
+      <li>Your message and the recent conversation.</li>
+      <li>Details of the open model: feature, sketch and dimension names and values, materials, errors, mass properties, and for assemblies and drawings their components, mates and views.</li>
+      <li>A screenshot of the SolidWorks window, unless you turn screenshots off in Settings.</li>
+      <li>Any image you attach to a message, such as a drawing, sketch or photo of what you want to model.</li>
+      <li>Your name, standards and file notes, if you've set them.</li>
+    </ul>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When Caddie highlights a ribbon button or a field for you, it sends a screenshot to find it. With screenshots off, it can still point at FeatureManager items and menus.</p>
+
+    <h2>What OpenAI does with it</h2>
+    <ul class="doc-list">
+      <li>OpenAI does not use API data to train its models.</li>
+      <li>Caddie asks OpenAI not to store conversations.</li>
+      <li>OpenAI may keep requests for up to 30 days to check for abuse, as it does for all API use. See <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI's data controls</a>.</li>
+    </ul>
+
+    <h2>What Caddie doesn't do</h2>
+    <ul class="doc-list">
+      <li>No account, usage tracking, analytics or crash reporting.</li>
+      <li>The relay doesn't log or keep the content of requests.</li>
+      <li>Caddie changes your model only with your approval, and most changes can be undone.</li>
+    </ul>
+
+    <div class="doc-callout">
+      <strong>Check your company's rules.</strong> If your work is covered by an NDA or export controls, confirm that sending model details and screenshots to OpenAI is allowed before you use Caddie on it. Turning screenshots off reduces what's sent, but model details are still needed to answer.
+    </div>
+
+    <div class="doc-contact">
+      Questions? Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a>.
+    </div>
+  </main>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Caddie</div>
+    <div class="footer-links">
+      <a href="./#download">Download</a>
+      <a href="docs/quick-start.html">Docs</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">&copy; 2026 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
+  </div>
+</footer>
+
+</body>
+</html>

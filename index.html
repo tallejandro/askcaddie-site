@@ -61,7 +61,7 @@
         <a href="#download" class="btn-hero-primary">&#8659;&nbsp; Download Free</a>
         <a href="#use-cases" class="btn-hero-secondary">See It In Action</a>
       </div>
-      <p class="hero-meta">Free during Alpha &nbsp;·&nbsp; v0.2 &nbsp;·&nbsp; Windows 10/11 64-bit</p>
+      <p class="hero-meta">Free during Alpha &nbsp;·&nbsp; v0.3 &nbsp;·&nbsp; Windows 10/11 64-bit</p>
 
       <div class="hero-chips">
         <div class="hero-chip-label">Try asking Caddie</div>
@@ -104,7 +104,7 @@
             <!-- Tab bar -->
             <div class="tp-tabs">
               <button class="tp-tab active">Chat</button>
-              <button class="tp-tab">Teach</button>
+              <button class="tp-tab">Learn</button>
               <button class="tp-tab">Review</button>
               <button class="tp-tab">History</button>
             </div>
@@ -158,7 +158,7 @@
   <div class="stats-inner">
     <div class="stat"><span class="stat-num">SolidWorks 2022+</span><span class="stat-label">Supported versions</span></div>
     <div class="stat"><span class="stat-num">&lt; 5 min</span><span class="stat-label">Time to install</span></div>
-    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Local data storage</span></div>
+    <div class="stat"><span class="stat-num">Your PC</span><span class="stat-label">Where history is kept</span></div>
     <div class="stat"><span class="stat-num">Free</span><span class="stat-label">During Alpha</span></div>
   </div>
 </div>
@@ -227,8 +227,8 @@
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🔒</div>
-        <div class="pillar-title">Private by Default</div>
-        <p class="pillar-desc">All conversation history, notes, and preferences are stored in SQLite on your PC. No account needed, no telemetry, no analytics — confidential designs stay confidential.</p>
+        <div class="pillar-title">Clear About Your Data</div>
+        <p class="pillar-desc">History, notes and preferences stay on your PC, with no account, telemetry or analytics. To answer, Caddie sends your question, model details and a screenshot to OpenAI with storage turned off, and screenshots can be switched off.</p>
       </div>
     </div>
 
@@ -240,8 +240,8 @@
       </div>
       <div class="feature-card">
         <div class="feature-icon">🎓</div>
-        <div class="feature-title">Full Certification Path</div>
-        <p class="feature-desc">From zero to expert — CSWA → CSWP → CSWPA → CSWE, and equivalent paths for every supported CAD platform.</p>
+        <div class="feature-title">Practice Exams</div>
+        <p class="feature-desc">CSWA, CSWP and sheet metal practice parts with a drawing and a timer. Caddie checks your answer against your model and tells you what to look at. Quick drills cover the other certifications.</p>
       </div>
       <div class="feature-card">
         <div class="feature-icon">🖼</div>
@@ -358,11 +358,11 @@
         <p class="docs-desc">See what's shipping now, what's next, and where Caddie is headed in future milestones.</p>
         <span class="docs-link">View roadmap →</span>
       </a>
-      <a href="#privacy" class="docs-card">
+      <a href="privacy.html" class="docs-card">
         <div class="docs-icon">🔒</div>
         <div class="docs-title">Privacy & Data</div>
-        <p class="docs-desc">Everything stored locally. No telemetry. No account. Your CAD data never leaves your machine.</p>
-        <span class="docs-link">Read policy →</span>
+        <p class="docs-desc">Exactly what Caddie sends to answer you, what stays on your PC, and how to turn screenshots off.</p>
+        <span class="docs-link">Read the details →</span>
       </a>
     </div>
   </div>
@@ -382,32 +382,32 @@
           <p>Add-in loads, taskpane UI, fast context snapshot (doc + features + screenshot), AI chat with streaming.</p>
         </div>
       </div>
-      <div class="roadmap-item active">
-        <div class="roadmap-tag tag-active">Next</div>
+      <div class="roadmap-item done">
+        <div class="roadmap-tag tag-done">Done</div>
         <div class="roadmap-content">
-          <h3>M2 — Deep Context + Selection Awareness</h3>
-          <p>Deep snapshot with mass properties, mates analysis, sketch validation, cancellable progress UI.</p>
+          <h3>M2 — Deep Context + Model Review</h3>
+          <p>Sketch diagnosis, mass properties, mates, equations, drawings, on-demand inspection tools, and an AI review with severity and fixes.</p>
         </div>
       </div>
-      <div class="roadmap-item">
-        <div class="roadmap-tag tag-soon">Soon</div>
+      <div class="roadmap-item active">
+        <div class="roadmap-tag tag-active">In testing</div>
         <div class="roadmap-content">
-          <h3>M3 — Structured AI Responses + Model Plans</h3>
-          <p>Plan → Why → Check → Alternatives response format. Review tab powered by AI analysis.</p>
+          <h3>M3 — Caddie Does the Work</h3>
+          <p>Fixes and modelling changes you approve with one click, with undo. Guided steps that highlight exactly where to click and tick themselves off. Live awareness of what you just did.</p>
         </div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-tag tag-soon">Soon</div>
         <div class="roadmap-content">
           <h3>M4 — Full Memory System</h3>
-          <p>Per-project notes, preference learning, session summarization, searchable history.</p>
+          <p>Your standards and per-file notes (now in testing), then session summaries and searching past conversations.</p>
         </div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-tag tag-future">Planned</div>
         <div class="roadmap-content">
-          <h3>M5 — Teach Me + Image Pipeline</h3>
-          <p>Image-based build plan generator, CSWP exercise grading, CSWE certification track.</p>
+          <h3>M5 — Practice + Teach Me</h3>
+          <p>Exam-style practice parts with checked answers (now in testing), image-based build plans, and a CSWE track.</p>
         </div>
       </div>
       <div class="roadmap-item">
@@ -424,32 +424,33 @@
 <!-- ─── Privacy ─────────────────────────────────────────────── -->
 <section id="privacy">
   <div class="container">
-    <div class="section-label">Privacy First</div>
-    <h2 class="section-title">Your CAD data stays on your machine.</h2>
-    <p class="section-subtitle">Caddie is built for engineers who work on confidential designs. We take data security seriously by default.</p>
+    <div class="section-label">Privacy</div>
+    <h2 class="section-title">What leaves your machine, and what doesn't.</h2>
+    <p class="section-subtitle">Caddie is built for engineers who work on confidential designs, so here is exactly where your data goes.</p>
 
     <div class="privacy-grid">
       <div class="privacy-card">
         <div class="privacy-icon">💾</div>
-        <div class="privacy-title">Local Storage</div>
-        <p class="privacy-desc">All history, notes, and preferences are stored in SQLite on your PC. Nothing leaves without your permission.</p>
+        <div class="privacy-title">Stays on Your PC</div>
+        <p class="privacy-desc">Conversation history, file notes and preferences are stored on your PC. You can turn history off or delete it in Settings.</p>
       </div>
       <div class="privacy-card">
-        <div class="privacy-icon">🔑</div>
-        <div class="privacy-title">No Account Needed</div>
-        <p class="privacy-desc">Caddie includes its own AI access during alpha. No OpenAI account or API key required — just install and go.</p>
+        <div class="privacy-icon">📤</div>
+        <div class="privacy-title">Sent to Answer You</div>
+        <p class="privacy-desc">Your question, your model's details and a screenshot of SolidWorks go to OpenAI through Caddie's relay. Your files are never uploaded, and screenshots can be turned off.</p>
+      </div>
+      <div class="privacy-card">
+        <div class="privacy-icon">🚫</div>
+        <div class="privacy-title">Not Used for Training</div>
+        <p class="privacy-desc">OpenAI doesn't train on API data, and Caddie asks it not to store conversations. OpenAI may keep requests for up to 30 days to check for abuse.</p>
       </div>
       <div class="privacy-card">
         <div class="privacy-icon">📵</div>
         <div class="privacy-title">No Telemetry</div>
-        <p class="privacy-desc">Zero usage tracking by default. No analytics, no crash reporting unless you explicitly opt in.</p>
-      </div>
-      <div class="privacy-card">
-        <div class="privacy-icon">🏠</div>
-        <div class="privacy-title">Opt-in Cloud</div>
-        <p class="privacy-desc">Cloud sync for history (coming in M6) is always explicit opt-in, never automatic.</p>
+        <p class="privacy-desc">No account, usage tracking or analytics. Answers you rate stay on your PC unless you choose to send a problem report.</p>
       </div>
     </div>
+    <p class="section-subtitle" style="margin-top:28px"><a href="privacy.html">Read the full privacy details →</a></p>
   </div>
 </section>
 
@@ -458,11 +459,11 @@
   <div class="download-inner">
     <img src="Caddie.png" alt="Caddie" class="download-mascot">
     <div class="hero-badge" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:white;margin-bottom:20px">
-      Developer Alpha &middot; v0.2
+      Developer Alpha &middot; v0.3
     </div>
     <h2 class="section-title" style="color:white">Download Caddie</h2>
     <p class="section-subtitle" style="color:rgba(255,255,255,0.85);margin:0 auto 36px">
-      Ready to run inside SolidWorks 2022+. Extract the zip, run the installer, and you're chatting with your models in under 5 minutes.
+      Ready to run inside SolidWorks 2022+. Run the installer, open SolidWorks, and you're working with Caddie in under 5 minutes.
     </p>
 
     <a href="CaddieSetup.exe" class="btn-download" download>
@@ -501,7 +502,7 @@
     <div class="footer-links">
       <a href="#download">Download</a>
       <a href="#docs">Docs</a>
-      <a href="#privacy">Privacy</a>
+      <a href="privacy.html">Privacy</a>
       <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
     <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS® is a registered trademark of Dassault Systèmes.</p>

@@ -52,7 +52,7 @@
       <ul>
         <li><a href="../#features">Features Overview</a></li>
         <li><a href="../#roadmap">Roadmap</a></li>
-        <li><a href="../#privacy">Privacy &amp; Data</a></li>
+        <li><a href="../privacy.html">Privacy &amp; Data</a></li>
       </ul>
     </div>
     <div class="doc-sidebar-section">
@@ -79,7 +79,7 @@
       <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit only)</li>
       <li><strong>CAD Software:</strong> SolidWorks 2022 or later</li>
       <li><strong>.NET Framework:</strong> 4.8 &mdash; already installed on most Windows 10/11 machines</li>
-      <li><strong>Internet:</strong> Required for AI responses (requests go through a secure HTTPS proxy &mdash; see <a href="../#privacy">Privacy</a>)</li>
+      <li><strong>Internet:</strong> Required for AI responses (requests go through a secure HTTPS relay &mdash; see <a href="../privacy.html">Privacy</a>)</li>
       <li><strong>Disk space:</strong> ~20 MB installed, plus space for local conversation history</li>
     </ul>
 
@@ -110,24 +110,27 @@
     </ol>
 
     <!-- Step 3 -->
-    <h2>Step 3 &mdash; Start a Conversation</h2>
+    <h2>Step 3 &mdash; Start Working Together</h2>
     <ol class="doc-steps">
-      <li>Open any part, assembly, or drawing in SolidWorks.</li>
-      <li>
-        Caddie automatically captures your context &mdash; the feature tree, active configuration, rebuild errors, and a viewport screenshot. The context bar at the top of the chat panel will show your file name and feature count.
-      </li>
-      <li>Type your question in the input box and press <strong>Enter</strong> or click the send button <strong>&rsaquo;</strong>.</li>
-      <li>Caddie streams back a response referencing your specific feature names, sketches, and mates.</li>
+      <li>The first time Caddie opens, it explains what it sends to answer you. Read it and click <strong>Got it</strong>.</li>
+      <li>Open any part, assembly, or drawing. Caddie follows what you do as you work, and the badge at the top shows any problems it spots.</li>
+      <li>Tell Caddie what you need in your own words and press <strong>Enter</strong>. To stop a reply, click the stop button or just type something else.</li>
+      <li>When Caddie can make a change for you, it shows a card. Nothing changes until you click <strong>Do it</strong>, and most changes have an <strong>Undo</strong>.</li>
+      <li>If you'd rather do it yourself, ask it to walk you through. A highlight points at each thing to click, and each step ticks itself off as you finish it.</li>
     </ol>
 
     <div class="doc-callout doc-callout-tip">
-      <strong>&#128161; What to ask</strong><br>
-      Caddie gives the best answers when questions are specific. Try:<br>
-      <em>"Why is my loft failing?"</em> &nbsp;&bull;&nbsp;
-      <em>"Review this bracket for manufacturing issues"</em> &nbsp;&bull;&nbsp;
-      <em>"How do I mate this part so it can only rotate on one axis?"</em> &nbsp;&bull;&nbsp;
-      <em>"What does Boss-Extrude3 do and why was it built this way?"</em>
+      <strong>&#128161; Things to try</strong><br>
+      <em>"this sketch is red, fix it"</em> &nbsp;&bull;&nbsp;
+      <em>"round the four corners, 5 mm"</em> &nbsp;&bull;&nbsp;
+      <em>"six of these holes around the centre bore"</em> &nbsp;&bull;&nbsp;
+      <em>"walk me through a chamfer, I want to learn it"</em> &nbsp;&bull;&nbsp;
+      <em>"undo that"</em><br>
+      Set <strong>Settings &rarr; How you work</strong> to your own standards, such as units, drawing standard and default material, and Caddie follows them in every answer.
     </div>
+
+    <h2>What leaves your computer</h2>
+    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">To answer you, Caddie sends your question, your model's details and a screenshot of SolidWorks to OpenAI, with storage turned off. Your files are never uploaded, your history stays on your PC, and you can turn screenshots off in Settings. <a href="../privacy.html">Full privacy details</a>.</p>
 
     <!-- Updating -->
     <h2>Updating Caddie</h2>
@@ -152,11 +155,12 @@
 
     <div class="doc-faq">
       <div class="doc-faq-q">The add-in doesn't appear in Tools &rarr; Add-Ins</div>
-      <div class="doc-faq-a">
-        Make sure you right-clicked <code>install.bat</code> and chose <strong>Run as Administrator</strong> &mdash; not just double-clicked it. After registering, restart SolidWorks completely (close and reopen). If it still doesn't appear, open Command Prompt as Administrator and run:<br>
-        <code>regsvr32 "C:\Caddie\Caddie.SwAddin.dll"</code><br>
-        Replace <code>C:\Caddie\</code> with your actual install path.
-      </div>
+      <div class="doc-faq-a">Close SolidWorks and run <strong>CaddieSetup.exe</strong> again, approving the administrator prompt. Then reopen SolidWorks, go to <strong>Tools &rarr; Add-Ins</strong> and tick Caddie under both <strong>Active</strong> and <strong>Start Up</strong>.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">Caddie says it has run out of credit, or can't sign in</div>
+      <div class="doc-faq-a">The AI service behind Caddie needs attention from whoever set Caddie up. Nothing is wrong on your PC. If it says it can't sign in, installing the latest version usually fixes it.</div>
     </div>
 
     <div class="doc-faq">
@@ -166,22 +170,22 @@
 
     <div class="doc-faq">
       <div class="doc-faq-q">The taskpane is blank or stuck on "Loading…"</div>
-      <div class="doc-faq-a">This usually means the <code>ui\</code> folder is missing or in the wrong location. Make sure a <code>ui\</code> folder exists in the same directory as <code>Caddie.SwAddin.dll</code>, and that it contains <code>index.html</code>. Re-extract the zip if needed. You can also check the log at <code>%AppData%\CaddieAddin\caddie.log</code> for error details.</div>
+      <div class="doc-faq-a">Caddie's panel needs the Microsoft Edge WebView2 Runtime, which the installer adds when it's missing. Run <strong>CaddieSetup.exe</strong> again, or install the runtime from <a href="https://developer.microsoft.com/microsoft-edge/webview2/" target="_blank" rel="noopener">Microsoft</a>, then restart SolidWorks.</div>
     </div>
 
     <div class="doc-faq">
-      <div class="doc-faq-q">Context isn't updating when I open a new model</div>
-      <div class="doc-faq-a">Click the <strong>&#8635; Refresh</strong> button in the taskpane to manually trigger a context capture. Auto-capture fires on document open, switch, and save &mdash; but a manual refresh is the fastest way to force an update after making changes.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">I get an error: "The type name HttpClient could not be found"</div>
-      <div class="doc-faq-a">This is a build-time error, not a runtime error &mdash; only relevant if you're building from source. The fix is to add <code>&lt;Reference Include="System.Net.Http" /&gt;</code> to the <code>Caddie.SwAddin.csproj</code> file. Pre-built releases don't have this issue.</div>
+      <div class="doc-faq-q">Caddie doesn't seem to see my latest change</div>
+      <div class="doc-faq-a">Caddie follows your work as you go and re-reads the model before every answer. If something still looks stale, click <strong>&#8635; Refresh</strong> at the top of the chat.</div>
     </div>
 
     <div class="doc-faq">
       <div class="doc-faq-q">SolidWorks shows "Add-in failed to load" on startup</div>
-      <div class="doc-faq-a">This typically means a DLL dependency is missing. Make sure all DLLs from the zip are in the same folder (don't move just <code>Caddie.SwAddin.dll</code> on its own). If you recently updated Windows, try repairing .NET Framework 4.8 via Windows Update or the Microsoft download page.</div>
+      <div class="doc-faq-a">Run <strong>CaddieSetup.exe</strong> again to repair the installation. If you recently updated Windows, also repair .NET Framework 4.8 through Windows Update.</div>
+    </div>
+
+    <div class="doc-faq">
+      <div class="doc-faq-q">Reporting a problem</div>
+      <div class="doc-faq-a">In Caddie, go to <strong>Settings &rarr; Copy a problem report</strong> and paste it into an email. It contains Caddie's version, a recent log and any answers you've rated, and you can read it before you send it.</div>
     </div>
 
     <div class="doc-contact">
@@ -197,10 +201,10 @@
     <div class="footer-links">
       <a href="../#download">Download</a>
       <a href="quick-start.html">Docs</a>
-      <a href="../#privacy">Privacy</a>
+      <a href="../privacy.html">Privacy</a>
       <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
-    <p class="footer-copy">&copy; 2025 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
+    <p class="footer-copy">&copy; 2026 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
   </div>
 </footer>
 
