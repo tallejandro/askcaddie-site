@@ -3,89 +3,110 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy and Data — Caddie</title>
+  <title>Privacy and data · Caddie</title>
   <meta name="description" content="What Caddie sends to answer you, what stays on your PC, and how to control it.">
+  <meta property="og:title" content="Privacy and data · Caddie">
+  <meta property="og:description" content="What Caddie sends to answer you, what stays on your PC, and how to control it.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css?v=7">
 </head>
 <body>
 
-<nav id="mainNav">
+<nav class="nav" aria-label="Main">
   <div class="nav-inner">
-    <a class="nav-logo" href=".">Caddie</a>
+    <a class="brand" href="./"><img src="img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
     <ul class="nav-links">
-      <li><a href="./#use-cases">Use Cases</a></li>
-      <li><a href="./#features">Features</a></li>
-      <li><a href="./#roadmap">Roadmap</a></li>
-      <li><a href="docs/quick-start.html">Docs</a></li>
-      <li><a href="./#download" class="nav-cta">Download Free</a></li>
+      <li><a href="./#how">How it works</a></li>
+      <li><a href="./#examples">Examples</a></li>
+      <li><a href="./#practice">Practice</a></li>
+      <li><a href="docs/./">Guides</a></li>
+      <li><a href="./#faq">FAQ</a></li>
+      <li><a href="./#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
     </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="./#how">How it works</a>
+    <a href="./#examples">Examples</a>
+    <a href="./#practice">Practice</a>
+    <a href="docs/./">Guides</a>
+    <a href="./#faq">FAQ</a>
+    <a href="./#download" class="btn btn-primary">Download free</a>
   </div>
 </nav>
 
-<div class="doc-wrap">
-  <main class="doc-content" style="max-width:760px;margin:0 auto">
-    <div class="doc-breadcrumb"><a href=".">Home</a> &rsaquo; Privacy and Data</div>
-    <h1 class="doc-h1">Privacy and Data</h1>
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="docs/quick-start.html">Quick start</a><a href="docs/index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="docs/fix-errors.html">Fix rebuild errors and red sketches</a><a href="docs/show-me-and-do-it.html">Show me, or do it for me</a><a href="docs/model-from-image.html">Model from a drawing or photo</a><a href="docs/sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="docs/practice-exams.html">Practise for the CSWA and CSWP</a><a href="docs/design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="privacy.html" aria-current="page">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+  </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="./">Home</a> › Privacy and data</div>
+    <h1>Privacy and data</h1>
     <p class="doc-lead">Caddie is built for engineers who work on confidential designs. This page says exactly where your data goes.</p>
+    
 
     <h2>What stays on your PC</h2>
-    <ul class="doc-list">
-      <li><strong>Conversation history</strong>, kept for the History tab in <code>%AppData%\CaddieAddin</code>. You can turn it off, or delete all of it, in Settings.</li>
-      <li><strong>Your standards and file notes</strong>, the "How you work" setting and anything Caddie remembers about a file.</li>
-      <li><strong>Answers you rate</strong>. They're only shared if you copy a problem report and send it yourself.</li>
-      <li><strong>Your SolidWorks files.</strong> Caddie never uploads them.</li>
+    <ul>
+      <li><b>Conversation history,</b> kept for the History tab in <code>%AppData%\CaddieAddin</code>. You can turn it off, or delete all of it, in Settings.</li>
+      <li><b>Your standards and file notes:</b> the How you work setting, and anything Caddie remembers about a file.</li>
+      <li><b>Answers you rate.</b> They're only shared if you copy a problem report and send it yourself.</li>
+      <li><b>Your SolidWorks files.</b> Caddie never uploads them.</li>
     </ul>
 
     <h2>What is sent to answer you</h2>
-    <p style="font-size:15px;color:var(--text2);margin-bottom:12px;line-height:1.65">Each time you ask something, Caddie sends these to OpenAI through Caddie's relay, a small service that forwards requests and adds the API key:</p>
-    <ul class="doc-list">
+    <p>Each time you ask something, Caddie sends these to OpenAI through Caddie's relay, a small service that forwards requests and adds the API key:</p>
+    <ul>
       <li>Your message and the recent conversation.</li>
       <li>Details of the open model: feature, sketch and dimension names and values, materials, errors, mass properties, and for assemblies and drawings their components, mates and views.</li>
       <li>A screenshot of the SolidWorks window, unless you turn screenshots off in Settings.</li>
       <li>Any image you attach to a message, such as a drawing, sketch or photo of what you want to model.</li>
       <li>Your name, standards and file notes, if you've set them.</li>
+      <li>While you practise, the practice problem and its answer key, so Caddie can coach you.</li>
     </ul>
-    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When Caddie highlights a ribbon button or a field for you, it sends a screenshot to find it. With screenshots off, it can still point at FeatureManager items and menus.</p>
+    <p>When Caddie highlights a ribbon button or a field for you, it sends a screenshot to find it. With screenshots off, it can still point at FeatureManager items and menus.</p>
 
     <h2>What OpenAI does with it</h2>
-    <ul class="doc-list">
+    <ul>
       <li>OpenAI does not use API data to train its models.</li>
       <li>Caddie asks OpenAI not to store conversations.</li>
       <li>OpenAI may keep requests for up to 30 days to check for abuse, as it does for all API use. See <a href="https://developers.openai.com/api/docs/guides/your-data" target="_blank" rel="noopener">OpenAI's data controls</a>.</li>
     </ul>
 
     <h2>What Caddie doesn't do</h2>
-    <ul class="doc-list">
+    <ul>
       <li>No account, usage tracking, analytics or crash reporting.</li>
       <li>The relay doesn't log or keep the content of requests.</li>
       <li>Caddie changes your model only with your approval, and most changes can be undone.</li>
     </ul>
 
-    <div class="doc-callout">
-      <strong>Check your company's rules.</strong> If your work is covered by an NDA or export controls, confirm that sending model details and screenshots to OpenAI is allowed before you use Caddie on it. Turning screenshots off reduces what's sent, but model details are still needed to answer.
-    </div>
+    <div class="callout warn"><b>Check your company's rules.</b> If your work is covered by an NDA or export controls, confirm that sending model details and screenshots to OpenAI is allowed before you use Caddie on it. Turning screenshots off reduces what's sent, but model details are still needed to answer.</div>
 
-    <div class="doc-contact">
-      Questions? Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a>.
-    </div>
+    <p>Questions? Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a>.</p>
+
   </main>
 </div>
 
-<footer>
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">Caddie</div>
+    <a class="brand" href="./"><span class="brand-disc"><img src="img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
     <div class="footer-links">
-      <a href="./#download">Download</a>
-      <a href="docs/quick-start.html">Docs</a>
+      <a href="docs/./">Guides</a>
+      <a href="docs/quick-start.html">Quick start</a>
       <a href="privacy.html">Privacy</a>
+      <a href="./#download">Download</a>
       <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
-    <p class="footer-copy">&copy; 2026 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
   </div>
 </footer>
 
+<script src="js/site.js"></script>
 </body>
 </html>

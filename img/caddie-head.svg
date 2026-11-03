@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Caddie</title>
+  <g stroke="#082941" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M8 26 L23 31 L23 58 L8 52 Z" fill="#D5D8D8"/>
+    <path d="M23 31 L57 25 L57 51 L23 58 Z" fill="#FCFAF4"/>
+    <path d="M8 26 L42 20 L57 25 L23 31 Z" fill="#E8EAE8"/>
+    <path d="M15 25.5 C14 12 44 6.5 48 20.5 C40 25 24 28 15 25.5 Z" fill="#647F8F"/>
+    <path d="M37 24.2 C45 20.5 56 19.5 61 22.6 C57.5 26.5 46 28.6 37 27.4 Z" fill="#3F5A6E"/>
+  </g>
+  <g fill="#082941">
+    <ellipse cx="35" cy="40" rx="2.2" ry="3.1"/>
+    <ellipse cx="47" cy="37.8" rx="2.2" ry="3.1"/>
+    <path d="M31.5 45.6 C34.5 52.4 46.5 51.4 50.5 43.4 C44.5 46.6 37.5 47.4 31.5 45.6 Z"/>
+  </g>
+  <g fill="none" stroke="#082941" stroke-width="1.7" stroke-linecap="round">
+    <path d="M32.2 33.8 Q34.8 31.6 37.6 33"/>
+    <path d="M44.2 31.6 Q46.9 29.4 49.6 30.9"/>
+  </g>
+</svg>

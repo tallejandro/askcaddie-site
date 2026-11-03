@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model from a drawing or photo · Caddie</title>
+  <meta name="description" content="Attach a drawing, a hand sketch or a photo and build the part in SolidWorks with Caddie, step by step.">
+  <meta property="og:title" content="Model from a drawing or photo · Caddie">
+  <meta property="og:description" content="Attach a drawing, a hand sketch or a photo and build the part in SolidWorks with Caddie, step by step.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=7">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="../"><img src="../img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="../#how">How it works</a></li>
+      <li><a href="../#examples">Examples</a></li>
+      <li><a href="../#practice">Practice</a></li>
+      <li><a href="./" aria-current="page">Guides</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="../#how">How it works</a>
+    <a href="../#examples">Examples</a>
+    <a href="../#practice">Practice</a>
+    <a href="./">Guides</a>
+    <a href="../#faq">FAQ</a>
+    <a href="../#download" class="btn btn-primary">Download free</a>
+  </div>
+</nav>
+
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html" aria-current="page">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+  </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Model from a drawing, sketch or photo</div>
+    <h1>Model from a drawing, sketch or photo</h1>
+    <p class="doc-lead">Give Caddie a picture of what you want to make. It reads the shape and the dimensions, tells you what it assumed, and builds it with you.</p>
+    
+
+    <p class="doc-meta">Conversations on this page are word for word from Caddie's test runs on sample models.</p>
+    <h2>Attach an image</h2>
+    <ul>
+      <li><b>Paste</b> a screenshot into the chat box with Ctrl+V,</li>
+      <li><b>drag</b> an image file onto the panel, or</li>
+      <li><b>click the paperclip</b> next to the box and choose a file.</li>
+    </ul>
+    <p>Add a line about what you want, or just send it. Large images are shrunk to 1600 pixels before they're sent.</p>
+
+    <h2>A real example</h2>
+    <p>This drawing was attached to an empty part with the message "can you help me model this".</p>
+    <figure class="doc-figure pair">
+      <div class="card" style="padding:12px"><img src="../img/angle-drawing.png" width="917" height="811" loading="lazy" alt="A dimensioned drawing of an angle bracket: 80 wide, 60 deep, 70 tall, 8 mm walls, R8 inside bend, two Ø10 holes in the base 15 mm from the edges and a Ø16 hole in the upright 18 mm from the top."></div>
+      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="Caddie's first proposal for the bracket: sketch 7 shapes on the Right Plane, extrude by 80 mm, assign 6061 Alloy."></div>
+      <figcaption>The attached drawing, and the first change Caddie proposed.</figcaption>
+    </figure>
+    <p>Caddie split the build into two approvals and checked the body before adding the holes:</p>
+    <ol class="doc-steps">
+      <li><b>"Create the 80 mm wide aluminium angle bracket from its 60 × 70 mm side profile, with 8 mm walls and the R8 inside corner."</b> A sketch of six lines and an arc on the Right Plane, an 80 mm mid-plane extrude, and 6061 Alloy.</li>
+      <li><b>"Add the centred Ø16 upright hole 18 mm below the top and the two Ø10 base holes 15 mm from the front and side edges, assuming the left base hole mirrors the right."</b> Two sketches and two through-all cuts.</li>
+    </ol>
+    
+    <div class="card transcript">
+      <div class="ctx">Part1 · after both changes</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">can you help me model this</div></div>
+      
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">The 6061 aluminium angle bracket is modelled with 8 mm walls, the R8 inside corner and all three through-holes. I assumed the two base holes are symmetric and the upright hole is centred across the 80 mm width, as shown.</div></div>
+    </div>
+
+    <h2>What works best</h2>
+    <ul>
+      <li><b>Dimensioned drawings:</b> Caddie uses the numbers as given, including the material and units if they're on the drawing.</li>
+      <li><b>Hand sketches:</b> write the dimensions on them. Caddie asks about anything it can't read.</li>
+      <li><b>Photos of real parts:</b> include one known size, such as the overall length or a hole diameter, so Caddie can scale the rest. Expect a question or two.</li>
+      <li><b>Screenshots</b> of other CAD software or of a PDF drawing work the same way.</li>
+    </ul>
+
+    <h2>Prefer to model it yourself?</h2>
+    <p>Say "guide me through modelling this" and Caddie starts a guide instead, with each step highlighted. To practise with answers checked, use the parts on the <a href="practice-exams.html">Learn tab</a>.</p>
+
+    <h2>Good to know</h2>
+    <ul>
+      <li>Caddie builds with sketches, extrudes, cuts, fillets, chamfers, shells, mirrors and patterns. For revolves, sweeps and lofts it guides you through the steps instead.</li>
+      <li>It can misread a dimension or a view. Check the assumptions it lists, and measure the result.</li>
+      <li>Attached images are sent to OpenAI so they can be read. Don't attach anything you aren't allowed to share. See <a href="../privacy.html">Privacy and data</a>.</li>
+    </ul>
+
+    <nav class="doc-next" aria-label="More guides">
+      <a href="show-me-and-do-it.html"><span>Previous</span>← Show me, or do it for me</a>
+      <a class="next" href="sheet-metal-weldments.html"><span>Next</span>Sheet metal, weldments and holes →</a>
+    </nav>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="../"><span class="brand-disc"><img src="../img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
+    <div class="footer-links">
+      <a href="./">Guides</a>
+      <a href="quick-start.html">Quick start</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../#download">Download</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

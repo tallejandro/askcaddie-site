@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design intent, explained · Caddie</title>
+  <meta name="description" content="What design intent is in SolidWorks, how to build it into a part, and how Caddie helps you check it.">
+  <meta property="og:title" content="Design intent, explained · Caddie">
+  <meta property="og:description" content="What design intent is in SolidWorks, how to build it into a part, and how Caddie helps you check it.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=7">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="../"><img src="../img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="../#how">How it works</a></li>
+      <li><a href="../#examples">Examples</a></li>
+      <li><a href="../#practice">Practice</a></li>
+      <li><a href="./" aria-current="page">Guides</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="../#how">How it works</a>
+    <a href="../#examples">Examples</a>
+    <a href="../#practice">Practice</a>
+    <a href="./">Guides</a>
+    <a href="../#faq">FAQ</a>
+    <a href="../#download" class="btn btn-primary">Download free</a>
+  </div>
+</nav>
+
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html" aria-current="page">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+  </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Design intent, explained</div>
+    <h1>Design intent, explained</h1>
+    <p class="doc-lead">Design intent is the plan behind a model: which sizes drive the others, what stays centred, what must never change. Build it in and the part updates the way you expect. Leave it out and the next edit breaks it.</p>
+    
+
+    <h2>Two parts that look the same</h2>
+    <p>Take a plate with a hole in the middle, modelled two ways:</p>
+    <ul>
+      <li><b>Version A:</b> the hole is dimensioned 50 mm from the left edge. Make the plate 140 mm long and the hole stays 50 mm from the left. It's no longer centred.</li>
+      <li><b>Version B:</b> the hole is tied to the plate's centre, with the sketch centred on the origin. Make the plate 140 mm long and the hole is still in the middle.</li>
+    </ul>
+    <p>Both rebuild without errors and look identical. Only B captures what the designer meant: the hole is centred. That's design intent, and it only shows up when someone changes something.</p>
+
+    <h2>Where intent lives in SolidWorks</h2>
+    <table class="doc-table">
+      <thead><tr><th>Tool</th><th>What it captures</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><b>Sketch relations</b></td><td>Geometric rules</td><td>Midpoint, Symmetric, Equal, Collinear, Tangent</td></tr>
+        <tr><td><b>Dimensions</b></td><td>What's measured from where</td><td>Dimension a hole from the centre line, not from an edge that may move</td></tr>
+        <tr><td><b>Origin and planes</b></td><td>The part's frame of reference</td><td>Centre the base sketch on the origin, so mirrors and symmetry come free</td></tr>
+        <tr><td><b>End conditions</b></td><td>How a feature reacts to size changes</td><td>Through All for a through hole, not a blind depth that matches today's thickness</td></tr>
+        <tr><td><b>Equations and global variables</b></td><td>Rules between sizes</td><td>Wall = Height / 10</td></tr>
+        <tr><td><b>Feature order</b></td><td>What depends on what</td><td>Fillets after the features they round; pattern the feature, not its sketch</td></tr>
+        <tr><td><b>Configurations and design tables</b></td><td>Families of sizes</td><td>One file for the M6, M8 and M10 versions</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Good habits</h2>
+    <ul>
+      <li><b>Fully define sketches.</b> Blue geometry can move when something upstream changes.</li>
+      <li><b>Relate to the origin and the main planes,</b> not to edges that might change.</li>
+      <li><b>Use a relation when the rule is geometric.</b> Equal, symmetric and centred say more than two matching numbers.</li>
+      <li><b>Name what matters.</b> "Wall Thickness" beats D1@Boss-Extrude1 for the next person, and for you in six months.</li>
+      <li><b>Pick end conditions that say what you mean,</b> such as Through All for a through hole.</li>
+      <li><b>Keep fillets and cosmetic features late</b> in the tree.</li>
+      <li><b>Test it.</b> Change the main sizes up and down and rebuild. If something breaks, fix it now, not when a customer asks for a longer one.</li>
+    </ul>
+
+    <h2>How Caddie helps</h2>
+    <p class="doc-meta">Conversations on this page are word for word from Caddie's test runs on sample models.</p>
+    
+    <div class="card transcript">
+      <div class="ctx">Bracket.SLDPRT</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">what controls the overall size of this part</div></div>
+      
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Base Profile controls the part’s footprint: D1@Base Profile is 60 mm and D2@Base Profile is 40 mm. Boss-Extrude1 controls its thickness through D1@Boss-Extrude1, currently 25 mm.</p><p>Those are the three main overall-size controls; Mounting Hole controls the cut, not the outside size.</p></div></div>
+    </div>
+    
+    <div class="card transcript">
+      <div class="ctx">Bracket.SLDPRT · plate with a centre bore</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">the bore has to stay in the middle of the plate whatever length i make it</div></div>
+      <div class="note">Caddie also saved the rule as a note on the file and opened a guide.</div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Centre Bore needs its centre constrained to the plate’s midpoint, rather than a fixed distance from an edge. We’ll check its positioning constraints first, then tie it to the middle so it follows changes to the plate length.</div></div>
+    </div>
+    
+    <div class="card transcript">
+      <div class="ctx">Bracket.SLDPRT</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">i want the wall thickness to always be a tenth of the height</div></div>
+      
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Do you mean Boss-Extrude1’s 10 mm thickness should always be one tenth of Base Profile’s 40 mm height? I’ll link them with an equation so the thickness follows whenever the height changes.</div></div>
+    </div>
+    <p>Notice the last one: when there's more than one dimension it could mean, Caddie confirms which before linking anything.</p>
+
+    <h2>Coming next: the stress test</h2>
+    <p>The best check of design intent is to change things and see what breaks. The next update adds a test that does exactly that on the open part: Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds after each change, lists every feature that fails or warns, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
+
+    <h2>Questions to try</h2>
+    <div class="chips"><span class="chip">what controls the overall size of this part</span><span class="chip">is this sketch fully defined, and what can still move</span><span class="chip">what depends on Sketch1</span><span class="chip">how should I dimension this so the holes stay symmetric</span><span class="chip">link the hole spacing to the plate width</span><span class="chip">rename my features so they say what they do</span></div>
+
+    <nav class="doc-next" aria-label="More guides">
+      <a href="practice-exams.html"><span>Previous</span>← Practise for the CSWA and CSWP</a>
+      
+    </nav>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="../"><span class="brand-disc"><img src="../img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
+    <div class="footer-links">
+      <a href="./">Guides</a>
+      <a href="quick-start.html">Quick start</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../#download">Download</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

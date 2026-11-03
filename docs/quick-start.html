@@ -3,224 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quick Start Guide — Caddie</title>
-  <meta name="description" content="Install Caddie inside SolidWorks in under 5 minutes. Step-by-step guide.">
+  <title>Quick start · Caddie</title>
+  <meta name="description" content="Install Caddie for SolidWorks, find the panel and ask your first question in about five minutes.">
+  <meta property="og:title" content="Quick start · Caddie">
+  <meta property="og:description" content="Install Caddie for SolidWorks, find the panel and ask your first question in about five minutes.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=3">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=7">
 </head>
 <body>
 
-<nav id="mainNav">
+<nav class="nav" aria-label="Main">
   <div class="nav-inner">
-    <a class="nav-logo" href="..">Caddie</a>
+    <a class="brand" href="../"><img src="../img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
     <ul class="nav-links">
-      <li><a href="../#use-cases">Use Cases</a></li>
-      <li><a href="../#features">Features</a></li>
-      <li><a href="../#roadmap">Roadmap</a></li>
-      <li><a href="quick-start.html" style="color:var(--blue);font-weight:700">Docs</a></li>
-      <li><a href="../#download" class="nav-cta">Download Free</a></li>
+      <li><a href="../#how">How it works</a></li>
+      <li><a href="../#examples">Examples</a></li>
+      <li><a href="../#practice">Practice</a></li>
+      <li><a href="./" aria-current="page">Guides</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
     </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav-mobile" id="navMobile" aria-hidden="true" style="display:none">
-    <ul>
-      <li><a href="../#use-cases">Use Cases</a></li>
-      <li><a href="../#features">Features</a></li>
-      <li><a href="../#roadmap">Roadmap</a></li>
-      <li><a href="quick-start.html">Docs</a></li>
-      <li><a href="../#download" class="nav-mobile-cta">&#8659;&nbsp; Download Free</a></li>
-    </ul>
+  <div class="nav-mobile">
+    <a href="../#how">How it works</a>
+    <a href="../#examples">Examples</a>
+    <a href="../#practice">Practice</a>
+    <a href="./">Guides</a>
+    <a href="../#faq">FAQ</a>
+    <a href="../#download" class="btn btn-primary">Download free</a>
   </div>
 </nav>
 
-<div class="doc-wrap">
-
-  <!-- Sidebar -->
-  <aside class="doc-sidebar">
-    <div class="doc-sidebar-section">
-      <div class="doc-sidebar-label">Getting Started</div>
-      <ul>
-        <li><a href="quick-start.html" class="active">Quick Start Guide</a></li>
-      </ul>
-    </div>
-    <div class="doc-sidebar-section">
-      <div class="doc-sidebar-label">Reference</div>
-      <ul>
-        <li><a href="../#features">Features Overview</a></li>
-        <li><a href="../#roadmap">Roadmap</a></li>
-        <li><a href="../privacy.html">Privacy &amp; Data</a></li>
-      </ul>
-    </div>
-    <div class="doc-sidebar-section">
-      <div class="doc-sidebar-label">Support</div>
-      <ul>
-        <li><a href="mailto:hello@askcaddie.app">Email Support</a></li>
-      </ul>
-    </div>
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html" aria-current="page">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Quick start</div>
+    <h1>Quick start</h1>
+    <p class="doc-lead">Install Caddie, find the panel, and ask your first question. It takes about five minutes.</p>
+    
 
-  <!-- Main content -->
-  <main class="doc-content">
-    <div class="doc-breadcrumb"><a href="..">Home</a> &rsaquo; Quick Start Guide</div>
-    <h1 class="doc-h1">Quick Start Guide</h1>
-    <p class="doc-lead">Get Caddie running inside your CAD software in under 5 minutes.</p>
-
-    <div class="doc-callout">
-      <strong>Alpha release</strong> &mdash; Caddie is under active development. SolidWorks 2022+ is fully supported today. Fusion 360 and Onshape integrations are on the <a href="../#roadmap">roadmap</a>.
-    </div>
-
-    <!-- Requirements -->
-    <h2>System Requirements</h2>
-    <ul class="doc-list">
-      <li><strong>Operating System:</strong> Windows 10 or Windows 11 (64-bit only)</li>
-      <li><strong>CAD Software:</strong> SolidWorks 2022 or later</li>
-      <li><strong>.NET Framework:</strong> 4.8 &mdash; already installed on most Windows 10/11 machines</li>
-      <li><strong>Internet:</strong> Required for AI responses (requests go through a secure HTTPS relay &mdash; see <a href="../privacy.html">Privacy</a>)</li>
-      <li><strong>Disk space:</strong> ~20 MB installed, plus space for local conversation history</li>
+    <h2>What you need</h2>
+    <ul>
+      <li>Windows 10 or 11, 64-bit</li>
+      <li>SolidWorks 2022 or newer. Caddie is tested most on SolidWorks 2026.</li>
+      <li>An internet connection</li>
+      <li>Permission to install software. The installer asks for administrator rights so it can register the add-in with SolidWorks.</li>
     </ul>
 
-    <!-- Step 1 -->
-    <h2>Step 1 &mdash; Download &amp; Install</h2>
+    <h2>Install</h2>
     <ol class="doc-steps">
-      <li>
-        <strong>Download CaddieSetup.exe</strong> from the <a href="../#download">download section</a>.
-      </li>
-      <li>
-        <strong>Run CaddieSetup.exe.</strong>
-        <div class="doc-note">&#9888; Windows SmartScreen may show a warning because the installer is not yet code-signed. Click <strong>More info</strong> &rarr; <strong>Run anyway</strong>. This is normal for indie software during alpha.</div>
-      </li>
-      <li>Click through the setup wizard. The default install location (<code>C:\Program Files\Caddie\</code>) is recommended.</li>
-      <li>If SolidWorks is running, the installer will ask you to close it first &mdash; this is required so the DLL can be written.</li>
-      <li>Click <strong>Finish</strong>. Caddie is now installed and registered.</li>
+      <li><b>Close SolidWorks.</b> The installer can't replace files SolidWorks has loaded.</li>
+      <li><b>Download <a href="../CaddieSetup.exe" download>CaddieSetup.exe</a> and run it.</b> If Windows shows "Windows protected your PC", click More info, then Run anyway. The installer isn't code-signed yet.</li>
+      <li><b>Click through the wizard.</b> It takes a few seconds. There's no account to create.</li>
+      <li><b>Open SolidWorks.</b> The Ask Caddie panel opens in the task pane on the right.</li>
     </ol>
+    <div class="callout"><b>Panel not showing?</b> In SolidWorks, open Tools › Add-Ins, tick Caddie in both columns (active now, and at start-up), and click OK. If the task pane is closed, open it from View › User Interface › Task Pane, then click the Caddie tab on its right edge.</div>
 
-    <!-- Step 2 -->
-    <h2>Step 2 &mdash; Enable in SolidWorks</h2>
+    <h2>Ask your first question</h2>
     <ol class="doc-steps">
-      <li>Open SolidWorks (or restart it if it was already running).</li>
-      <li>Go to <strong>Tools &rarr; Add-Ins&hellip;</strong></li>
-      <li>Find <strong>Caddie</strong> in the list of available add-ins.</li>
-      <li>Check the <strong>Active</strong> checkbox to load it now, and check <strong>Start Up</strong> so it loads automatically every time SolidWorks opens.</li>
-      <li>Click <strong>OK</strong>.</li>
-      <li>The <strong>Ask Caddie</strong> panel will appear on the right side of your SolidWorks window.</li>
+      <li><b>Open a part you know,</b> ideally one with a rebuild error or a sketch that isn't fully defined.</li>
+      <li><b>Type a question in the box at the bottom</b> the way you'd ask a colleague: "why is this failing", "what's the mass", "how would you make this lighter".</li>
+      <li><b>Read the answer.</b> It names your features and values. If there's work to do, Caddie starts a guide or offers to make the change.</li>
     </ol>
+    <p>The green dot and file name above the box show which document Caddie is reading. It reads the model again each time you ask; Refresh does it on demand.</p>
+    
+    <figure class="doc-figure">
+      <div class="shot"><img src="../img/panel-guide.png" width="760" height="1200" loading="lazy" alt="The Chat tab after asking 'fillit wont work ugh': Caddie names Fillet1 and its 12 mm radius, and a three-step guide card is open."></div>
+      <figcaption>Asked “fillit wont work ugh”, Caddie found the failing fillet and opened a guide to fix it.</figcaption>
+    </figure>
 
-    <!-- Step 3 -->
-    <h2>Step 3 &mdash; Start Working Together</h2>
-    <ol class="doc-steps">
-      <li>The first time Caddie opens, it explains what it sends to answer you. Read it and click <strong>Got it</strong>.</li>
-      <li>Open any part, assembly, or drawing. Caddie follows what you do as you work, and the badge at the top shows any problems it spots.</li>
-      <li>Tell Caddie what you need in your own words and press <strong>Enter</strong>. To stop a reply, click the stop button or just type something else.</li>
-      <li>When Caddie can make a change for you, it shows a card. Nothing changes until you click <strong>Do it</strong>, and most changes have an <strong>Undo</strong>.</li>
-      <li>If you'd rather do it yourself, ask it to walk you through. A highlight points at each thing to click, and each step ticks itself off as you finish it.</li>
-    </ol>
+    <h2>The tabs</h2>
+    <table class="doc-table">
+      <thead><tr><th>Tab</th><th>What it's for</th></tr></thead>
+      <tbody>
+        <tr><td><b>Chat</b></td><td>Ask anything. The suggestions under the conversation change with the document: Fix 2 issues, Mass &amp; CG, Rename features, Check mates, Drawing checklist and so on. Attach an image with the paperclip, or paste one.</td></tr>
+        <tr><td><b>Learn</b></td><td>Practice exams with checked answers, and quick drills. See <a href="practice-exams.html">Practise for the CSWA and CSWP</a>.</td></tr>
+        <tr><td><b>Review</b></td><td>A full check of the open model, most important first, with what to do about each finding.</td></tr>
+        <tr><td><b>History</b></td><td>Past conversations, kept on this PC.</td></tr>
+        <tr><td><b>Settings</b></td><td>Your name, how you work, notes on the open file, screenshots, saved conversations, and Copy a problem report.</td></tr>
+      </tbody>
+    </table>
 
-    <div class="doc-callout doc-callout-tip">
-      <strong>&#128161; Things to try</strong><br>
-      <em>"this sketch is red, fix it"</em> &nbsp;&bull;&nbsp;
-      <em>"round the four corners, 5 mm"</em> &nbsp;&bull;&nbsp;
-      <em>"six of these holes around the centre bore"</em> &nbsp;&bull;&nbsp;
-      <em>"walk me through a chamfer, I want to learn it"</em> &nbsp;&bull;&nbsp;
-      <em>"undo that"</em><br>
-      Set <strong>Settings &rarr; How you work</strong> to your own standards, such as units, drawing standard and default material, and Caddie follows them in every answer.
-    </div>
+    <h2>Tell Caddie how you work</h2>
+    <p><b>How you work</b> in Settings holds your standards, and Caddie follows them in every answer. For example: "Inches unless I say otherwise. ANSI drawings. Default material 6061-T6. Minimum wall 2 mm. Name features by what they do."</p>
+    <p><b>Notes on this file</b> holds facts the model can't show, such as what it mates with or who makes it. Caddie brings them up whenever that file is open. You can also just say "remember that this mates with the motor plate".</p>
 
-    <h2>What leaves your computer</h2>
-    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">To answer you, Caddie sends your question, your model's details and a screenshot of SolidWorks to OpenAI, with storage turned off. Your files are never uploaded, your history stays on your PC, and you can turn screenshots off in Settings. <a href="../privacy.html">Full privacy details</a>.</p>
+    <h2>Getting good answers</h2>
+    <ul>
+      <li><b>Say the goal, not just the method.</b> "This hole has to stay centred" gets a better answer than "add a midpoint".</li>
+      <li><b>Select something first</b> if you mean a particular face, edge or feature. Caddie sees the selection.</li>
+      <li><b>Say "show me" or "do it".</b> Show me starts a guide you follow; do it proposes a change for you to approve.</li>
+      <li><b>Ask follow-ups.</b> Caddie remembers the conversation.</li>
+      <li><b>Check what matters.</b> Caddie can be wrong. Treat numbers for a real design as a starting point and verify them.</li>
+    </ul>
 
-    <!-- Updating -->
-    <h2>Updating Caddie</h2>
-    <p style="font-size:15px;color:var(--text2);margin-bottom:16px;line-height:1.65">When a new version is released, Caddie will show an update banner inside SolidWorks automatically. Updating takes about 30 seconds:</p>
-    <ol class="doc-steps">
-      <li>Click the <strong>Download</strong> link in the update banner, or visit the <a href="../#download">download page</a>.</li>
-      <li>Run the new <strong>CaddieSetup.exe</strong> &mdash; it detects your existing installation and upgrades automatically.</li>
-      <li>Reopen SolidWorks. The updated version loads automatically.</li>
-    </ol>
+    <h2>Updates</h2>
+    <p>When a new version is out, a bar at the top of the panel says so. Download it, close SolidWorks and run the installer. Your settings and history carry over.</p>
 
-    <!-- Uninstalling -->
-    <h2>Uninstalling</h2>
-    <ol class="doc-steps">
-      <li>Close SolidWorks.</li>
-      <li>Open <strong>Windows Settings &rarr; Apps</strong> (or Control Panel &rarr; Programs).</li>
-      <li>Find <strong>Caddie for SOLIDWORKS</strong> in the list and click <strong>Uninstall</strong>.</li>
-      <li>Optionally delete the app data folder to remove conversation history and settings: <code>%AppData%\CaddieAddin\</code></li>
-    </ol>
+    <h2>Uninstall</h2>
+    <p>Open Windows Settings › Apps › Installed apps, find Caddie for SOLIDWORKS and click Uninstall. Saved conversations and settings stay in <code>%AppData%\CaddieAddin</code> until you delete that folder, or use Delete all saved conversations in Settings first.</p>
 
-    <!-- Troubleshooting -->
-    <h2 id="troubleshooting">Troubleshooting</h2>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">The add-in doesn't appear in Tools &rarr; Add-Ins</div>
-      <div class="doc-faq-a">Close SolidWorks and run <strong>CaddieSetup.exe</strong> again, approving the administrator prompt. Then reopen SolidWorks, go to <strong>Tools &rarr; Add-Ins</strong> and tick Caddie under both <strong>Active</strong> and <strong>Start Up</strong>.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">Caddie says it has run out of credit, or can't sign in</div>
-      <div class="doc-faq-a">The AI service behind Caddie needs attention from whoever set Caddie up. Nothing is wrong on your PC. If it says it can't sign in, installing the latest version usually fixes it.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">Caddie loads but can't connect to AI</div>
-      <div class="doc-faq-a">Check your internet connection. Caddie routes AI requests through a secure HTTPS proxy &mdash; make sure your firewall or corporate network isn't blocking outbound connections to <code>*.workers.dev</code>. If you're on a VPN, try disabling it temporarily to test.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">The taskpane is blank or stuck on "Loading…"</div>
-      <div class="doc-faq-a">Caddie's panel needs the Microsoft Edge WebView2 Runtime, which the installer adds when it's missing. Run <strong>CaddieSetup.exe</strong> again, or install the runtime from <a href="https://developer.microsoft.com/microsoft-edge/webview2/" target="_blank" rel="noopener">Microsoft</a>, then restart SolidWorks.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">Caddie doesn't seem to see my latest change</div>
-      <div class="doc-faq-a">Caddie follows your work as you go and re-reads the model before every answer. If something still looks stale, click <strong>&#8635; Refresh</strong> at the top of the chat.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">SolidWorks shows "Add-in failed to load" on startup</div>
-      <div class="doc-faq-a">Run <strong>CaddieSetup.exe</strong> again to repair the installation. If you recently updated Windows, also repair .NET Framework 4.8 through Windows Update.</div>
-    </div>
-
-    <div class="doc-faq">
-      <div class="doc-faq-q">Reporting a problem</div>
-      <div class="doc-faq-a">In Caddie, go to <strong>Settings &rarr; Copy a problem report</strong> and paste it into an email. It contains Caddie's version, a recent log and any answers you've rated, and you can read it before you send it.</div>
-    </div>
-
-    <div class="doc-contact">
-      Still stuck? Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a> &mdash; we respond quickly during the alpha.
-    </div>
-
+    <nav class="doc-next" aria-label="More guides">
+      <span></span>
+      <a class="next" href="fix-errors.html"><span>Next</span>Fix rebuild errors and red sketches →</a>
+    </nav>
   </main>
 </div>
 
-<footer>
+<footer class="footer">
   <div class="footer-inner">
-    <div class="footer-logo">Caddie</div>
+    <a class="brand" href="../"><span class="brand-disc"><img src="../img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
     <div class="footer-links">
-      <a href="../#download">Download</a>
-      <a href="quick-start.html">Docs</a>
+      <a href="./">Guides</a>
+      <a href="quick-start.html">Quick start</a>
       <a href="../privacy.html">Privacy</a>
+      <a href="../#download">Download</a>
       <a href="mailto:hello@askcaddie.app">Contact</a>
     </div>
-    <p class="footer-copy">&copy; 2026 Ask Caddie. SOLIDWORKS&reg; is a registered trademark of Dassault Syst&egrave;mes SE.</p>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
   </div>
 </footer>
 
-<script>
-const navToggle = document.getElementById('navToggle');
-const navMobile = document.getElementById('navMobile');
-function closeMenu() {
-  navToggle.classList.remove('open');
-  navMobile.style.display = 'none';
-}
-navToggle.addEventListener('click', () => {
-  navMobile.style.display === 'none'
-    ? (navToggle.classList.add('open'), navMobile.style.display = 'block')
-    : closeMenu();
-});
-navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-</script>
+<script src="../js/site.js"></script>
 </body>
 </html>

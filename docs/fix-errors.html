@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix rebuild errors and red sketches · Caddie</title>
+  <meta name="description" content="How Caddie finds and fixes SolidWorks rebuild errors, over-defined sketches and dangling references.">
+  <meta property="og:title" content="Fix rebuild errors and red sketches · Caddie">
+  <meta property="og:description" content="How Caddie finds and fixes SolidWorks rebuild errors, over-defined sketches and dangling references.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=7">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="../"><img src="../img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="../#how">How it works</a></li>
+      <li><a href="../#examples">Examples</a></li>
+      <li><a href="../#practice">Practice</a></li>
+      <li><a href="./" aria-current="page">Guides</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="../#how">How it works</a>
+    <a href="../#examples">Examples</a>
+    <a href="../#practice">Practice</a>
+    <a href="./">Guides</a>
+    <a href="../#faq">FAQ</a>
+    <a href="../#download" class="btn btn-primary">Download free</a>
+  </div>
+</nav>
+
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html" aria-current="page">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+  </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Fix rebuild errors and red sketches</div>
+    <h1>Fix rebuild errors and red sketches</h1>
+    <p class="doc-lead">Caddie sees every rebuild error, warning and sketch problem in the open model. Ask in any words and it tells you what's wrong, why, and the quickest fix.</p>
+    
+
+    <p class="doc-meta">Conversations on this page are word for word from Caddie's test runs on sample models.</p>
+    <h2>Just ask</h2>
+    <p>You don't need to name the feature. Caddie reads the errors first, so even "help" gets a specific answer.</p>
+    <div class="chips"><span class="chip">help</span><span class="chip">this is broken</span><span class="chip">sketch 2 red why</span><span class="chip">why is there a yellow triangle</span><span class="chip">fillit wont work ugh</span></div>
+    
+    <div class="card transcript">
+      <div class="ctx">Bracket.SLDPRT · Fillet1 has a rebuild error</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">help</div></div>
+      
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Fillet1 is failing because its 12 mm radius is too large for the selected geometry. Your base is only 3 mm thick; the guide walks you through trying a 1 mm radius and checking the preview.</div></div>
+    </div>
+
+    <h2>What Caddie can see</h2>
+    <ul>
+      <li>Rebuild errors and warnings on every feature, with the reason SolidWorks gives, such as a fillet radius that's too big or a missing reference.</li>
+      <li>Each sketch's status (under, fully or over-defined), its relations, and which ones are over-defining it.</li>
+      <li>Dangling relations and dimensions left behind when an edge or face they used has gone.</li>
+      <li>Parent and child features, so it can trace a failure back to the edit that caused it.</li>
+      <li>Mate errors in assemblies.</li>
+    </ul>
+
+    <h2>Three ways to fix it</h2>
+    <ol class="doc-steps">
+      <li><b>Let Caddie fix it.</b> When the fix is clear, such as a conflicting relation or a radius that's too big, Caddie shows the exact change. Click Do it. Most changes can be undone.</li>
+      <li><b>Fix it yourself with a guide.</b> Say "show me" and Caddie highlights each step on screen. Good when you want to learn the fix.</li>
+      <li><b>Just understand it.</b> Ask "why did this happen?" and Caddie explains the cause, so it doesn't happen next time.</li>
+    </ol>
+    <figure class="doc-figure pair">
+      <div class="shot"><img src="../img/panel-fix-ask.png" width="760" height="1120" loading="lazy" alt="Caddie asks to delete the Vertical relation in Sketch2, warning that deleting a relation can't be undone, with Do it and Not now buttons."></div>
+      <div class="shot"><img src="../img/panel-fix.png" width="760" height="1120" loading="lazy" alt="After Do it: Deleted a Vertical relation from Sketch2, and Caddie explains why the sketch was over-defined."></div>
+      <figcaption>Asked “sketch 2 red why”: Caddie asks first, then says what it did and why the sketch was red.</figcaption>
+    </figure>
+
+    <h2>Live notices</h2>
+    <p>Caddie keeps an eye on the model while you work. When a feature gets a new rebuild error, or a sketch becomes over-defined or under-defined, a short notice appears in the chat with a Fix it button. The badge at the top of the panel shows how many issues the model has; click it and Caddie fixes what it can.</p>
+
+    <h2>Common problems</h2>
+    <table class="doc-table">
+      <thead><tr><th>What you see</th><th>Usual cause</th><th>What Caddie does</th></tr></thead>
+      <tbody>
+        <tr><td>Fillet or chamfer fails</td><td>The size is too big for the edges or the wall</td><td>Compares it with the geometry, suggests a size that should fit, and can change it</td></tr>
+        <tr><td>Red or yellow sketch (over-defined)</td><td>Relations or dimensions fighting each other</td><td>Finds the conflicting relation and proposes deleting it</td></tr>
+        <tr><td>Blue sketch (under-defined)</td><td>Missing dimensions or relations</td><td>Explains what can still move and how to pin it down</td></tr>
+        <tr><td>Dangling relation or dimension</td><td>The edge or face it referenced was deleted or changed</td><td>Names the dangling item and guides you to re-attach it</td></tr>
+        <tr><td>A feature fails after an edit further up</td><td>A lost reference, or a size now out of range</td><td>Traces parents and children to the edit that caused it</td></tr>
+      </tbody>
+    </table>
+
+    <h2>When Caddie can't make the fix</h2>
+    <p>Some fixes aren't changes Caddie can make yet, such as adding a sketch relation, re-attaching a lost reference or editing a mate. Caddie says so and walks you through doing it by hand, with each step highlighted.</p>
+
+    <nav class="doc-next" aria-label="More guides">
+      <a href="quick-start.html"><span>Previous</span>← Quick start</a>
+      <a class="next" href="show-me-and-do-it.html"><span>Next</span>Show me, or do it for me →</a>
+    </nav>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="../"><span class="brand-disc"><img src="../img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
+    <div class="footer-links">
+      <a href="./">Guides</a>
+      <a href="quick-start.html">Quick start</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../#download">Download</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

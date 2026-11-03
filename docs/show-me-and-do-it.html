@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show me, or do it for me · Caddie</title>
+  <meta name="description" content="How Caddie's guides highlight each click in SolidWorks, and how changes you approve work, including undo.">
+  <meta property="og:title" content="Show me, or do it for me · Caddie">
+  <meta property="og:description" content="How Caddie's guides highlight each click in SolidWorks, and how changes you approve work, including undo.">
+  <meta property="og:image" content="https://askcaddie.app/img/og.png">
+  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
+  <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+  <meta name="theme-color" content="#FCFAF4">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/site.css?v=7">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="brand" href="../"><img src="../img/caddie-mark-112.png" width="97" height="112" alt="">Caddie</a>
+    <ul class="nav-links">
+      <li><a href="../#how">How it works</a></li>
+      <li><a href="../#examples">Examples</a></li>
+      <li><a href="../#practice">Practice</a></li>
+      <li><a href="./" aria-current="page">Guides</a></li>
+      <li><a href="../#faq">FAQ</a></li>
+      <li><a href="../#download" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Download free</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile">
+    <a href="../#how">How it works</a>
+    <a href="../#examples">Examples</a>
+    <a href="../#practice">Practice</a>
+    <a href="./">Guides</a>
+    <a href="../#faq">FAQ</a>
+    <a href="../#download" class="btn btn-primary">Download free</a>
+  </div>
+</nav>
+
+<div class="doc-layout">
+  <aside class="doc-sidebar" aria-label="Guides">
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html" aria-current="page">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+  </aside>
+  <main class="doc-main">
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Show me, or do it for me</div>
+    <h1>Show me, or do it for me</h1>
+    <p class="doc-lead">Caddie can walk you through a task with highlights on screen, or make the change itself after you approve it. You choose.</p>
+    
+
+    <h2>Guides: Caddie shows you where to click</h2>
+    <p>Ask how to do something, such as "how do I shell this but leave the top open" or "show me how to measure between these holes", and a guide card appears above the chat box. Each step is highlighted on screen: a ribbon button, a menu item, a field in the PropertyManager or a feature in the FeatureManager tree.</p>
+    
+    <figure class="doc-figure">
+      <div class="shot wide"><img src="../img/sw-show-me.png" width="820" height="845" loading="lazy" alt="SolidWorks with the Tools menu open; Caddie has outlined Evaluate › Measure and labelled it Measure."></div>
+      <figcaption>A guide step highlighting Tools › Evaluate › Measure, in SolidWorks 2026.</figcaption>
+    </figure>
+    <h3>The guide card</h3>
+    <table class="doc-table">
+      <tbody>
+        <tr><td><b>Show me</b></td><td>Highlights this step on screen again.</td></tr>
+        <tr><td><b>Open it</b></td><td>Opens the command for you, when the step starts one.</td></tr>
+        <tr><td><b>Do it for me</b></td><td>Makes this step's change, when it's one Caddie can make.</td></tr>
+        <tr><td><b>Done</b></td><td>For steps SolidWorks can't confirm by itself.</td></tr>
+        <tr><td><b>Skip</b> and <b>×</b></td><td>Skip a step, or stop the guide.</td></tr>
+      </tbody>
+    </table>
+    <p>Most steps tick themselves off. When you open the Fillet command, or the error clears, the guide moves to the next step on its own.</p>
+    
+    <figure class="doc-figure">
+      <div class="shot"><img src="../img/panel-guide.png" width="760" height="1200" loading="lazy" alt="A guide card titled Reduce Fillet1's radius, step 1 of 3: Right-click Fillet1 and choose Edit Feature, with a Show me button."></div>
+      <figcaption>The guide Caddie opened for a failing fillet. Its three steps: edit Fillet1, change 12 mm to 1 mm, click the green check.</figcaption>
+    </figure>
+
+    <h2>Changes: Caddie does it, after you say yes</h2>
+    <p>When you ask Caddie to make something, or the fix is clear, it shows a card with a one-line summary and every change it will make. Nothing happens until you click Do it.</p>
+    
+    <figure class="doc-figure">
+      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="A proposal card: create the 80 mm wide aluminium angle bracket from its side profile. Changes: sketch 7 shapes on Right Plane, extrude by 80 mm, assign 6061 Alloy. Buttons: Do it, Not now, and a Don't ask again this session checkbox."></div>
+      <figcaption>A proposal waiting for approval. Each line is a change Caddie will make.</figcaption>
+    </figure>
+    <h3>What Caddie can change</h3>
+    <table class="doc-table">
+      <tbody>
+        <tr><td><b>Sketches</b></td><td>New sketches on a plane or a flat face, with lines, arcs, circles and rectangles. Open or close a sketch.</td></tr>
+        <tr><td><b>Features</b></td><td>Extrudes and cuts (blind, through all, mid-plane, both directions or from an offset), fillets, chamfers, shells, mirrors, and linear and circular patterns.</td></tr>
+        <tr><td><b>Edits</b></td><td>Change a dimension, make a dimension driven, rename, suppress or unsuppress, delete a feature, delete a sketch relation.</td></tr>
+        <tr><td><b>Properties</b></td><td>Material and custom properties.</td></tr>
+      </tbody>
+    </table>
+    <h3>Undo</h3>
+    <p>After a change, the card shows what happened and an Undo button. Undo reverts the whole set at once, including renames and materials. It works until you change the model yourself; after that, use Ctrl+Z in SolidWorks. Deleted sketch relations can't be restored, so Caddie always asks before deleting one.</p>
+    <h3>If something fails</h3>
+    <p>The changes in one card are applied together. If one of them fails, Caddie puts everything back and tells you what went wrong.</p>
+    <h3>Don't ask again</h3>
+    <p>For routine work, tick Don't ask again this session. Caddie then makes changes without asking first, and still shows what it did. Deleting a feature or a relation always asks.</p>
+
+    <h2>Which should I use?</h2>
+    <ul>
+      <li><b>Learning SolidWorks, or want to be faster at it:</b> guides. You do the clicks, so it sticks.</li>
+      <li><b>Know what you want and want it done:</b> changes.</li>
+      <li><b>Say which you'd like:</b> "show me how" or "just do it".</li>
+    </ul>
+
+    <nav class="doc-next" aria-label="More guides">
+      <a href="fix-errors.html"><span>Previous</span>← Fix rebuild errors and red sketches</a>
+      <a class="next" href="model-from-image.html"><span>Next</span>Model from a drawing or photo →</a>
+    </nav>
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <a class="brand" href="../"><span class="brand-disc"><img src="../img/caddie-mark-112.png" width="97" height="112" alt=""></span>Caddie</a>
+    <div class="footer-links">
+      <a href="./">Guides</a>
+      <a href="quick-start.html">Quick start</a>
+      <a href="../privacy.html">Privacy</a>
+      <a href="../#download">Download</a>
+      <a href="mailto:hello@askcaddie.app">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 Ask Caddie. SOLIDWORKS is a registered trademark of Dassault Systèmes SolidWorks Corporation. Caddie is an independent add-in and is not affiliated with or endorsed by Dassault Systèmes.</p>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>
