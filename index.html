@@ -12,7 +12,6 @@
   <meta property="og:description" content="Reads the model you have open, answers with your feature names, shows you where to click and makes fixes you approve. Free for SolidWorks 2022 and newer.">
   <meta property="og:image" content="https://askcaddie.app/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="img/caddie-head.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <meta name="theme-color" content="#FCFAF4">
@@ -50,7 +49,7 @@
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="badge"><span class="dot"></span>Free alpha · v0.3 · SolidWorks 2022 and newer</span>
+      <span class="badge"><span class="dot"></span>Free alpha · v0.3.1 · SolidWorks 2022 and newer</span>
       <h1>The SolidWorks expert <em>that can see your model.</em></h1>
       <p class="hero-sub">Caddie sits in the SolidWorks task pane and reads the part you have open: features, sketches, dimensions, errors, materials and mass. Ask in your own words. It answers with your feature names, shows you where to click, or makes the change once you say yes.</p>
       <div class="hero-ctas">
@@ -112,7 +111,7 @@
               <li>Dimensions, equations and configurations</li>
               <li>Material, mass and centre of mass</li>
               <li>Sheet metal settings, weldment cut lists and Hole Wizard holes</li>
-              <li>Assembly components and mates, drawing sheets and views</li>
+              <li>Assembly components and mates, including which parts can still move, and drawing sheets and views</li>
               <li>A screenshot of the window, unless you turn screenshots off</li>
             </ul>
           </div>
@@ -255,9 +254,9 @@
         <div class="bubble bubble-ai"><p>You need 8 pieces of 30 × 30 × 2.60 mm square tube:</p><ul><li>4 at 630 mm, with 45° mitres at both ends.</li><li>4 at 970 mm, with square cuts at both ends.</li></ul><p>Those are finished cut lengths; allow extra stock for saw kerf.</p></div>
       </article>
       <article class="card example">
-        <div class="ex-top"><span class="tag amber">Sheet metal</span><span class="ex-model">Cover.SLDPRT</span></div>
-        <div class="bubble bubble-user">what size blank do i need to cut for this</div>
-        <div class="bubble bubble-ai"><p>You need a 182.6 × 95 mm blank in 1.5 mm AISI 304 stainless steel. That’s the flat-pattern bounding size with both bends accounted for using your current K-factor of 0.44.</p><p>Use the flat-pattern DXF for the actual cut outline and holes, and confirm the bend allowance with your fabricator before cutting.</p></div>
+        <div class="ex-top"><span class="tag green">Calculation</span><span class="ex-model">worked exactly</span></div>
+        <div class="bubble bubble-user">what's the max shear stress in a 20 mm solid steel shaft carrying 50 N·m of torque</div>
+        <div class="bubble bubble-ai"><p>The maximum shear stress is <strong>31.8 MPa</strong>, at the shaft’s outer surface.</p><p>For a solid circular shaft, τmax = 16T/(πd³). Using T = 50,000 N·mm and d = 20 mm gives 31.8 N/mm², or MPa.</p><p>This assumes pure torsion without keyways or other stress concentrations. Whether it’s acceptable depends on the steel grade, fatigue loading and required safety factor.</p></div>
       </article>
       <article class="card example">
         <div class="ex-top"><span class="tag green">Practice</span><span class="ex-model">Mounting plate · CSWA</span></div>
@@ -328,8 +327,8 @@
       </div>
     </div>
     <div class="soon">
-      <span class="tag">Coming next</span>
-      <p><b>A design intent stress test.</b> Caddie changes each driving dimension 20% up and down, rebuilds, reports exactly what breaks, then puts every value back. It's built and being tested for the next update.</p>
+      <span class="tag">New in 0.3.1</span>
+      <p><b>A design intent stress test.</b> Ask "is this part built well enough that I can change the sizes later?" Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds, tells you exactly what breaks, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
     </div>
     <a class="more" href="docs/design-intent.html" style="display:inline-block;margin-top:22px;font-weight:600">Design intent, explained →</a>
   </div>
@@ -457,6 +456,10 @@
         <p>OpenAI's models, through a small relay run by Caddie that adds the API key. Caddie picks the model; you don't need to configure anything.</p>
       </details>
       <details>
+        <summary>Can it do engineering calculations?</summary>
+        <p>Yes. For stresses, deflections, bolt preloads and the like, Caddie works the numbers out with an exact calculator instead of estimating them, and says what it assumed. Treat the result as a check, not a substitute for proper analysis or sign-off.</p>
+      </details>
+      <details>
         <summary>Does it work offline?</summary>
         <p>No. Caddie needs an internet connection to answer. Your history and settings are still on your PC when you're offline.</p>
       </details>
@@ -483,7 +486,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
         Download CaddieSetup.exe
       </a>
-      <p class="download-meta">v0.3 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
+      <p class="download-meta">v0.3.1 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
     </div>
     <div class="install">
       <div class="install-step"><div class="n">1</div><div><b>Run CaddieSetup.exe</b><span>If Windows shows a SmartScreen warning, click More info, then Run anyway. The installer is not code-signed yet.</span></div></div>

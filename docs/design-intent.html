@@ -8,7 +8,6 @@
   <meta property="og:title" content="Design intent, explained · Caddie">
   <meta property="og:description" content="What design intent is in SolidWorks, how to build it into a part, and how Caddie helps you check it.">
   <meta property="og:image" content="https://askcaddie.app/img/og.png">
-  <link rel="icon" type="image/svg+xml" href="../img/caddie-head.svg">
   <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
   <meta name="theme-color" content="#FCFAF4">
@@ -110,8 +109,16 @@
     </div>
     <p>Notice the last one: when there's more than one dimension it could mean, Caddie confirms which before linking anything.</p>
 
-    <h2>Coming next: the stress test</h2>
-    <p>The best check of design intent is to change things and see what breaks. The next update adds a test that does exactly that on the open part: Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds after each change, lists every feature that fails or warns, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
+    <h2>The stress test</h2>
+    <p>The best check of design intent is to change things and see what breaks. Since version 0.3.1 Caddie can do that on the open part: it makes each driving dimension 20% bigger, then 20% smaller, rebuilds after each change, lists every feature that fails or warns, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds. The graphics and the tree pause while it runs, and nothing is saved.</p>
+    
+    <div class="card transcript">
+      <div class="ctx">Bracket.SLDPRT · six driving dimensions</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">is this part built well enough that i can change the sizes later?</div></div>
+      
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Mostly, but Mounting Hole breaks when the 40 mm base dimension is reduced by 20%. The other five driving dimensions handled both increases and decreases, and all original sizes are restored.</p><p>Base Profile is fully defined, which is a good foundation. I couldn’t inspect the hole’s references, so the next check is whether its position should follow the plate centre or stay a fixed distance from an edge. Which do you intend?</p></div></div>
+    </div>
+    <p>It works on parts, up to 20 driving dimensions or 30 seconds per run. Close any open sketch first.</p>
 
     <h2>Questions to try</h2>
     <div class="chips"><span class="chip">what controls the overall size of this part</span><span class="chip">is this sketch fully defined, and what can still move</span><span class="chip">what depends on Sketch1</span><span class="chip">how should I dimension this so the holes stay symmetric</span><span class="chip">link the hole spacing to the plate width</span><span class="chip">rename my features so they say what they do</span></div>
