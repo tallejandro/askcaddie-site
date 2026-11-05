@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=9">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html" aria-current="page">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html" aria-current="page">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
     <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Model from a drawing, sketch or photo</div>
@@ -61,23 +61,22 @@
     <p>Add a line about what you want, or just send it. Large images are shrunk to 1600 pixels before they're sent.</p>
 
     <h2>A real example</h2>
-    <p>This drawing was attached to an empty part with the message "can you help me model this".</p>
+    <p>This drawing was attached to an empty part with the message "Model this bracket from the attached drawing."</p>
     <figure class="doc-figure pair">
       <div class="card" style="padding:12px"><img src="../img/angle-drawing.png" width="917" height="811" loading="lazy" alt="A dimensioned drawing of an angle bracket: 80 wide, 60 deep, 70 tall, 8 mm walls, R8 inside bend, two Ø10 holes in the base 15 mm from the edges and a Ø16 hole in the upright 18 mm from the top."></div>
-      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="Caddie's first proposal for the bracket: sketch 7 shapes on the Right Plane, extrude by 80 mm, assign 6061 Alloy."></div>
-      <figcaption>The attached drawing, and the first change Caddie proposed.</figcaption>
+      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="Caddie's proposal for the bracket: the side profile sketch on the Right Plane, an 80 mm extrude, the base and upright hole sketches and cuts, and 6061 Alloy."></div>
+      <figcaption>The attached drawing, and the change Caddie proposed.</figcaption>
     </figure>
-    <p>Caddie split the build into two approvals and checked the body before adding the holes:</p>
+    <p>Caddie proposed the whole part as one set of changes for a single approval:</p>
     <ol class="doc-steps">
-      <li><b>"Create the 80 mm wide aluminium angle bracket from its 60 × 70 mm side profile, with 8 mm walls and the R8 inside corner."</b> A sketch of six lines and an arc on the Right Plane, an 80 mm mid-plane extrude, and 6061 Alloy.</li>
-      <li><b>"Add the centred Ø16 upright hole 18 mm below the top and the two Ø10 base holes 15 mm from the front and side edges, assuming the left base hole mirrors the right."</b> Two sketches and two through-all cuts.</li>
+      <li><b>"Build the 80 mm wide aluminium angle bracket with its R8 inside corner and three through-holes, assuming the undimensioned hole positions are symmetric about the width."</b> A seven-entity side profile on the Right Plane and an 80 mm extrude, a sketch and a through-all cut for the two base holes, another for the upright hole, and 6061 Alloy.</li>
     </ol>
     
     <div class="card transcript">
-      <div class="ctx">Part1 · after both changes</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">can you help me model this</div></div>
+      <div class="ctx">Part1 · after the change</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Model this bracket from the attached drawing.</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">The 6061 aluminium angle bracket is modelled with 8 mm walls, the R8 inside corner and all three through-holes. I assumed the two base holes are symmetric and the upright hole is centred across the 80 mm width, as shown.</div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>The bracket is set up with the R8 inside corner, three through-holes and 6061 aluminium.</p><p>I assumed the base holes are symmetric and the upright hole is centered across the width, since those positions aren’t dimensioned.</p></div></div>
     </div>
 
     <h2>What works best</h2>
@@ -89,7 +88,7 @@
     </ul>
 
     <h2>Prefer to model it yourself?</h2>
-    <p>Say "guide me through modelling this" and Caddie starts a guide instead, with each step highlighted. To practise with answers checked, use the parts on the <a href="practice-exams.html">Learn tab</a>.</p>
+    <p>Ask Caddie to guide you through modelling it and it starts a guide instead, with each step highlighted. To practise with answers checked, use the parts on the <a href="practice-exams.html">Learn tab</a>.</p>
 
     <h2>Good to know</h2>
     <ul>
@@ -99,7 +98,7 @@
     </ul>
 
     <nav class="doc-next" aria-label="More guides">
-      <a href="show-me-and-do-it.html"><span>Previous</span>← Show me, or do it for me</a>
+      <a href="show-me-and-do-it.html"><span>Previous</span>← Guide me, or do it for me</a>
       <a class="next" href="sheet-metal-weldments.html"><span>Next</span>Sheet metal, weldments and holes →</a>
     </nav>
   </main>

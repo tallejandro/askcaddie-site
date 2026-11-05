@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=9">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html" aria-current="page">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html" aria-current="page">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
     <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Design intent, explained</div>
@@ -89,42 +89,42 @@
     
     <div class="card transcript">
       <div class="ctx">Bracket.SLDPRT</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">what controls the overall size of this part</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Which dimensions control the overall size of this part?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Base Profile controls the part’s footprint: D1@Base Profile is 60 mm and D2@Base Profile is 40 mm. Boss-Extrude1 controls its thickness through D1@Boss-Extrude1, currently 25 mm.</p><p>Those are the three main overall-size controls; Mounting Hole controls the cut, not the outside size.</p></div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>The base size is controlled by D1@Base Profile (60 mm), D2@Base Profile (40 mm), and D1@Boss-Extrude1 (25 mm depth).</p><p>Those define the base, but I can’t confirm the finished part’s overall envelope from the features visible here.</p></div></div>
     </div>
     
     <div class="card transcript">
       <div class="ctx">Bracket.SLDPRT · plate with a centre bore</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">the bore has to stay in the middle of the plate whatever length i make it</div></div>
-      <div class="note">Caddie also saved the rule as a note on the file and opened a guide.</div>
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Centre Bore needs its centre constrained to the plate’s midpoint, rather than a fixed distance from an edge. We’ll check its positioning constraints first, then tie it to the middle so it follows changes to the plate length.</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">The bore must stay centred on the plate when the length changes. How should it be constrained?</div></div>
+      <div class="note">Caddie also opened a six-step guide: edit the bore's sketch, draw the diagonal, add the Midpoint relation, and remove any position dimension that conflicts.</div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Constrain the bore centre to the midpoint of a construction diagonal between opposite plate corners. That keeps it centred as the plate length changes.</p><p>I couldn’t inspect the existing bore sketch constraints, so an existing position dimension may need to be removed if it conflicts.</p></div></div>
     </div>
     
     <div class="card transcript">
       <div class="ctx">Bracket.SLDPRT</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">i want the wall thickness to always be a tenth of the height</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Make the wall thickness one tenth of the height, so it follows when the height changes.</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Do you mean Boss-Extrude1’s 10 mm thickness should always be one tenth of Base Profile’s 40 mm height? I’ll link them with an equation so the thickness follows whenever the height changes.</div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>I’ll link the wall thickness to one tenth of the height with an equation, so it updates automatically.</p><p>Which dimensions should I use for the wall thickness and height?</p></div></div>
     </div>
-    <p>Notice the last one: when there's more than one dimension it could mean, Caddie confirms which before linking anything.</p>
+    <p>Notice the last one: when it isn't clear which dimensions you mean, Caddie confirms before linking anything.</p>
 
     <h2>The stress test</h2>
     <p>The best check of design intent is to change things and see what breaks. Since version 0.3.1 Caddie can do that on the open part: it makes each driving dimension 20% bigger, then 20% smaller, rebuilds after each change, lists every feature that fails or warns, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds. The graphics and the tree pause while it runs, and nothing is saved.</p>
     
     <div class="card transcript">
       <div class="ctx">Bracket.SLDPRT · six driving dimensions</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">is this part built well enough that i can change the sizes later?</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Mostly, but Mounting Hole breaks when the 40 mm base dimension is reduced by 20%. The other five driving dimensions handled both increases and decreases, and all original sizes are restored.</p><p>Base Profile is fully defined, which is a good foundation. I couldn’t inspect the hole’s references, so the next check is whether its position should follow the plate centre or stay a fixed distance from an edge. Which do you intend?</p></div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Not reliably: Mounting Hole fails when the 40 mm Base Profile dimension is reduced by 20%. The other five driving dimensions rebuilt at both 20% larger and smaller, and all values are restored.</p><p>I couldn’t inspect the hole’s references, but I’d first check whether its position leaves enough material when the plate narrows.</p></div></div>
     </div>
     <p>It works on parts, up to 20 driving dimensions or 30 seconds per run. Close any open sketch first.</p>
 
     <h2>Questions to try</h2>
-    <div class="chips"><span class="chip">what controls the overall size of this part</span><span class="chip">is this sketch fully defined, and what can still move</span><span class="chip">what depends on Sketch1</span><span class="chip">how should I dimension this so the holes stay symmetric</span><span class="chip">link the hole spacing to the plate width</span><span class="chip">rename my features so they say what they do</span></div>
+    <div class="chips"><span class="chip">Which dimensions control the overall size of this part?</span><span class="chip">Is this sketch fully defined, and what can still move?</span><span class="chip">What depends on Sketch1?</span><span class="chip">How should I dimension this so the holes stay symmetric?</span><span class="chip">Link the hole spacing to the plate width.</span><span class="chip">Rename the features so their names describe them.</span></div>
 
     <nav class="doc-next" aria-label="More guides">
-      <a href="practice-exams.html"><span>Previous</span>← Practise for the CSWA and CSWP</a>
+      <a href="practice-exams.html"><span>Previous</span>← Practise for SolidWorks certification</a>
       
     </nav>
   </main>

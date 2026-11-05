@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Show me, or do it for me · Caddie</title>
-  <meta name="description" content="How Caddie's guides highlight each click in SolidWorks, and how changes you approve work, including undo.">
-  <meta property="og:title" content="Show me, or do it for me · Caddie">
-  <meta property="og:description" content="How Caddie's guides highlight each click in SolidWorks, and how changes you approve work, including undo.">
+  <title>Guide me, or do it for me · Caddie</title>
+  <meta name="description" content="How Caddie's guides highlight each click in SolidWorks while you do the work, and how changes you approve work, including undo.">
+  <meta property="og:title" content="Guide me, or do it for me · Caddie">
+  <meta property="og:description" content="How Caddie's guides highlight each click in SolidWorks while you do the work, and how changes you approve work, including undo.">
   <meta property="og:image" content="https://askcaddie.app/img/og.png">
   <link rel="icon" type="image/png" sizes="64x64" href="../img/favicon.png">
   <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=9">
 </head>
 <body>
 
@@ -43,16 +43,16 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html" aria-current="page">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html" aria-current="page">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
-    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Show me, or do it for me</div>
-    <h1>Show me, or do it for me</h1>
-    <p class="doc-lead">Caddie can walk you through a task with highlights on screen, or make the change itself after you approve it. You choose.</p>
+    <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Guide me, or do it for me</div>
+    <h1>Guide me, or do it for me</h1>
+    <p class="doc-lead">Caddie can walk you through a task with highlights on screen while you make the clicks, or make the change itself after you approve it. You choose.</p>
     
 
-    <h2>Guides: Caddie shows you where to click</h2>
-    <p>Ask how to do something, such as "how do I shell this but leave the top open" or "show me how to measure between these holes", and a guide card appears above the chat box. Each step is highlighted on screen: a ribbon button, a menu item, a field in the PropertyManager or a feature in the FeatureManager tree.</p>
+    <h2>Guides: you do the work, Caddie highlights where to click</h2>
+    <p>Ask how to do something, such as "How do I shell this part but leave the top face open?" or "Walk me through measuring the distance between these holes.", and a guide card appears above the chat box. Each step is highlighted on screen: a ribbon button, a menu item, a field in the PropertyManager or a feature in the FeatureManager tree. Caddie doesn't click anything; you do.</p>
     
     <figure class="doc-figure">
       <div class="shot wide"><img src="../img/sw-show-me.png" width="820" height="845" loading="lazy" alt="SolidWorks with the Tools menu open; Caddie has outlined Evaluate › Measure and labelled it Measure."></div>
@@ -61,7 +61,7 @@
     <h3>The guide card</h3>
     <table class="doc-table">
       <tbody>
-        <tr><td><b>Show me</b></td><td>Highlights this step on screen again.</td></tr>
+        <tr><td><b>Highlight it</b></td><td>Highlights where to click for this step again, if the highlight has gone.</td></tr>
         <tr><td><b>Open it</b></td><td>Opens the command for you, when the step starts one.</td></tr>
         <tr><td><b>Do it for me</b></td><td>Makes this step's change, when it's one Caddie can make.</td></tr>
         <tr><td><b>Done</b></td><td>For steps SolidWorks can't confirm by itself.</td></tr>
@@ -71,15 +71,15 @@
     <p>Most steps tick themselves off. When you open the Fillet command, or the error clears, the guide moves to the next step on its own.</p>
     
     <figure class="doc-figure">
-      <div class="shot"><img src="../img/panel-guide.png" width="760" height="1200" loading="lazy" alt="A guide card titled Reduce Fillet1's radius, step 1 of 3: Right-click Fillet1 and choose Edit Feature, with a Show me button."></div>
-      <figcaption>The guide Caddie opened for a failing fillet. Its three steps: edit Fillet1, change 12 mm to 1 mm, click the green check.</figcaption>
+      <div class="shot"><img src="../img/panel-guide.png" width="760" height="1200" loading="lazy" alt="A guide card titled Fix Fillet1, step 1 of 3: Right-click Fillet1 and choose Edit Feature, with a Highlight it button."></div>
+      <figcaption>The guide Caddie opened for a failing fillet. Its three steps: edit Fillet1, change 12 mm to 1 mm as a starting point, click the green check.</figcaption>
     </figure>
 
     <h2>Changes: Caddie does it, after you say yes</h2>
     <p>When you ask Caddie to make something, or the fix is clear, it shows a card with a one-line summary and every change it will make. Nothing happens until you click Do it.</p>
     
     <figure class="doc-figure">
-      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="A proposal card: create the 80 mm wide aluminium angle bracket from its side profile. Changes: sketch 7 shapes on Right Plane, extrude by 80 mm, assign 6061 Alloy. Buttons: Do it, Not now, and a Don't ask again this session checkbox."></div>
+      <div class="shot"><img src="../img/panel-image.png" width="760" height="1600" loading="lazy" alt="A proposal card: build the 80 mm wide aluminium angle bracket with its R8 inside corner and three through-holes. Changes: the side profile sketch on the Right Plane, an 80 mm extrude, two hole sketches and cuts, and 6061 Alloy. Buttons: Do it, Not now, and a Don't ask again this session checkbox."></div>
       <figcaption>A proposal waiting for approval. Each line is a change Caddie will make.</figcaption>
     </figure>
     <h3>What Caddie can change</h3>
@@ -102,9 +102,9 @@
     <ul>
       <li><b>Learning SolidWorks, or want to be faster at it:</b> guides. You do the clicks, so it sticks.</li>
       <li><b>Know what you want and want it done:</b> changes.</li>
-      <li><b>Say which you'd like:</b> "show me how" or "just do it".</li>
+      <li><b>Say which you'd like:</b> "walk me through it" or "just do it".</li>
     </ul>
-    <p>How Caddie explains, in Settings, sets the default: Step by step leans on guides, Short and direct on changes. In the Review tab, every problem has its own Show me and Fix it buttons.</p>
+    <p>How Caddie explains, in Settings, sets the default: Step by step leans on guides, Short and direct on changes. In the Review tab, every problem has its own Fix it button, where Caddie proposes the change, and Guide me button, where you make it with a guide.</p>
 
     <nav class="doc-next" aria-label="More guides">
       <a href="fix-errors.html"><span>Previous</span>← Fix rebuild errors and red sketches</a>

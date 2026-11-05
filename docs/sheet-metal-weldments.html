@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=9">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html" aria-current="page">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html" aria-current="page">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
     <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Sheet metal, weldments and holes</div>
@@ -57,16 +57,16 @@
     
     <div class="card transcript">
       <div class="ctx">Cover.SLDPRT · sheet metal, 1.5 mm AISI 304</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">what k factor is this using</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">What K-factor is this part using?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">It’s using a K-factor of 0.44 to calculate the bend allowance for the flat pattern.</div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">The part is using a K-factor of 0.44.</div></div>
     </div>
     
     <div class="card transcript">
       <div class="ctx">Cover.SLDPRT · sheet metal, 1.5 mm AISI 304</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">what size blank do i need to cut for this</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">What blank size do I need for this part?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>You need a 182.6 × 95 mm blank in 1.5 mm AISI 304 stainless steel. That’s the flat-pattern bounding size with both bends accounted for using your current K-factor of 0.44.</p><p>Use the flat-pattern DXF for the actual cut outline and holes, and confirm the bend allowance with your fabricator before cutting.</p></div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>The flat blank is 182.6 × 95 mm in 1.5 mm AISI 304 sheet.</p><p>That size uses the model’s K-factor of 0.44, so confirm the bend allowance with your fabricator before cutting.</p></div></div>
     </div>
 
     <h2>Weldments</h2>
@@ -74,35 +74,28 @@
     
     <div class="card transcript">
       <div class="ctx">Frame.SLDPRT · weldment</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">how long are the square tubes and how many of each do i need to cut</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">What's the cut list for the square tubing?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>You need 8 pieces of 30 × 30 × 2.60 mm square tube:</p><ul><li>4 at 630 mm, with 45° mitres at both ends.</li><li>4 at 970 mm, with square cuts at both ends.</li></ul><p>Those are finished cut lengths; allow extra stock for saw kerf.</p></div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>The square tubing cut list for 30 × 30 × 2.60 mm tube is:</p><ul><li>4 pieces at 630 mm, with 45° cuts at both ends</li><li>4 pieces at 970 mm, with square cuts at both ends</li></ul></div></div>
     </div>
     
     <div class="card transcript">
       <div class="ctx">Frame.SLDPRT · weldment</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">which tubes get mitred ends</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Which of the tubes have mitred ends?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">The four 630 mm lengths of 30 × 30 × 2.60 mm square tube get 45° mitres at both ends. The four 970 mm tubes have square-cut ends.</div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">The four 630 mm lengths of 30 × 30 × 2.60 mm square tube have 45° mitres at both ends. The four 970 mm tubes have square ends.</div></div>
     </div>
 
     <h2>Hole Wizard holes</h2>
-    <p>For each Hole Wizard feature, Caddie reads the hole type and standard, the size and fastener, whether it's through or blind, its depth, counterbore or countersink sizes, thread depth, and how many holes there are. It also checks them against the part.</p>
-    
-    <div class="card transcript">
-      <div class="ctx">Cover.SLDPRT · four M6 tapped holes in 1.5 mm sheet</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">how deep are the threads on these tapped holes and what size</div></div>
-      
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>The four holes in M6 Tapped Hole1 are M6 × 1.0, with a specified thread depth of 10 mm. The Ø5 mm tap-drill holes are blind, 12 mm deep.</p><p>That depth is worth checking: the cover is only 1.5 mm thick, so you won’t get 10 mm of thread unless there’s a thicker boss or insert at those locations.</p></div></div>
-    </div>
+    <p>For each Hole Wizard feature, Caddie reads the hole type and standard, the size and fastener, whether it's through or blind, its depth, counterbore or countersink sizes, thread depth, and how many holes there are. Ask what size the tapped holes are, and it answers with the thread, the thread depth and the drill depth from the feature itself.</p>
 
     <h2>Questions to try</h2>
-    <div class="chips"><span class="chip">what size blank do i need</span><span class="chip">how many bends, and what's the inside radius</span><span class="chip">make me a cut list for the saw</span><span class="chip">what bolts go in these holes</span><span class="chip">is the counterbore deep enough for an M8 cap screw</span><span class="chip">why is my flat pattern bigger than I expected</span></div>
+    <div class="chips"><span class="chip">What blank size do I need?</span><span class="chip">How many bends are there, and what's the inside radius?</span><span class="chip">Give me a cut list for the saw.</span><span class="chip">Which fasteners go in these holes?</span><span class="chip">Is the counterbore deep enough for an M8 cap screw?</span><span class="chip">Why is the flat pattern larger than expected?</span></div>
     <div class="callout warn"><b>Check with your fabricator.</b> Bend allowances depend on the tooling and material at the shop. Caddie reads what's in the model, which is only as right as the settings in it.</div>
 
     <nav class="doc-next" aria-label="More guides">
       <a href="model-from-image.html"><span>Previous</span>← Model from a drawing or photo</a>
-      <a class="next" href="practice-exams.html"><span>Next</span>Practise for the CSWA and CSWP →</a>
+      <a class="next" href="practice-exams.html"><span>Next</span>Practise for SolidWorks certification →</a>
     </nav>
   </main>
 </div>

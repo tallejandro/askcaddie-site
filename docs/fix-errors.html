@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/site.css?v=7">
+  <link rel="stylesheet" href="../css/site.css?v=9">
 </head>
 <body>
 
@@ -43,24 +43,24 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html" aria-current="page">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Show me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for the CSWA and CSWP</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html" aria-current="page">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
     <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Fix rebuild errors and red sketches</div>
     <h1>Fix rebuild errors and red sketches</h1>
-    <p class="doc-lead">Caddie sees every rebuild error, warning and sketch problem in the open model. Ask in any words and it tells you what's wrong, why, and the quickest fix.</p>
+    <p class="doc-lead">Caddie sees every rebuild error, warning and sketch problem in the open model. Ask about the problem and it tells you what's wrong, why, and the quickest fix.</p>
     
 
     <p class="doc-meta">Conversations on this page are word for word from Caddie's test runs on sample models.</p>
-    <h2>Just ask</h2>
-    <p>You don't need to name the feature. Caddie reads the errors first, so even "help" gets a specific answer.</p>
-    <div class="chips"><span class="chip">help</span><span class="chip">this is broken</span><span class="chip">sketch 2 red why</span><span class="chip">why is there a yellow triangle</span><span class="chip">fillit wont work ugh</span></div>
+    <h2>Ask about the problem</h2>
+    <p>You don't need to name the feature or copy the error message. Caddie reads the errors before it answers.</p>
+    <div class="chips"><span class="chip">Why won't this part rebuild?</span><span class="chip">What's causing the rebuild errors?</span><span class="chip">Why is Sketch2 over-defined?</span><span class="chip">What does the warning on Cut-Extrude1 mean?</span></div>
     
     <div class="card transcript">
       <div class="ctx">Bracket.SLDPRT · Fillet1 has a rebuild error</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">help</div></div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">Why won't this part rebuild?</div></div>
       
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Fillet1 is failing because its 12 mm radius is too large for the selected geometry. Your base is only 3 mm thick; the guide walks you through trying a 1 mm radius and checking the preview.</div></div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai">Fillet1 won’t rebuild because its 12 mm radius is too large for the geometry it’s trying to round. The 3 mm-thick Boss-Extrude1 doesn’t leave enough room for that fillet, so it needs a smaller radius.</div></div>
     </div>
 
     <h2>What Caddie can see</h2>
@@ -75,13 +75,13 @@
     <h2>Three ways to fix it</h2>
     <ol class="doc-steps">
       <li><b>Let Caddie fix it.</b> When the fix is clear, such as a conflicting relation or a radius that's too big, Caddie shows the exact change. Click Do it. Most changes can be undone.</li>
-      <li><b>Fix it yourself with a guide.</b> Say "show me" and Caddie highlights each step on screen. Good when you want to learn the fix.</li>
+      <li><b>Fix it yourself with a guide.</b> Say "walk me through it" and Caddie highlights each step on screen while you make the clicks. Good when you want to learn the fix.</li>
       <li><b>Just understand it.</b> Ask "why did this happen?" and Caddie explains the cause, so it doesn't happen next time.</li>
     </ol>
     <figure class="doc-figure pair">
-      <div class="shot"><img src="../img/panel-fix-ask.png" width="760" height="1120" loading="lazy" alt="Caddie asks to delete the Vertical relation in Sketch2, warning that deleting a relation can't be undone, with Do it and Not now buttons."></div>
-      <div class="shot"><img src="../img/panel-fix.png" width="760" height="1120" loading="lazy" alt="After Do it: Deleted a Vertical relation from Sketch2, and Caddie explains why the sketch was over-defined."></div>
-      <figcaption>Asked “sketch 2 red why”: Caddie asks first, then says what it did and why the sketch was red.</figcaption>
+      <div class="shot"><img src="../img/panel-fix-ask.png" width="760" height="1120" loading="lazy" alt="Caddie asks to delete a Horizontal relation in Sketch2, warning that deleting a relation can't be undone, with Do it and Not now buttons."></div>
+      <div class="shot"><img src="../img/panel-fix.png" width="760" height="1120" loading="lazy" alt="After Do it: a Horizontal relation was deleted from Sketch2, and Caddie confirms no alerts remain."></div>
+      <figcaption>Asked “Sketch2 is over-defined. Find the conflicting relation and fix it.”: Caddie asks first, then says what it did.</figcaption>
     </figure>
 
     <h2>Live notices</h2>
@@ -104,7 +104,7 @@
 
     <nav class="doc-next" aria-label="More guides">
       <a href="quick-start.html"><span>Previous</span>← Quick start</a>
-      <a class="next" href="show-me-and-do-it.html"><span>Next</span>Show me, or do it for me →</a>
+      <a class="next" href="show-me-and-do-it.html"><span>Next</span>Guide me, or do it for me →</a>
     </nav>
   </main>
 </div>

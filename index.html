@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=7">
+  <link rel="stylesheet" href="css/site.css?v=9">
 </head>
 <body>
 
@@ -49,9 +49,9 @@
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="badge"><span class="dot"></span>Free alpha · v0.3.2 · SolidWorks 2022 and newer</span>
+      <span class="badge"><span class="dot"></span>Free alpha · v0.3.3 · SolidWorks 2022 and newer</span>
       <h1>The SolidWorks expert <em>that can see your model.</em></h1>
-      <p class="hero-sub">Caddie sits in the SolidWorks task pane and reads the part you have open: features, sketches, dimensions, errors, materials and mass. Ask in your own words. It answers with your feature names, shows you where to click, or makes the change once you say yes.</p>
+      <p class="hero-sub">Caddie sits in the SolidWorks task pane and reads the part you have open: features, sketches, dimensions, errors, materials and mass. Ask as you would a senior colleague. It answers with your feature names and values, shows you where to click, or makes the change once you approve it.</p>
       <div class="hero-ctas">
         <a href="#download" class="btn btn-primary btn-lg">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
@@ -61,19 +61,19 @@
       </div>
       <p class="hero-meta"><span>Windows 10 and 11</span><span>No account</span><span>Free during the alpha</span></p>
       <div class="try">
-        <div class="try-label">People really type</div>
+        <div class="try-label">Questions it answers from your model</div>
         <div class="chips">
-          <span class="chip">help</span>
-          <span class="chip">fillit wont work ugh</span>
-          <span class="chip">what size blank do i need to cut for this</span>
-          <span class="chip">why is mine wrong</span>
-          <span class="chip">can you help me model this 🖼</span>
+          <span class="chip">Why won't this part rebuild?</span>
+          <span class="chip">What blank size do I need for this part?</span>
+          <span class="chip">Will this part still rebuild if the main dimensions change?</span>
+          <span class="chip">Which parts in this assembly can still move?</span>
+          <span class="chip">Model this bracket from the attached drawing.</span>
         </div>
       </div>
     </div>
     <div class="hero-art" aria-label="Screenshots of the Caddie panel">
       <div class="shot shot-back"><img src="img/panel-practice.png" width="760" height="1720" alt="The Learn tab: a CSWP-style angle bracket drawing, an answer marked too high and a hint that the two base holes are missing."></div>
-      <div class="shot shot-front"><img src="img/panel-guide.png" width="760" height="1200" alt="The Chat tab: the user typed 'fillit wont work ugh'. Caddie explains that Fillet1's 12 mm radius is too big for a 3 mm thick part and opens a three-step guide."></div>
+      <div class="shot shot-front"><img src="img/panel-guide.png" width="760" height="1200" alt="The Chat tab: asked to walk through fixing the Fillet1 rebuild error, Caddie explains that its 12 mm radius is too large and opens a step-by-step guide."></div>
       <img class="hero-mascot" src="img/caddie-mark-260.png" width="225" height="260" alt="">
       <div class="hero-caption"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg>Real answers from Caddie's test runs</div>
     </div>
@@ -83,9 +83,9 @@
 <!-- ─── Proof strip ────────────────────────────────────────── -->
 <section class="proof" aria-label="At a glance">
   <div class="container proof-inner">
-    <div class="proof-item"><div class="proof-num">Your names</div><div class="proof-label">Answers say Fillet1 and 12 mm, not "your fillet"</div></div>
+    <div class="proof-item"><div class="proof-num">Model-specific</div><div class="proof-label">Answers cite your features and values, such as Fillet1 at 12 mm</div></div>
     <div class="proof-item"><div class="proof-num">Asks first</div><div class="proof-label">Every change is shown before it happens, with undo</div></div>
-    <div class="proof-item"><div class="proof-num">12 parts</div><div class="proof-label">CSWA, CSWP and sheet metal practice, checked to 0.1%</div></div>
+    <div class="proof-item"><div class="proof-num">Exam practice</div><div class="proof-label">12 original parts for SolidWorks certification, answers checked in SolidWorks</div></div>
     <div class="proof-item"><div class="proof-num">Your PC</div><div class="proof-label">History stays local. No account, no telemetry</div></div>
   </div>
 </section>
@@ -96,7 +96,7 @@
     <div class="section-head">
       <span class="eyebrow">How it works</span>
       <h2 class="h2">It reads the model, so you don't have to explain it.</h2>
-      <p class="lead">A general chatbot only knows what you type or paste into it. Caddie reads SolidWorks directly every time you ask, so "help" is enough of a question.</p>
+      <p class="lead">A general chatbot only knows what you type or paste into it. Caddie reads SolidWorks directly every time you ask, so you never have to describe the model first.</p>
     </div>
     <div class="how-grid">
       <div class="how-steps">
@@ -119,14 +119,14 @@
         <div class="how-step">
           <div class="how-num">2</div>
           <div>
-            <h3>You ask in your own words</h3>
-            <p>Typos and vague questions are fine. "sketch 2 red why" and "why is there a yellow triangle" both get a specific answer, because Caddie checks the model before it replies instead of asking you to describe it.</p>
+            <h3>You ask as you would a colleague</h3>
+            <p>There's no need to name the feature or copy an error message. Ask "Why won't this part rebuild?" and Caddie checks the model before it replies, so the answer is about your part rather than parts in general.</p>
           </div>
         </div>
         <div class="how-step">
           <div class="how-num">3</div>
           <div>
-            <h3>It explains, shows you, or does it</h3>
+            <h3>It explains, guides you, or does it</h3>
             <p>Answers name the feature and the value, and explain as much as you need: tell Caddie whether you're learning SolidWorks or use it every day. When there's work to do, Caddie starts a guide that highlights each click, or proposes the exact change for you to approve.</p>
           </div>
         </div>
@@ -143,8 +143,8 @@
         </div>
         <div class="arrow-down" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16m0 0l-6-6m6 6l6-6"/></svg></div>
         <div class="card convo">
-          <div><div class="who who-user">You</div><div class="bubble bubble-user">fillit wont work ugh</div></div>
-          <div><div class="who">Caddie</div><div class="bubble bubble-ai">Fillet1 is failing because its 12 mm radius is too big for the selected edges. Boss-Extrude1 is only 3 mm thick, so try a 1 mm radius first; the guide is open to make that change.</div></div>
+          <div><div class="who who-user">You</div><div class="bubble bubble-user">Why won't this part rebuild?</div></div>
+          <div><div class="who">Caddie</div><div class="bubble bubble-ai">Fillet1 won’t rebuild because its 12 mm radius is too large for the geometry it’s trying to round. The 3 mm-thick Boss-Extrude1 doesn’t leave enough room for that fillet, so it needs a smaller radius.</div></div>
         </div>
       </div>
     </div>
@@ -167,13 +167,13 @@
         </figure>
       </div>
       <div class="feature-text">
-        <span class="tag">Show me</span>
+        <span class="tag">Guides</span>
         <h3>It points at the exact button, menu or field.</h3>
-        <p>Ask how to do something and Caddie starts a short guide. Each step highlights where to click in SolidWorks, and ticks itself off when SolidWorks shows it's done, so you're never hunting through menus.</p>
+        <p>Ask how to do something and Caddie starts a short guide. Each step highlights where to click in SolidWorks, and ticks itself off when SolidWorks shows it's done, so you're never hunting through menus. You make every click yourself.</p>
         <ul class="ticks">
           <li>Highlights ribbon buttons, menus, PropertyManager fields and FeatureManager items</li>
           <li>Moves to the next step on its own as you work</li>
-          <li>Show me, Skip, or stop the guide at any time</li>
+          <li>Highlight it again, skip a step, or stop the guide at any time</li>
         </ul>
         <a class="more" href="docs/show-me-and-do-it.html">Guides and highlights →</a>
       </div>
@@ -181,10 +181,10 @@
 
     <div class="feature-row reverse">
       <div class="feature-media">
-        <div class="shot"><img src="img/panel-fix.png" width="760" height="1120" loading="lazy" alt="The user typed 'sketch 2 red why'. Caddie proposed removing one conflicting Vertical relation from Sketch2, the change shows as done, and Caddie explains the over-defined sketch."></div>
+        <div class="shot"><img src="img/panel-fix.png" width="760" height="1120" loading="lazy" alt="Asked to find and fix the conflicting relation in the over-defined Sketch2, Caddie proposed removing one Horizontal relation. The change shows as done, and Caddie confirms no alerts remain."></div>
       </div>
       <div class="feature-text">
-        <span class="tag green">Do it</span>
+        <span class="tag green">Changes you approve</span>
         <h3>It can make the fix, after you say yes.</h3>
         <p>When the fix is clear, Caddie shows exactly what it will change. Nothing happens until you click Do it, and most changes come with an Undo button.</p>
         <ul class="ticks">
@@ -192,13 +192,16 @@
           <li>Dimensions, materials, names, suppression and custom properties</li>
           <li>If any step fails, everything is put back</li>
         </ul>
-        <p class="quote-line">Asked <b>"sketch 2 red why"</b>, Caddie found the Vertical relation fighting the others, asked to delete it, and then explained what had been wrong.</p>
+        <div class="quote-line">
+          <p><span class="q-label">Asked</span><span class="q-ask">Sketch2 is over-defined. Find the conflicting relation and fix it.</span></p>
+          <p><span class="q-label">Caddie</span>“Sketch2 was over-defined by a conflicting Horizontal relation. I’ve proposed removing the flagged relation; the check shows no remaining alerts.”</p>
+        </div>
       </div>
     </div>
 
     <div class="feature-row">
       <div class="feature-media">
-        <div class="shot"><img src="img/panel-image.png" width="760" height="1600" loading="lazy" alt="The user attached a drawing of an angle bracket and asked 'can you help me model this'. Caddie proposes a sketch on the Right Plane, an 80 mm extrude and 6061 Alloy, with Do it and Not now buttons."></div>
+        <div class="shot"><img src="img/panel-image.png" width="760" height="1600" loading="lazy" alt="The user attached a drawing of an angle bracket and asked Caddie to model it. Caddie proposes a side profile sketch, an 80 mm extrude, the three holes and 6061 Alloy, with Do it and Not now buttons."></div>
       </div>
       <div class="feature-text">
         <span class="tag">Attach an image</span>
@@ -209,7 +212,10 @@
           <li>Says what it assumed, so you can correct it</li>
           <li>You approve each step before it's built</li>
         </ul>
-        <p class="quote-line">From this drawing, Caddie built the profile, the extrude and the three holes, and finished with: <b>"I assumed the two base holes are symmetric and the upright hole is centred across the 80 mm width, as shown."</b></p>
+        <div class="quote-line">
+          <p><span class="q-label">Asked, with the drawing attached</span><span class="q-ask">Model this bracket from the attached drawing.</span></p>
+          <p><span class="q-label">Caddie</span>“The bracket is set up with the R8 inside corner, three through-holes and 6061 aluminium. I assumed the base holes are symmetric and the upright hole is centered across the width, since those positions aren’t dimensioned.”</p>
+        </div>
         <a class="more" href="docs/model-from-image.html">Modelling from an image →</a>
       </div>
     </div>
@@ -219,16 +225,16 @@
         <div class="shot"><img src="img/panel-practice.png" width="760" height="1720" loading="lazy" alt="A practice question: the answer is too high, and the hint says the part has exactly the extra material the two base holes should remove."></div>
       </div>
       <div class="feature-text">
-        <span class="tag amber">Learn</span>
+        <span class="tag steel">Certification practice</span>
         <h3>Practice exams that check your work.</h3>
-        <p>The Learn tab generates CSWA, CSWP and sheet metal practice parts with new dimensions every time. Model the part and check your answer, or let Caddie read your model and tell you what's off without giving the answer away.</p>
+        <p>The Learn tab has 12 original practice parts in the style of SolidWorks' certification exams: the Associate (CSWA), the Professional (CSWP) and the advanced Sheet Metal exam. Model the part from its drawing and check your answer, or let Caddie read your model and tell you what's off without giving the answer away.</p>
         <ul class="ticks">
-          <li>12 practice parts with a drawing, a timer and exam conditions</li>
+          <li>A drawing, a timer and new dimensions every attempt</li>
           <li>Hints that find the missing feature or the wrong material</li>
           <li>Build the answer in SolidWorks to compare with yours</li>
-          <li>Quick quizzes in 12 topics, from weldments to the API</li>
+          <li>Quick quizzes on 12 topics, including weldments, surfacing and mold making</li>
         </ul>
-        <a class="more" href="docs/practice-exams.html">Practising for the CSWA and CSWP →</a>
+        <a class="more" href="docs/practice-exams.html">Practising for SolidWorks certification →</a>
       </div>
     </div>
   </div>
@@ -240,41 +246,41 @@
     <div class="section-head center">
       <span class="eyebrow">Real answers</span>
       <h2 class="h2">Specific answers, word for word.</h2>
-      <p class="lead">Unedited answers from Caddie's test runs on sample models. Each one names the feature and the number, and points out what's worth checking.</p>
+      <p class="lead">Unedited answers from Caddie's test runs on sample models. Each one names the feature and the number, and says what's worth checking.</p>
     </div>
     <div class="examples">
       <article class="card example">
-        <div class="ex-top"><span class="tag amber">Sheet metal</span><span class="ex-model">Cover.SLDPRT</span></div>
-        <div class="bubble bubble-user">how deep are the threads on these tapped holes and what size</div>
-        <div class="bubble bubble-ai"><p>The four holes in M6 Tapped Hole1 are M6 × 1.0, with a specified thread depth of 10 mm. The Ø5 mm tap-drill holes are blind, 12 mm deep.</p><p>That depth is worth checking: the cover is only 1.5 mm thick, so you won’t get 10 mm of thread unless there’s a thicker boss or insert at those locations.</p></div>
+        <div class="ex-top"><span class="tag steel">Sheet metal</span><span class="ex-model">Cover.SLDPRT</span></div>
+        <div class="bubble bubble-user">What blank size do I need for this part?</div>
+        <div class="bubble bubble-ai"><p>The flat blank is 182.6 × 95 mm in 1.5 mm AISI 304 sheet.</p><p>That size uses the model’s K-factor of 0.44, so confirm the bend allowance with your fabricator before cutting.</p></div>
       </article>
       <article class="card example">
         <div class="ex-top"><span class="tag">Weldments</span><span class="ex-model">Frame.SLDPRT</span></div>
-        <div class="bubble bubble-user">how long are the square tubes and how many of each do i need to cut</div>
-        <div class="bubble bubble-ai"><p>You need 8 pieces of 30 × 30 × 2.60 mm square tube:</p><ul><li>4 at 630 mm, with 45° mitres at both ends.</li><li>4 at 970 mm, with square cuts at both ends.</li></ul><p>Those are finished cut lengths; allow extra stock for saw kerf.</p></div>
+        <div class="bubble bubble-user">What's the cut list for the square tubing?</div>
+        <div class="bubble bubble-ai"><p>The square tubing cut list for 30 × 30 × 2.60 mm tube is:</p><ul><li>4 pieces at 630 mm, with 45° cuts at both ends</li><li>4 pieces at 970 mm, with square cuts at both ends</li></ul></div>
       </article>
       <article class="card example">
         <div class="ex-top"><span class="tag green">Calculation</span><span class="ex-model">worked exactly</span></div>
-        <div class="bubble bubble-user">what's the max shear stress in a 20 mm solid steel shaft carrying 50 N·m of torque</div>
-        <div class="bubble bubble-ai"><p>The maximum shear stress is <strong>31.8 MPa</strong>, at the shaft’s outer surface.</p><p>For a solid circular shaft, τmax = 16T/(πd³). Using T = 50,000 N·mm and d = 20 mm gives 31.8 N/mm², or MPa.</p><p>This assumes pure torsion without keyways or other stress concentrations. Whether it’s acceptable depends on the steel grade, fatigue loading and required safety factor.</p></div>
+        <div class="bubble bubble-user">What's the maximum shear stress in a 20 mm solid steel shaft carrying 50 N·m of torque?</div>
+        <div class="bubble bubble-ai"><p>The maximum shear stress is <strong>31.8 MPa</strong>, assuming pure torsion.</p><p>Using the solid circular shaft formula, τmax = 16T / (πd³), with torque in N·mm and diameter in mm.</p></div>
       </article>
       <article class="card example">
-        <div class="ex-top"><span class="tag green">Practice</span><span class="ex-model">Mounting plate · CSWA</span></div>
-        <div class="bubble bubble-user">why is mine wrong</div>
-        <div class="bubble bubble-ai"><p>Your part is about 0.9% too heavy, which points to one missing Ø10 corner hole or one that doesn’t cut all the way through. The extra material matches one full corner hole, and your centre of gravity is slightly off-centre too. Check Sketch2 and Cut-Extrude1 for all four corner holes cutting through the plate.</p></div>
-      </article>
-      <article class="card example">
-        <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
-        <div class="bubble bubble-user">what controls the overall size of this part</div>
-        <div class="bubble bubble-ai"><p>Base Profile controls the part’s footprint: D1@Base Profile is 60 mm and D2@Base Profile is 40 mm. Boss-Extrude1 controls its thickness through D1@Boss-Extrude1, currently 25 mm.</p><p>Those are the three main overall-size controls; Mounting Hole controls the cut, not the outside size.</p></div>
+        <div class="ex-top"><span class="tag green">Practice</span><span class="ex-model">Mounting plate · CSWA style</span></div>
+        <div class="bubble bubble-user">My mass is far higher than the expected answer. What did I miss?</div>
+        <div class="bubble bubble-ai"><p>Your material is the issue: Part1 is assigned Plain Carbon Steel instead of the specified 6061 Alloy. Steel is much denser, and your model’s volume matches the practice part, so the geometry isn’t what’s driving the high mass.</p></div>
       </article>
       <article class="card example">
         <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
-        <div class="bubble bubble-user">i want the wall thickness to always be a tenth of the height</div>
-        <div class="bubble bubble-ai"><p>Do you mean Boss-Extrude1’s 10 mm thickness should always be one tenth of Base Profile’s 40 mm height? I’ll link them with an equation so the thickness follows whenever the height changes.</p></div>
+        <div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div>
+        <div class="bubble bubble-ai"><p>Not reliably: Mounting Hole fails when the 40 mm Base Profile dimension is reduced by 20%. The other five driving dimensions rebuilt at both 20% larger and smaller, and all values are restored.</p><p>I couldn’t inspect the hole’s references, but I’d first check whether its position leaves enough material when the plate narrows.</p></div>
+      </article>
+      <article class="card example">
+        <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
+        <div class="bubble bubble-user">The bore must stay centred on the plate when the length changes. How should it be constrained?</div>
+        <div class="bubble bubble-ai"><p>Constrain the bore centre to the midpoint of a construction diagonal between opposite plate corners. That keeps it centred as the plate length changes.</p><p>I couldn’t inspect the existing bore sketch constraints, so an existing position dimension may need to be removed if it conflicts.</p></div>
       </article>
     </div>
-    <p class="examples-note">Recorded 1 and 2 November 2026 by the answer-quality tests that every Caddie release goes through.</p>
+    <p class="examples-note">Recorded 5 November 2026 by the answer-quality tests that every Caddie release goes through.</p>
   </div>
 </section>
 
@@ -284,20 +290,41 @@
     <div class="section-head">
       <span class="eyebrow">Certification practice</span>
       <h2 class="h2">New practice parts, every time.</h2>
-      <p class="lead">Each part is generated from its own geometry, with third-angle views and dimensions. The drawing, the answer key and the part Caddie builds for you always agree, and the keys were checked by building every part in SolidWorks.</p>
+      <p class="lead">The 12 practice parts are original, written for Caddie in the style of SolidWorks' certification exams. They aren't copies of exam questions. Each is generated from its own geometry with third-angle views, and gets new dimensions every attempt. The drawing, the answer key and the part Caddie builds for you always agree.</p>
     </div>
+    <div class="exams">
+      <div class="card exam">
+        <span class="abbr">CSWA</span>
+        <h3>Certified SOLIDWORKS Associate</h3>
+        <p>The entry-level exam. Model a part from a drawing, make design changes, and report the mass.</p>
+        <span class="count">3 practice parts</span>
+      </div>
+      <div class="card exam">
+        <span class="abbr">CSWP</span>
+        <h3>Certified SOLIDWORKS Professional</h3>
+        <p>The core professional exam. Busier parts, several rounds of design changes, mass and centre of mass.</p>
+        <span class="count">7 practice parts</span>
+      </div>
+      <div class="card exam">
+        <span class="abbr">CSWPA-SM</span>
+        <h3>Sheet Metal, an advanced exam</h3>
+        <p>One of the advanced specialist exams. Formed sheet metal parts, with the mass and the flat pattern length.</p>
+        <span class="count">2 practice parts</span>
+      </div>
+    </div>
+    <p class="why-note"><b>Why only Sheet Metal of the advanced exams?</b> A practice part is only useful if its answer is exact, and Caddie computes every answer key from the part's geometry. It can do that for formed sheet metal, but not yet for weldments, surfacing or mold tooling, so those topics are covered by quiz questions instead.</p>
     <div class="drawings">
       <figure class="card drawing"><img src="img/drawing-clevis.svg" width="420" height="337" loading="lazy" alt="Generated drawing of a clevis: top, front and right views with lettered dimensions."><figcaption>Clevis <span>CSWP style</span></figcaption></figure>
       <figure class="card drawing"><img src="img/drawing-hub.svg" width="420" height="297" loading="lazy" alt="Generated drawing of a keyed hub: a flange with a bolt circle, a bore and a keyway."><figcaption>Keyed hub <span>CSWP style</span></figcaption></figure>
-      <figure class="card drawing"><img src="img/drawing-sm-channel.svg" width="420" height="260" loading="lazy" alt="Generated drawing of a sheet metal channel with bends and holes."><figcaption>Sheet-metal channel <span>Sheet metal</span></figcaption></figure>
+      <figure class="card drawing"><img src="img/drawing-sm-channel.svg" width="420" height="260" loading="lazy" alt="Generated drawing of a sheet metal channel with bends and holes."><figcaption>Sheet-metal channel <span>Sheet Metal style</span></figcaption></figure>
     </div>
     <div class="stat-row">
-      <div class="card stat"><b>12</b><span>practice parts: 3 CSWA, 7 CSWP and 2 sheet metal</span></div>
+      <div class="card stat"><b>12</b><span>original practice parts: 3 CSWA, 7 CSWP and 2 Sheet Metal</span></div>
       <div class="card stat"><b>0.1%</b><span>to count as right, for mass, volume and centre of mass</span></div>
-      <div class="card stat"><b>24 of 24</b><span>answer keys matched SolidWorks within 0.003% when built</span></div>
-      <div class="card stat"><b>56</b><span>drill questions in 12 topics, CSWA to the API</span></div>
+      <div class="card stat"><b>24 of 24</b><span>test builds in SolidWorks, each part twice at different sizes, matched the keys within 0.003%</span></div>
+      <div class="card stat"><b>56</b><span>quiz questions on 12 topics, from CSWA basics to the API</span></div>
     </div>
-    <p class="compare-note">Practice parts are in the style of the exams, not copies of real exam questions. Caddie won't help during a real certification exam: the exam has to be your own work.</p>
+    <p class="compare-note">The exams are run by Dassault Systèmes, and Caddie isn't affiliated with its certification programme. Caddie won't help during a real exam: the certification has to be your own work.</p>
   </div>
 </section>
 
@@ -313,22 +340,22 @@
       <div class="card intent-card">
         <h3>See what drives the size</h3>
         <p>Caddie lists the dimensions that control the part by name and value, and tells you which ones only position features.</p>
-        <div class="say">what controls the overall size of this part</div>
+        <div class="say">Which dimensions control the overall size of this part?</div>
       </div>
       <div class="card intent-card">
         <h3>Link sizes with equations</h3>
         <p>Say the rule in plain words. Caddie confirms which dimensions you mean before it links them with an equation.</p>
-        <div class="say">i want the wall thickness to always be a tenth of the height</div>
+        <div class="say">Make the wall thickness one tenth of the height.</div>
       </div>
       <div class="card intent-card">
         <h3>Keep features where they belong</h3>
         <p>A bore that must stay centred should be tied to the middle, not to one edge. Caddie checks how it's located and fixes the relation.</p>
-        <div class="say">the bore has to stay in the middle of the plate whatever length i make it</div>
+        <div class="say">The bore must stay centred on the plate when the length changes.</div>
       </div>
     </div>
     <div class="soon">
       <span class="tag">New in 0.3.1</span>
-      <p><b>A design intent stress test.</b> Ask "is this part built well enough that I can change the sizes later?" Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds, tells you exactly what breaks, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
+      <p><b>A design intent stress test.</b> Ask "Will this part still rebuild if the main dimensions change?" Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds, tells you exactly what breaks, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
     </div>
     <a class="more" href="docs/design-intent.html" style="display:inline-block;margin-top:22px;font-weight:600">Design intent, explained →</a>
   </div>
@@ -380,10 +407,10 @@
     </div>
     <div class="guide-grid">
       <a class="card guide-card" href="docs/quick-start.html"><span class="kicker">Start here · 5 min</span><h3>Quick start</h3><p>Install Caddie, find the panel, and ask your first question about a real model.</p><span class="go">Read the guide →</span></a>
-      <a class="card guide-card" href="docs/fix-errors.html"><span class="kicker">Troubleshooting</span><h3>Fix rebuild errors and red sketches</h3><p>Failing features, over-defined sketches, dangling references, and the yellow triangles.</p><span class="go">Read the guide →</span></a>
-      <a class="card guide-card" href="docs/show-me-and-do-it.html"><span class="kicker">Working together</span><h3>Show me, or do it for me</h3><p>How guides highlight each click, and how changes you approve work, including undo.</p><span class="go">Read the guide →</span></a>
+      <a class="card guide-card" href="docs/fix-errors.html"><span class="kicker">Troubleshooting</span><h3>Fix rebuild errors and red sketches</h3><p>Failing features, over-defined sketches, dangling references and rebuild warnings.</p><span class="go">Read the guide →</span></a>
+      <a class="card guide-card" href="docs/show-me-and-do-it.html"><span class="kicker">Working together</span><h3>Guide me, or do it for me</h3><p>How guides highlight each click while you do the work, and how changes you approve work, including undo.</p><span class="go">Read the guide →</span></a>
       <a class="card guide-card" href="docs/model-from-image.html"><span class="kicker">Modelling</span><h3>Model from a drawing or photo</h3><p>Turn a drawing, a sketch on paper or a photo into a part, step by step.</p><span class="go">Read the guide →</span></a>
-      <a class="card guide-card" href="docs/practice-exams.html"><span class="kicker">Learning</span><h3>Practise for the CSWA and CSWP</h3><p>Practice parts, exam conditions, hints that don't give it away, and quick quizzes.</p><span class="go">Read the guide →</span></a>
+      <a class="card guide-card" href="docs/practice-exams.html"><span class="kicker">Learning</span><h3>Practise for SolidWorks certification</h3><p>Original practice parts for the CSWA, CSWP and Sheet Metal exams, hints that don't give it away, and quick quizzes.</p><span class="go">Read the guide →</span></a>
       <a class="card guide-card" href="docs/design-intent.html"><span class="kicker">Concepts</span><h3>Design intent, explained</h3><p>What design intent is, how to build it into a part, and how Caddie helps you check it.</p><span class="go">Read the guide →</span></a>
     </div>
   </div>
@@ -448,8 +475,12 @@
         <p>No. Every change is shown first, and nothing happens until you click Do it. You can tick "Don't ask again this session" for routine changes, but deleting features and sketch relations always asks.</p>
       </details>
       <details>
-        <summary>Will it help me pass the CSWA or CSWP?</summary>
-        <p>It's a good way to prepare: practice parts with checked answers, hints and quick quizzes. It won't help during a real exam, and you shouldn't use it there. The certification has to be your own work.</p>
+        <summary>Will it help me prepare for SolidWorks certification?</summary>
+        <p>Yes, for the CSWA (Associate), the CSWP (Professional) and the advanced Sheet Metal exam: practice parts with checked answers, hints and quick quizzes, including quizzes on the other advanced topics. It won't help during a real exam, and you shouldn't use it there. The certification has to be your own work.</p>
+      </details>
+      <details>
+        <summary>Where do the practice parts come from?</summary>
+        <p>They're original parts written for Caddie, in the style of the exams, not copies of exam questions. Each answer key is computed exactly from the part's geometry, and every part was built in SolidWorks, twice at different sizes, to check that the keys match.</p>
       </details>
       <details>
         <summary>I'm still learning SolidWorks. Is it for me?</summary>
@@ -490,7 +521,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
         Download CaddieSetup.exe
       </a>
-      <p class="download-meta">v0.3.2 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
+      <p class="download-meta">v0.3.3 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
     </div>
     <div class="install">
       <div class="install-step"><div class="n">1</div><div><b>Run CaddieSetup.exe</b><span>If Windows shows a SmartScreen warning, click More info, then Run anyway. The installer is not code-signed yet.</span></div></div>

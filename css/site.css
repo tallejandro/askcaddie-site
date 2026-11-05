@@ -253,6 +253,7 @@ code, kbd {
 .bubble { border-radius: 12px; padding: 11px 14px; font-size: 15px; line-height: 1.55; }
 .bubble-user { justify-self: end; background: var(--blue-50); border: 1px solid var(--blue-100); color: var(--ink); }
 .bubble-ai { background: var(--bg-alt); border: 1px solid var(--line); }
+.bubble-change { background: var(--green-50); border: 1px solid #BFE1CF; color: var(--ink); font-size: 14px; }
 .who { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); margin-bottom: 4px; }
 .who-user { text-align: right; }
 .arrow-down { display: grid; place-items: center; color: var(--steel); }
@@ -277,11 +278,18 @@ code, kbd {
   border: 1px solid #BFE1CF;
 }
 .feature-text .more { display: inline-block; margin-top: 22px; font-weight: 650; }
+/* A short exchange from a test run: the question, then Caddie's words. Quiet, so the screenshot leads. */
 .quote-line {
-  margin-top: 20px; padding: 12px 16px; border-left: 3px solid var(--gold);
-  background: var(--gold-50); border-radius: 0 10px 10px 0; font-size: 15px; color: var(--text);
+  margin-top: 22px; padding: 14px 16px; background: #fff; border: 1px solid var(--line);
+  border-left: 3px solid var(--blue); border-radius: 0 10px 10px 0; font-size: 14.5px; color: var(--text);
+  display: grid; gap: 8px;
 }
-.quote-line b { color: var(--ink); }
+.quote-line p { margin: 0; }
+.quote-line .q-label {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 2px;
+}
+.quote-line .q-ask { color: var(--ink); font-weight: 600; }
 
 /* ─── Real answers ─────────────────────────────────────────── */
 .examples { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -293,7 +301,7 @@ code, kbd {
   color: var(--blue-600); background: var(--blue-50); border-radius: 6px; padding: 4px 8px;
 }
 .tag.green { color: #23704B; background: var(--green-50); }
-.tag.amber { color: var(--amber); background: var(--gold-50); }
+.tag.steel { color: var(--steel-700); background: var(--steel-50); }
 .tag.ink { color: var(--paper); background: var(--ink); }
 .ex-model { font-size: 12.5px; color: var(--faint); font-family: var(--mono); text-align: right; }
 .example .bubble { font-size: 14.5px; }
@@ -312,6 +320,15 @@ code, kbd {
 .stat { padding: 18px; }
 .stat b { display: block; font: 800 26px/1.2 var(--display); color: var(--ink); letter-spacing: -.02em; }
 .stat span { font-size: 13.5px; color: var(--muted); }
+/* Which certification each practice track is styled on. */
+.exams { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
+.exam { padding: 20px; }
+.exam .abbr { font: 600 12px var(--mono); letter-spacing: .04em; color: var(--blue-600); }
+.exam h3 { font: 700 16.5px/1.3 var(--display); color: var(--ink); margin: 4px 0 6px; }
+.exam p { font-size: 14.5px; color: var(--muted); }
+.exam .count { display: block; margin-top: 10px; font-size: 13px; font-weight: 650; color: var(--text); }
+.why-note { margin-top: 16px; font-size: 14.5px; color: var(--muted); max-width: 760px; }
+.why-note b { color: var(--ink); }
 
 /* ─── Design intent ────────────────────────────────────────── */
 .intent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -322,9 +339,9 @@ code, kbd {
 .intent-card .say::before { content: "Try: "; font-weight: 700; color: var(--blue); }
 .soon {
   display: flex; gap: 14px; align-items: flex-start; margin-top: 24px; padding: 18px 20px;
-  border: 1px solid var(--gold-100); background: var(--gold-50); border-radius: var(--radius-lg);
+  border: 1px solid var(--line); background: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
 }
-.soon .tag { flex: none; background: #fff; color: var(--amber); }
+.soon .tag { flex: none; }
 .soon p { color: var(--text); font-size: 15px; }
 
 /* ─── Compare ──────────────────────────────────────────────── */
@@ -430,7 +447,7 @@ code, kbd {
 .doc-sidebar .group-label { font-size: 11.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
 .doc-sidebar a { display: block; color: var(--muted); padding: 6px 10px; border-radius: 8px; font-weight: 500; }
 .doc-sidebar a:hover { color: var(--ink); background: var(--bg-alt); text-decoration: none; }
-.doc-sidebar a[aria-current="page"] { color: var(--ink); background: var(--gold-50); box-shadow: inset 3px 0 0 var(--gold); font-weight: 650; }
+.doc-sidebar a[aria-current="page"] { color: var(--ink); background: var(--blue-50); box-shadow: inset 3px 0 0 var(--blue); font-weight: 650; }
 .doc-main { max-width: 760px; }
 .breadcrumb { font-size: 13.5px; color: var(--faint); margin-bottom: 14px; }
 .breadcrumb a { color: var(--muted); }
@@ -451,7 +468,8 @@ code, kbd {
 }
 .doc-steps > li > b:first-child { color: var(--ink); }
 .callout { margin: 20px 0; padding: 14px 18px; border-radius: var(--radius); background: var(--blue-50); border: 1px solid var(--blue-100); font-size: 15px; }
-.callout.warn { background: var(--gold-50); border-color: var(--gold-100); }
+/* Warnings stay orange, a signal rather than the brand's gold (docs/BRAND.md). */
+.callout.warn { background: #FFF4EA; border-color: #F5CFA8; }
 .callout.good { background: var(--green-50); border-color: #BFE1CF; }
 .callout b:first-child { color: var(--ink); }
 .doc-figure { margin: 24px 0; }
@@ -480,6 +498,7 @@ code, kbd {
   .feature-row.reverse .feature-media { order: 0; }
   .read-demo { position: static; }
   .examples, .guide-grid, .intent-grid { grid-template-columns: 1fr 1fr; }
+  .exams { grid-template-columns: 1fr; }
   .privacy-grid { grid-template-columns: 1fr 1fr; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .doc-layout { grid-template-columns: 1fr; gap: 24px; }
