@@ -49,7 +49,7 @@
 <header class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="badge"><span class="dot"></span>Free alpha · v0.3.3 · SolidWorks 2022 and newer</span>
+      <span class="badge"><span class="dot"></span>Free alpha · v0.3.4 · SolidWorks 2022 and newer</span>
       <h1>The SolidWorks expert <em>that can see your model.</em></h1>
       <p class="hero-sub">Caddie sits in the SolidWorks task pane and reads the part you have open: features, sketches, dimensions, errors, materials and mass. Ask as you would a senior colleague. It answers with your feature names and values, shows you where to click, or makes the change once you approve it.</p>
       <div class="hero-ctas">
@@ -109,7 +109,8 @@
               <li>The feature tree, with rebuild errors and warnings</li>
               <li>Sketch status, relations and what's over-defining a sketch</li>
               <li>Dimensions, equations and configurations</li>
-              <li>Material, mass and centre of mass</li>
+              <li>Material, mass and center of mass</li>
+              <li>Measured checks: hole depth against the material, holes near edges and bends, thin walls, pocket corners, bend radii and draft</li>
               <li>Sheet metal settings, weldment cut lists and Hole Wizard holes</li>
               <li>Assembly components and mates, including which parts can still move, and drawing sheets and views</li>
               <li>A screenshot of the window, unless you turn screenshots off</li>
@@ -120,7 +121,7 @@
           <div class="how-num">2</div>
           <div>
             <h3>You ask as you would a colleague</h3>
-            <p>There's no need to name the feature or copy an error message. Ask "Why won't this part rebuild?" and Caddie checks the model before it replies, so the answer is about your part rather than parts in general.</p>
+            <p>There's no need to name the feature or copy an error message. Ask "Why won't this part rebuild?" and Caddie checks the model before it replies, so the answer is about your part rather than parts in general. Put files designed together in a project, and Caddie carries the requirements and decisions from one conversation to the next.</p>
           </div>
         </div>
         <div class="how-step">
@@ -162,7 +163,7 @@
     <div class="feature-row">
       <div class="feature-media">
         <figure>
-          <div class="shot wide"><img src="img/sw-show-me.png" width="820" height="845" loading="lazy" alt="SolidWorks with the Tools menu open. Caddie has outlined Evaluate, then Measure, in blue and labelled it."></div>
+          <div class="shot wide"><img src="img/sw-show-me.png" width="820" height="845" loading="lazy" alt="SolidWorks with the Tools menu open. Caddie has outlined Evaluate, then Measure, in blue and labeled it."></div>
           <figcaption>Caddie highlighting Tools › Evaluate › Measure in SolidWorks 2026.</figcaption>
         </figure>
       </div>
@@ -214,9 +215,9 @@
         </ul>
         <div class="quote-line">
           <p><span class="q-label">Asked, with the drawing attached</span><span class="q-ask">Model this bracket from the attached drawing.</span></p>
-          <p><span class="q-label">Caddie</span>“The bracket is set up with the R8 inside corner, three through-holes and 6061 aluminium. I assumed the base holes are symmetric and the upright hole is centered across the width, since those positions aren’t dimensioned.”</p>
+          <p><span class="q-label">Caddie</span>“The bracket is ready to build with the R8 inside corner and three through-holes. I assumed the undimensioned hole positions are symmetric, as drawn. The material is SolidWorks’ 6061 Alloy; the drawing doesn’t specify a temper.”</p>
         </div>
-        <a class="more" href="docs/model-from-image.html">Modelling from an image →</a>
+        <a class="more" href="docs/model-from-image.html">Modeling from an image →</a>
       </div>
     </div>
 
@@ -234,7 +235,7 @@
           <li>Build the answer in SolidWorks to compare with yours</li>
           <li>Quick quizzes on 12 topics, including weldments, surfacing and mold making</li>
         </ul>
-        <a class="more" href="docs/practice-exams.html">Practising for SolidWorks certification →</a>
+        <a class="more" href="docs/practice-exams.html">Practicing for SolidWorks certification →</a>
       </div>
     </div>
   </div>
@@ -276,8 +277,8 @@
       </article>
       <article class="card example">
         <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
-        <div class="bubble bubble-user">The bore must stay centred on the plate when the length changes. How should it be constrained?</div>
-        <div class="bubble bubble-ai"><p>Constrain the bore centre to the midpoint of a construction diagonal between opposite plate corners. That keeps it centred as the plate length changes.</p><p>I couldn’t inspect the existing bore sketch constraints, so an existing position dimension may need to be removed if it conflicts.</p></div>
+        <div class="bubble bubble-user">The bore must stay centered on the plate when the length changes. How should it be constrained?</div>
+        <div class="bubble bubble-ai"><p>Constrain the bore center to the midpoint of a construction diagonal between opposite plate corners. That keeps it centered as the plate’s length or width changes.</p></div>
       </article>
     </div>
     <p class="examples-note">Recorded 5 November 2026 by the answer-quality tests that every Caddie release goes through.</p>
@@ -302,7 +303,7 @@
       <div class="card exam">
         <span class="abbr">CSWP</span>
         <h3>Certified SOLIDWORKS Professional</h3>
-        <p>The core professional exam. Busier parts, several rounds of design changes, mass and centre of mass.</p>
+        <p>The core professional exam. Busier parts, several rounds of design changes, mass and center of mass.</p>
         <span class="count">7 practice parts</span>
       </div>
       <div class="card exam">
@@ -320,11 +321,11 @@
     </div>
     <div class="stat-row">
       <div class="card stat"><b>12</b><span>original practice parts: 3 CSWA, 7 CSWP and 2 Sheet Metal</span></div>
-      <div class="card stat"><b>0.1%</b><span>to count as right, for mass, volume and centre of mass</span></div>
+      <div class="card stat"><b>0.1%</b><span>to count as right, for mass, volume and center of mass</span></div>
       <div class="card stat"><b>24 of 24</b><span>test builds in SolidWorks, each part twice at different sizes, matched the keys within 0.003%</span></div>
       <div class="card stat"><b>56</b><span>quiz questions on 12 topics, from CSWA basics to the API</span></div>
     </div>
-    <p class="compare-note">The exams are run by Dassault Systèmes, and Caddie isn't affiliated with its certification programme. Caddie won't help during a real exam: the certification has to be your own work.</p>
+    <p class="compare-note">The exams are run by Dassault Systèmes, and Caddie isn't affiliated with its certification program. Caddie won't help during a real exam: the certification has to be your own work.</p>
   </div>
 </section>
 
@@ -349,8 +350,8 @@
       </div>
       <div class="card intent-card">
         <h3>Keep features where they belong</h3>
-        <p>A bore that must stay centred should be tied to the middle, not to one edge. Caddie checks how it's located and fixes the relation.</p>
-        <div class="say">The bore must stay centred on the plate when the length changes.</div>
+        <p>A bore that must stay centered should be tied to the middle, not to one edge. Caddie checks how it's located and fixes the relation.</p>
+        <div class="say">The bore must stay centered on the plate when the length changes.</div>
       </div>
     </div>
     <div class="soon">
@@ -409,8 +410,8 @@
       <a class="card guide-card" href="docs/quick-start.html"><span class="kicker">Start here · 5 min</span><h3>Quick start</h3><p>Install Caddie, find the panel, and ask your first question about a real model.</p><span class="go">Read the guide →</span></a>
       <a class="card guide-card" href="docs/fix-errors.html"><span class="kicker">Troubleshooting</span><h3>Fix rebuild errors and red sketches</h3><p>Failing features, over-defined sketches, dangling references and rebuild warnings.</p><span class="go">Read the guide →</span></a>
       <a class="card guide-card" href="docs/show-me-and-do-it.html"><span class="kicker">Working together</span><h3>Guide me, or do it for me</h3><p>How guides highlight each click while you do the work, and how changes you approve work, including undo.</p><span class="go">Read the guide →</span></a>
-      <a class="card guide-card" href="docs/model-from-image.html"><span class="kicker">Modelling</span><h3>Model from a drawing or photo</h3><p>Turn a drawing, a sketch on paper or a photo into a part, step by step.</p><span class="go">Read the guide →</span></a>
-      <a class="card guide-card" href="docs/practice-exams.html"><span class="kicker">Learning</span><h3>Practise for SolidWorks certification</h3><p>Original practice parts for the CSWA, CSWP and Sheet Metal exams, hints that don't give it away, and quick quizzes.</p><span class="go">Read the guide →</span></a>
+      <a class="card guide-card" href="docs/model-from-image.html"><span class="kicker">Modeling</span><h3>Model from a drawing or photo</h3><p>Turn a drawing, a sketch on paper or a photo into a part, step by step.</p><span class="go">Read the guide →</span></a>
+      <a class="card guide-card" href="docs/practice-exams.html"><span class="kicker">Learning</span><h3>Practice for SolidWorks certification</h3><p>Original practice parts for the CSWA, CSWP and Sheet Metal exams, hints that don't give it away, and quick quizzes.</p><span class="go">Read the guide →</span></a>
       <a class="card guide-card" href="docs/design-intent.html"><span class="kicker">Concepts</span><h3>Design intent, explained</h3><p>What design intent is, how to build it into a part, and how Caddie helps you check it.</p><span class="go">Read the guide →</span></a>
     </div>
   </div>
@@ -521,7 +522,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
         Download CaddieSetup.exe
       </a>
-      <p class="download-meta">v0.3.3 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
+      <p class="download-meta">v0.3.4 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
     </div>
     <div class="install">
       <div class="install-step"><div class="n">1</div><div><b>Run CaddieSetup.exe</b><span>If Windows shows a SmartScreen warning, click More info, then Run anyway. The installer is not code-signed yet.</span></div></div>

@@ -43,29 +43,29 @@
 
 <div class="doc-layout">
   <aside class="doc-sidebar" aria-label="Guides">
-    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practise for SolidWorks certification</a><a href="design-intent.html" aria-current="page">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
+    <div class="group"><div class="group-label">Start</div><a href="quick-start.html">Quick start</a><a href="index.html">All guides</a></div><div class="group"><div class="group-label">Using Caddie</div><a href="fix-errors.html">Fix rebuild errors and red sketches</a><a href="show-me-and-do-it.html">Guide me, or do it for me</a><a href="model-from-image.html">Model from a drawing or photo</a><a href="sheet-metal-weldments.html">Sheet metal, weldments and holes</a></div><div class="group"><div class="group-label">Learning</div><a href="practice-exams.html">Practice for SolidWorks certification</a><a href="design-intent.html" aria-current="page">Design intent, explained</a></div><div class="group"><div class="group-label">About</div><a href="../privacy.html">Privacy and data</a><a href="mailto:hello@askcaddie.app">Contact</a></div>
   </aside>
   <main class="doc-main">
     <div class="breadcrumb"><a href="../">Home</a> › <a href="./">Guides</a> › Design intent, explained</div>
     <h1>Design intent, explained</h1>
-    <p class="doc-lead">Design intent is the plan behind a model: which sizes drive the others, what stays centred, what must never change. Build it in and the part updates the way you expect. Leave it out and the next edit breaks it.</p>
+    <p class="doc-lead">Design intent is the plan behind a model: which sizes drive the others, what stays centered, what must never change. Build it in and the part updates the way you expect. Leave it out and the next edit breaks it.</p>
     
 
     <h2>Two parts that look the same</h2>
-    <p>Take a plate with a hole in the middle, modelled two ways:</p>
+    <p>Take a plate with a hole in the middle, modeled two ways:</p>
     <ul>
-      <li><b>Version A:</b> the hole is dimensioned 50 mm from the left edge. Make the plate 140 mm long and the hole stays 50 mm from the left. It's no longer centred.</li>
-      <li><b>Version B:</b> the hole is tied to the plate's centre, with the sketch centred on the origin. Make the plate 140 mm long and the hole is still in the middle.</li>
+      <li><b>Version A:</b> the hole is dimensioned 50 mm from the left edge. Make the plate 140 mm long and the hole stays 50 mm from the left. It's no longer centered.</li>
+      <li><b>Version B:</b> the hole is tied to the plate's center, with the sketch centered on the origin. Make the plate 140 mm long and the hole is still in the middle.</li>
     </ul>
-    <p>Both rebuild without errors and look identical. Only B captures what the designer meant: the hole is centred. That's design intent, and it only shows up when someone changes something.</p>
+    <p>Both rebuild without errors and look identical. Only B captures what the designer meant: the hole is centered. That's design intent, and it only shows up when someone changes something.</p>
 
     <h2>Where intent lives in SolidWorks</h2>
     <table class="doc-table">
       <thead><tr><th>Tool</th><th>What it captures</th><th>Example</th></tr></thead>
       <tbody>
         <tr><td><b>Sketch relations</b></td><td>Geometric rules</td><td>Midpoint, Symmetric, Equal, Collinear, Tangent</td></tr>
-        <tr><td><b>Dimensions</b></td><td>What's measured from where</td><td>Dimension a hole from the centre line, not from an edge that may move</td></tr>
-        <tr><td><b>Origin and planes</b></td><td>The part's frame of reference</td><td>Centre the base sketch on the origin, so mirrors and symmetry come free</td></tr>
+        <tr><td><b>Dimensions</b></td><td>What's measured from where</td><td>Dimension a hole from the center line, not from an edge that may move</td></tr>
+        <tr><td><b>Origin and planes</b></td><td>The part's frame of reference</td><td>Center the base sketch on the origin, so mirrors and symmetry come free</td></tr>
         <tr><td><b>End conditions</b></td><td>How a feature reacts to size changes</td><td>Through All for a through hole, not a blind depth that matches today's thickness</td></tr>
         <tr><td><b>Equations and global variables</b></td><td>Rules between sizes</td><td>Wall = Height / 10</td></tr>
         <tr><td><b>Feature order</b></td><td>What depends on what</td><td>Fillets after the features they round; pattern the feature, not its sketch</td></tr>
@@ -77,7 +77,7 @@
     <ul>
       <li><b>Fully define sketches.</b> Blue geometry can move when something upstream changes.</li>
       <li><b>Relate to the origin and the main planes,</b> not to edges that might change.</li>
-      <li><b>Use a relation when the rule is geometric.</b> Equal, symmetric and centred say more than two matching numbers.</li>
+      <li><b>Use a relation when the rule is geometric.</b> Equal, symmetric and centered say more than two matching numbers.</li>
       <li><b>Name what matters.</b> "Wall Thickness" beats D1@Boss-Extrude1 for the next person, and for you in six months.</li>
       <li><b>Pick end conditions that say what you mean,</b> such as Through All for a through hole.</li>
       <li><b>Keep fillets and cosmetic features late</b> in the tree.</li>
@@ -95,10 +95,10 @@
     </div>
     
     <div class="card transcript">
-      <div class="ctx">Bracket.SLDPRT · plate with a centre bore</div>
-      <div><div class="who who-user">You</div><div class="bubble bubble-user">The bore must stay centred on the plate when the length changes. How should it be constrained?</div></div>
-      <div class="note">Caddie also opened a six-step guide: edit the bore's sketch, draw the diagonal, add the Midpoint relation, and remove any position dimension that conflicts.</div>
-      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Constrain the bore centre to the midpoint of a construction diagonal between opposite plate corners. That keeps it centred as the plate length changes.</p><p>I couldn’t inspect the existing bore sketch constraints, so an existing position dimension may need to be removed if it conflicts.</p></div></div>
+      <div class="ctx">Bracket.SLDPRT · plate with a center bore</div>
+      <div><div class="who who-user">You</div><div class="bubble bubble-user">The bore must stay centered on the plate when the length changes. How should it be constrained?</div></div>
+      <div class="note">Caddie also opened a five-step guide: edit the bore's sketch, draw the diagonal, add the Midpoint relation, remove anything that locks the bore in place, and rebuild.</div>
+      <div><div class="who">Caddie</div><div class="bubble bubble-ai"><p>Constrain the bore center to the midpoint of a construction diagonal between opposite plate corners. That keeps it centered as the plate’s length or width changes.</p></div></div>
     </div>
     
     <div class="card transcript">
@@ -124,7 +124,7 @@
     <div class="chips"><span class="chip">Which dimensions control the overall size of this part?</span><span class="chip">Is this sketch fully defined, and what can still move?</span><span class="chip">What depends on Sketch1?</span><span class="chip">How should I dimension this so the holes stay symmetric?</span><span class="chip">Link the hole spacing to the plate width.</span><span class="chip">Rename the features so their names describe them.</span></div>
 
     <nav class="doc-next" aria-label="More guides">
-      <a href="practice-exams.html"><span>Previous</span>← Practise for SolidWorks certification</a>
+      <a href="practice-exams.html"><span>Previous</span>← Practice for SolidWorks certification</a>
       
     </nav>
   </main>
