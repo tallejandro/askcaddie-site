@@ -621,6 +621,11 @@ code, kbd {
   .packet-row .k { min-width: 0; }
   .soon { flex-direction: column; gap: 10px; }
   .btn { white-space: normal; }
+  .hero-ctas .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+  .proof-inner { grid-template-columns: 1fr; }
+  .proof-item, .proof-item:nth-child(3) { padding: 14px 0; border-left: 0; border-top: 1px solid var(--line); }
+  .proof-item:first-child { border-top: none; }
+  .proof-num { font-size: 18px; }
   /* The comparison table stacks: each row is a question, Caddie's answer, then the general chat's. */
   .compare-wrap { overflow: visible; }
   .compare, .compare tbody { display: block; min-width: 0; }
