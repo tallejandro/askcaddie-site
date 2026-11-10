@@ -745,4 +745,39 @@ a.chip:active { transform: scale(.97); }
   .reveal-on .example:not(.in) .bubble-ai { opacity: 1; transform: none; }
 }
 
-.shot-video video { display: block; width: 100%; height: auto; background: #fff; }
+
+/* ─── Guide tour: zoomed walk through real SolidWorks frames ─── */
+.tour { width: 100%; }
+.tour-stage {
+  position: relative; overflow: hidden; width: 100%; aspect-ratio: 1920 / 1042;
+  border-radius: 16px; background: #fff; border: 1px solid rgba(8, 41, 65, .12); box-shadow: var(--shadow-lg);
+}
+.tour-fallback { display: block; width: 100%; height: auto; }
+.tour-cam, .tour-cursor, .tour-ripple { display: none; }
+.tour-on .tour-fallback { display: none; }
+.tour-on .tour-cam { display: block; position: absolute; left: 0; top: 0; width: 1920px; height: 1042px; transform-origin: 0 0; }
+.tour-cam img { position: absolute; left: 0; top: 0; width: 1920px; height: 1042px; opacity: 0; transition: opacity 140ms ease; }
+.tour-cam img[data-f="a"] { opacity: 1; }
+.tour-cam img.on { opacity: 1; }
+.tour-cam img[data-f="a"]:not(.on) { opacity: 0; }
+.tour-on .tour-cursor {
+  display: block; position: absolute; left: -4px; top: -3px; width: 26px; height: 26px; opacity: 0; pointer-events: none;
+  transition: opacity 200ms ease; filter: drop-shadow(0 2px 3px rgba(8, 41, 65, .35));
+}
+.tour-cursor svg { display: block; width: 100%; height: 100%; transition: transform 120ms var(--ease-out); transform-origin: 4px 3px; }
+.tour-cursor.show { opacity: 1; }
+.tour-cursor.press svg { transform: scale(.86); }
+.tour-on .tour-ripple {
+  display: block; position: absolute; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%;
+  border: 2px solid var(--blue); background: rgba(30, 111, 168, .18); opacity: 0; pointer-events: none;
+}
+.tour-ripple.go { animation: tour-ripple 520ms var(--ease-out); }
+@keyframes tour-ripple { 0% { opacity: 1; transform: scale(.3); } 100% { opacity: 0; transform: scale(1.5); } }
+.tour-cap { display: flex; align-items: center; gap: 14px; margin-top: 14px; min-height: 48px; }
+.tour-dots { display: flex; gap: 5px; flex: none; }
+.tour-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--steel-200); transition: background-color 200ms ease, transform 200ms var(--ease-out); }
+.tour-dots i.on { background: var(--blue); transform: scale(1.25); }
+.tour-cap-text { font-size: 15px; line-height: 1.45; color: var(--ink); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) {
+  .tour-cam img, .tour-cursor, .tour-dots i { transition: none; }
+}
