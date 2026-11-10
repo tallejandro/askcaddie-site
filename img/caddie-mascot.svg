@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 84 380 436" width="380" height="436">
+<!-- Caddie mascot v4: hand-drawn over the original site/Caddie.png, same pose, proportions and line. -->
+<defs>
+  <linearGradient id="capG" x1="0.9" y1="0.1" x2="0.1" y2="0.9"><stop offset="0" stop-color="#6A8595"/><stop offset="1" stop-color="#4E6979"/></linearGradient>
+  <linearGradient id="brimG" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6A8595"/><stop offset="1" stop-color="#829BA9"/></linearGradient>
+  <linearGradient id="bagG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6C8797"/><stop offset="1" stop-color="#587383"/></linearGradient>
+  <linearGradient id="sideG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DADDDD"/><stop offset="1" stop-color="#CBD0D1"/></linearGradient>
+  <clipPath id="topC"><path d="M67,174 L165,207 L305,176 L207,143 Z"/></clipPath>
+  <clipPath id="frontC"><path d="M172,352 L276,320 L276,398 L175,428 Z"/></clipPath>
+  <clipPath id="shoeRC"><path d="M228,462 C221,470 219,484 226,488 C250,497 280,501 294,492 C301,484 292,468 276,462 C262,456 240,456 228,462 Z"/></clipPath>
+  <clipPath id="shoeLC"><path d="M150,470 C135,472 119,484 122,496 C124,509 150,511 168,506 C183,502 187,490 182,476 C180,469 170,466 150,470 Z"/></clipPath>
+</defs>
+<g stroke="#082941" stroke-width="7" stroke-linejoin="round" stroke-linecap="round" fill="none">
+
+  <!-- waving arm -->
+  <path d="M298,305 C328,309 346,300 348,276" stroke-width="29"/>
+  <path d="M298,305 C328,309 346,300 348,276" stroke="#3F5A6E" stroke-width="15"/>
+
+  <!-- legs -->
+  <path d="M170,418 L163,460" stroke-width="23"/>
+  <path d="M239,398 L245,452" stroke-width="23"/>
+
+  <!-- shoes -->
+  <path d="M150,470 C135,472 119,484 122,496 C124,509 150,511 168,506 C183,502 187,490 182,476 C180,469 170,466 150,470 Z" fill="#FCFAF4"/>
+  <path clip-path="url(#shoeLC)" d="M150,470 C166,472 176,484 174,512 L196,512 L190,462 Z" fill="#D5D8D8" stroke="none"/>
+  <path d="M150,470 C135,472 119,484 122,496 C124,509 150,511 168,506 C183,502 187,490 182,476 C180,469 170,466 150,470 Z"/>
+  <path d="M153,463 L177,462" stroke-width="20"/><path d="M153,463 L177,462" stroke="#FCFAF4" stroke-width="7"/>
+  <path d="M228,462 C221,470 219,484 226,488 C250,497 280,501 294,492 C301,484 292,468 276,462 C262,456 240,456 228,462 Z" fill="#FCFAF4"/>
+  <path clip-path="url(#shoeRC)" d="M215,450 L252,452 C240,466 240,482 250,500 L215,500 Z" fill="#D5D8D8" stroke="none"/>
+  <path d="M228,462 C221,470 219,484 226,488 C250,497 280,501 294,492 C301,484 292,468 276,462 C262,456 240,456 228,462 Z"/>
+  <path d="M234,454 L259,452" stroke-width="20"/><path d="M234,454 L259,452" stroke="#FCFAF4" stroke-width="7"/>
+
+  <!-- torso -->
+  <path d="M150,345 L172,352 L175,428 L152,408 Z" fill="#334B5D"/>
+  <path d="M172,352 L276,320 L276,398 L175,428 Z" fill="#3F5A6E"/>
+  <g clip-path="url(#frontC)"><path d="M280,326 L166,416" stroke-width="19"/><path d="M280,326 L166,416" stroke="#647F8F" stroke-width="7"/></g>
+  <path d="M172,352 L276,320 L276,398 L175,428 Z"/>
+
+  <!-- cube -->
+  <path d="M67,174 L165,207 L305,176 L207,143 Z" fill="#FCFAF4"/>
+  <path clip-path="url(#topC)" d="M92,166 C118,182 158,197 205,187 C240,179 262,166 298,173 L298,140 L92,140 Z" fill="#D5D8D8" stroke="none"/>
+  <path d="M67,174 L165,207 L166,355 L67,322 Z" fill="url(#sideG)"/>
+  <path d="M165,207 L305,176 L306,321 L166,355 Z" fill="#FCFAF4"/>
+  <path d="M67,174 L165,207 L305,176 L207,143 Z"/>
+
+  <!-- face -->
+  <path d="M198,228 Q206,218 217,222" stroke-width="6"/>
+  <path d="M258,216 Q268,207 278,215" stroke-width="6"/>
+  <ellipse cx="212" cy="251" rx="8.5" ry="13" fill="#082941" stroke="none"/>
+  <ellipse cx="264" cy="243" rx="8.5" ry="14" fill="#082941" stroke="none"/>
+  <path d="M213,281 C226,292 252,289 266,276 C262,295 249,303 239,303 C228,303 217,296 213,281 Z" fill="#082941" stroke-width="5"/>
+  <ellipse cx="239.500" cy="298" rx="5" ry="2.400" fill="#FCFAF4" stroke="none"/>
+
+  <!-- cap -->
+  <ellipse cx="163" cy="100" rx="9" ry="6" transform="rotate(-12 163 100)" fill="#587383"/>
+  <path d="M103,167 C100,136 121,107 160,101 C203,95 239,114 247,138 C212,138 168,150 140,171 C128,174 112,172 103,167 Z" fill="url(#capG)"/>
+  <path d="M159,103 C139,118 132,146 138,170" stroke-width="5"/>
+  <path d="M236,156 C250,151 268,150 281,153 C285,158 282,164 274,164 C262,160 250,157 238,157 Z" fill="#3F5A6E"/>
+  <path d="M140,171 C160,150 200,137 246,137 C262,139 277,146 281,153 C266,150 248,152 234,156 C212,163 196,178 172,178 C158,178 147,175 140,171 Z" fill="url(#brimG)"/>
+
+  <!-- bag: opening, tools, body -->
+  <path d="M40,337 L74,325 L147,350 L113,362 Z" fill="#0E3550"/>
+  <path d="M45,356 L46,256 L100,360 Z M54,340 L55,296 L79,341 Z" fill="#FCFAF4" fill-rule="evenodd" stroke-width="5"/>
+  <g transform="rotate(8 104 310)" stroke-width="5">
+    <path d="M97,360 L97,278 L104,262 L111,278 L111,360 Z" fill="#647F8F"/>
+    <path d="M97,278 L104,262 L111,278 Z" fill="#FCFAF4"/>
+    <path d="M102,267 L104,262 L106,267 Z" fill="#082941"/>
+  </g>
+  <g transform="rotate(14 132 320)" stroke-width="5">
+    <path d="M122,272 L142,272 L142,362 L122,362 Z" fill="#FCFAF4"/>
+    <path d="M122,286 L130,286 M122,298 L134,298 M122,310 L130,310 M122,322 L134,322 M122,334 L130,334" stroke-width="3.500"/>
+  </g>
+  <path d="M40,337 L113,362 L113,447 L50,421 Q40,417 40,406 Z" fill="url(#bagG)"/>
+  <path d="M113,362 L147,350 L147,430 L113,447 Z" fill="#4C6778"/>
+  <g transform="matrix(1,0.340,0,1,76,394)" stroke="none" fill="#FCFAF4">
+    <rect x="-3.800" y="-15" width="7.600" height="30" rx="1.500"/><rect x="-3.800" y="-15" width="7.600" height="30" rx="1.500" transform="rotate(45)"/>
+    <rect x="-3.800" y="-15" width="7.600" height="30" rx="1.500" transform="rotate(90)"/><rect x="-3.800" y="-15" width="7.600" height="30" rx="1.500" transform="rotate(135)"/>
+    <circle r="10.500"/><circle r="4.500" fill="#5F7A8A"/>
+  </g>
+
+  <!-- near arm and glove -->
+  <path d="M160,360 C150,364 142,372 137,382" stroke-width="27"/>
+  <path d="M160,360 C150,364 142,372 137,382" stroke="#3F5A6E" stroke-width="13"/>
+  <path d="M112,381 C108,369 120,362 132,366 C142,361 155,368 153,381 C159,391 155,404 145,406 C141,415 126,417 122,408 C112,406 105,392 112,381 Z" fill="#FCFAF4"/>
+  <path d="M127,395 Q134,399 132,408 M140,391 Q147,395 145,404" stroke-width="4.500"/>
+
+  <!-- waving glove -->
+  <path d="M330,268 C322,256 317,241 319,231 C321,222 331,221 334,230 L339,247 C337,232 339,217 344,209 C348,201 358,201 360,208 C364,201 375,202 376,211 C382,208 389,214 387,224 C389,238 385,254 377,268 C372,277 366,283 358,285 C346,287 336,280 330,268 Z" fill="#FCFAF4"/>
+  <path d="M360,208 L354,236 M376,211 L367,240" stroke-width="5"/>
+  <path d="M331,277 Q347,290 366,282" stroke-width="19"/><path d="M331,277 Q347,290 366,282" stroke="#FCFAF4" stroke-width="6"/>
+</g>
+</svg>
