@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=12">
+  <link rel="stylesheet" href="css/site.css?v=14">
 </head>
 <body>
 
@@ -95,7 +95,7 @@
 <!-- ─── How it works ───────────────────────────────────────── -->
 <section class="section" id="how">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">How it works</span>
       <h2 class="h2">It reads the model, so you don't have to explain it.</h2>
       <p class="lead">A general chatbot only knows what you type or paste into it. Caddie reads SolidWorks directly every time you ask, so you never have to describe the model first.</p>
@@ -157,17 +157,26 @@
 <!-- ─── What it does ───────────────────────────────────────── -->
 <section class="section section-alt" id="features">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">What it does</span>
       <h2 class="h2">Help that ends with the model fixed, not just explained.</h2>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row" data-reveal>
       <div class="feature-media">
         <figure>
           <div class="shot wide"><img src="img/sw-show-me.png" width="820" height="845" loading="lazy" alt="SolidWorks with the Tools menu open. Caddie has outlined Evaluate, then Measure, in blue and labeled it."></div>
           <figcaption>Caddie highlighting Tools › Evaluate › Measure in SolidWorks 2026.</figcaption>
         </figure>
+        <div class="card guide-anim" data-reveal>
+          <div class="gs-head"><span class="card-label">Guide: measure a distance</span><span class="gs-count">3 steps</span></div>
+          <div class="gs-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <ol class="gs-rows">
+            <li class="gs-row"><span class="gs-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><b>Open the Tools menu</b><span class="gs-where">Menu bar</span></li>
+            <li class="gs-row"><span class="gs-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><b>Choose Evaluate</b><span class="gs-where">Tools</span></li>
+            <li class="gs-row"><span class="gs-tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><b>Click Measure</b><span class="gs-where">Evaluate</span></li>
+          </ol>
+        </div>
       </div>
       <div class="feature-text">
         <span class="tag">Guides</span>
@@ -182,7 +191,7 @@
       </div>
     </div>
 
-    <div class="feature-row reverse">
+    <div class="feature-row reverse" data-reveal>
       <div class="feature-media">
         <div class="shot"><img src="img/panel-fix.png" width="760" height="1120" loading="lazy" alt="Asked to find and fix the conflicting relation in the over-defined Sketch2, Caddie proposed removing one Horizontal relation. The change shows as done, and Caddie confirms no alerts remain."></div>
       </div>
@@ -202,7 +211,7 @@
       </div>
     </div>
 
-    <div class="feature-row">
+    <div class="feature-row" data-reveal>
       <div class="feature-media">
         <div class="shot"><img src="img/panel-image.png" width="760" height="1600" loading="lazy" alt="The user attached a drawing of an angle bracket and asked Caddie to model it. Caddie proposes a side profile sketch, an 80 mm extrude, the three holes and 6061 Alloy, with Do it and Not now buttons."></div>
       </div>
@@ -223,7 +232,7 @@
       </div>
     </div>
 
-    <div class="feature-row reverse">
+    <div class="feature-row reverse" data-reveal>
       <div class="feature-media">
         <div class="shot"><img src="img/panel-practice.png" width="760" height="1720" loading="lazy" alt="A practice question: the answer is too high, and the hint says the part has exactly the extra material the two base holes should remove."></div>
       </div>
@@ -246,38 +255,38 @@
 <!-- ─── Real answers ───────────────────────────────────────── -->
 <section class="section" id="examples">
   <div class="container">
-    <div class="section-head center">
+    <div class="section-head center" data-reveal>
       <span class="eyebrow">Real answers</span>
       <h2 class="h2">Specific answers, word for word.</h2>
       <p class="lead">Unedited answers from Caddie's test runs on sample models. Each one names the feature and the number, and says what's worth checking.</p>
     </div>
     <div class="examples">
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:0ms">
         <div class="ex-top"><span class="tag steel">Sheet metal</span><span class="ex-model">Cover.SLDPRT</span></div>
         <div class="bubble bubble-user">What blank size do I need for this part?</div>
         <div class="bubble bubble-ai"><p>The flat blank is 182.6 × 95 mm in 1.5 mm AISI 304 sheet.</p><p>That size uses the model’s K-factor of 0.44, so confirm the bend allowance with your fabricator before cutting.</p></div>
       </article>
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:90ms">
         <div class="ex-top"><span class="tag">Weldments</span><span class="ex-model">Frame.SLDPRT</span></div>
         <div class="bubble bubble-user">What's the cut list for the square tubing?</div>
         <div class="bubble bubble-ai"><p>The square tubing cut list for 30 × 30 × 2.60 mm tube is:</p><ul><li>4 pieces at 630 mm, with 45° cuts at both ends</li><li>4 pieces at 970 mm, with square cuts at both ends</li></ul></div>
       </article>
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:180ms">
         <div class="ex-top"><span class="tag green">Calculation</span><span class="ex-model">worked exactly</span></div>
         <div class="bubble bubble-user">What's the maximum shear stress in a 20 mm solid steel shaft carrying 50 N·m of torque?</div>
         <div class="bubble bubble-ai"><p>The maximum shear stress is <strong>31.8 MPa</strong>, assuming pure torsion.</p><p>Using the solid circular shaft formula, τmax = 16T / (πd³), with torque in N·mm and diameter in mm.</p></div>
       </article>
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:0ms">
         <div class="ex-top"><span class="tag green">Practice</span><span class="ex-model">Mounting plate · CSWA style</span></div>
         <div class="bubble bubble-user">My mass is far higher than the expected answer. What did I miss?</div>
         <div class="bubble bubble-ai"><p>Your material is the issue: Part1 is assigned Plain Carbon Steel instead of the specified 6061 Alloy. Steel is much denser, and your model’s volume matches the practice part, so the geometry isn’t what’s driving the high mass.</p></div>
       </article>
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:90ms">
         <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
         <div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div>
         <div class="bubble bubble-ai"><p>Not reliably: Mounting Hole fails when the 40 mm Base Profile dimension is reduced by 20%. The other five driving dimensions rebuilt at both 20% larger and smaller, and all values are restored.</p><p>I couldn’t inspect the hole’s references, but I’d first check whether its position leaves enough material when the plate narrows.</p></div>
       </article>
-      <article class="card example">
+      <article class="card example" data-reveal style="--d:180ms">
         <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
         <div class="bubble bubble-user">The bore must stay centered on the plate when the length changes. How should it be constrained?</div>
         <div class="bubble bubble-ai"><p>Constrain the bore center to the midpoint of a construction diagonal between opposite plate corners. That keeps it centered as the plate’s length or width changes.</p></div>
@@ -290,7 +299,7 @@
 <!-- ─── Practice ───────────────────────────────────────────── -->
 <section class="section section-alt" id="practice">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Certification practice</span>
       <h2 class="h2">New practice parts, every time.</h2>
       <p class="lead">The 12 practice parts are original, written for Caddie in the style of SolidWorks' certification exams. They aren't copies of exam questions. Each is generated from its own geometry with third-angle views, and gets new dimensions every attempt. The drawing, the answer key and the part Caddie builds for you always agree.</p>
@@ -334,7 +343,7 @@
 <!-- ─── Design intent ──────────────────────────────────────── -->
 <section class="section" id="intent">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Design intent</span>
       <h2 class="h2">Models that survive the next change.</h2>
       <p class="lead">A part that rebuilds today can still fall apart when someone changes a size. Caddie explains what drives what in your model and helps you build the intent in, so changes go where you expect.</p>
@@ -367,7 +376,7 @@
 <!-- ─── Compare ────────────────────────────────────────────── -->
 <section class="section section-alt" id="compare">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Where Caddie fits</span>
       <h2 class="h2">Built for the SolidWorks you already use.</h2>
     </div>
@@ -403,7 +412,7 @@
 <!-- ─── Guides ─────────────────────────────────────────────── -->
 <section class="section" id="guides">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Guides</span>
       <h2 class="h2">Get the most out of it.</h2>
       <p class="lead">Short guides with real examples. Start with the quick start, then pick what you do most.</p>
@@ -422,7 +431,7 @@
 <!-- ─── Privacy ────────────────────────────────────────────── -->
 <section class="section section-alt" id="privacy">
   <div class="container">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <span class="eyebrow">Privacy</span>
       <h2 class="h2">What leaves your PC, and what doesn't.</h2>
       <p class="lead">Caddie is built for engineers who work on confidential designs, so here is exactly where your data goes.</p>
@@ -456,7 +465,7 @@
 <!-- ─── FAQ ────────────────────────────────────────────────── -->
 <section class="section" id="faq">
   <div class="container">
-    <div class="section-head center">
+    <div class="section-head center" data-reveal>
       <span class="eyebrow">FAQ</span>
       <h2 class="h2">Questions engineers ask.</h2>
     </div>
@@ -549,6 +558,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=2"></script>
+<script src="js/site.js?v=3"></script>
 </body>
 </html>

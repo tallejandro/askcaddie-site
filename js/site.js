@@ -34,3 +34,22 @@
   }, { threshold: 0.35 });
   io.observe(demo);
 })();
+
+// Scroll reveals: blocks marked data-reveal ease in as they enter the screen, once. Anything already
+// in view when the page loads is left alone. Without JS, IntersectionObserver or with reduced motion,
+// nothing is hidden.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!items.length) return;
+  document.documentElement.classList.add('reveal-on');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();

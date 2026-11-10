@@ -287,7 +287,8 @@ code, kbd {
 .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 56px 0; }
 .feature-row + .feature-row { border-top: 1px solid var(--line); }
 .feature-row.reverse .feature-media { order: 2; }
-.feature-media { display: flex; justify-content: center; }
+.feature-media { display: flex; flex-direction: column; align-items: center; }
+.feature-media .guide-anim { width: 100%; }
 .feature-media .shot { width: min(100%, 360px); }
 .feature-media .shot.wide { width: 100%; }
 .feature-media figure { width: 100%; }
@@ -641,4 +642,71 @@ code, kbd {
     content: attr(data-label); display: block; margin-bottom: 2px;
     font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint);
   }
+}
+
+/* ─── Motion on scroll ─────────────────────────────────────────
+   site.js adds .reveal-on to <html> only when it can observe scrolling and motion is allowed, and
+   adds .in to each [data-reveal] block as it enters. Without it, everything is simply shown. */
+.guide-anim { margin-top: 18px; padding: 16px 18px; }
+.gs-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; }
+.gs-head .card-label { margin-bottom: 0; }
+.gs-count { font-size: 12px; font-weight: 600; color: var(--muted); }
+.gs-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 12px; }
+.gs-bar i { height: 4px; border-radius: 2px; background: var(--blue); }
+.gs-rows { display: grid; gap: 6px; list-style: none; }
+.gs-row {
+  display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px;
+  border: 1px solid #BFE1CF; background: var(--green-50); font-size: 14px; color: var(--ink);
+}
+.gs-row .gs-tick {
+  flex: none; width: 18px; height: 18px; border-radius: 50%; background: var(--green); color: #fff;
+  display: grid; place-items: center;
+}
+.gs-tick svg { width: 11px; height: 11px; }
+.gs-row b { font-weight: 600; }
+.gs-row .gs-where { margin-left: auto; font-size: 12px; color: var(--muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-on [data-reveal]:not(.in) { opacity: 0; transform: translateY(14px); }
+  .reveal-on [data-reveal] { transition: opacity 520ms var(--ease-out), transform 520ms var(--ease-out); transition-delay: var(--d, 0ms); }
+  .reveal-on [data-reveal].in { opacity: 1; transform: none; }
+
+  /* Example cards: the question lands first, then the answer follows it. */
+  .reveal-on .example .bubble-ai { transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+  .reveal-on .example:not(.in) .bubble-ai { opacity: 0; transform: translateY(8px); }
+  .reveal-on .example.in .bubble-ai { transition-delay: calc(var(--d, 0ms) + 380ms); }
+
+  /* Hero screenshots settle into place once, on load. */
+  .hero-art .shot-front { animation: settle-front 560ms var(--ease-out) 80ms both; }
+  .hero-art .shot-back { animation: settle-back 640ms var(--ease-out) 160ms both; }
+  @keyframes settle-front { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes settle-back { from { opacity: 0; transform: translateY(6px); } }
+
+  /* The guide card plays through its three steps once: active, then ticked, then the next. */
+  .reveal-on .guide-anim:not(.in) .gs-row { background: #fff; border-color: var(--line); }
+  .reveal-on .guide-anim:not(.in) .gs-tick { opacity: 0; }
+  .reveal-on .guide-anim:not(.in) .gs-bar i { transform: scaleX(0); }
+  .guide-anim.in .gs-bar i { transform-origin: left; animation: 2700ms linear both; }
+  .guide-anim.in .gs-bar i:nth-child(1) { animation-name: gs-fill-1; }
+  .guide-anim.in .gs-bar i:nth-child(2) { animation-name: gs-fill-2; }
+  .guide-anim.in .gs-bar i:nth-child(3) { animation-name: gs-fill-3; }
+  .guide-anim.in .gs-row { animation-duration: 2700ms; animation-timing-function: var(--ease-out); animation-fill-mode: both; }
+  .guide-anim.in .gs-row:nth-child(1) { animation-name: gs-row-1; }
+  .guide-anim.in .gs-row:nth-child(2) { animation-name: gs-row-2; }
+  .guide-anim.in .gs-row:nth-child(3) { animation-name: gs-row-3; }
+  .guide-anim.in .gs-row .gs-tick { animation-duration: 2700ms; animation-timing-function: var(--ease-out); animation-fill-mode: both; }
+  .guide-anim.in .gs-row:nth-child(1) .gs-tick { animation-name: gs-tick-1; }
+  .guide-anim.in .gs-row:nth-child(2) .gs-tick { animation-name: gs-tick-2; }
+  .guide-anim.in .gs-row:nth-child(3) .gs-tick { animation-name: gs-tick-3; }
+
+  @keyframes gs-fill-1 { 0% { transform: scaleX(0); } 33%, 100% { transform: scaleX(1); } }
+  @keyframes gs-fill-2 { 0%, 33% { transform: scaleX(0); } 66%, 100% { transform: scaleX(1); } }
+  @keyframes gs-fill-3 { 0%, 66% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+  /* idle (white) -> active (blue outline) -> done (green) */
+  @keyframes gs-row-1 { 0%, 28% { background: var(--blue-50); border-color: var(--blue); } 36%, 100% { background: var(--green-50); border-color: #BFE1CF; } }
+  @keyframes gs-row-2 { 0%, 33% { background: #fff; border-color: var(--line); } 38%, 61% { background: var(--blue-50); border-color: var(--blue); } 69%, 100% { background: var(--green-50); border-color: #BFE1CF; } }
+  @keyframes gs-row-3 { 0%, 66% { background: #fff; border-color: var(--line); } 71%, 94% { background: var(--blue-50); border-color: var(--blue); } 100% { background: var(--green-50); border-color: #BFE1CF; } }
+  @keyframes gs-tick-1 { 0%, 28% { opacity: 0; transform: scale(.4); } 36%, 100% { opacity: 1; transform: none; } }
+  @keyframes gs-tick-2 { 0%, 61% { opacity: 0; transform: scale(.4); } 69%, 100% { opacity: 1; transform: none; } }
+  @keyframes gs-tick-3 { 0%, 94% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: none; } }
 }
