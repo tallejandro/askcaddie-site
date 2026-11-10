@@ -194,6 +194,9 @@ code, kbd {
 .try { margin-top: 30px; }
 .try-label { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+a.chip { text-decoration: none; transition: border-color 150ms ease, background-color 150ms ease, transform 160ms var(--ease-out); }
+a.chip:active { transform: scale(.97); }
+@media (hover:hover) and (pointer:fine) { a.chip:hover { border-color: var(--blue); background: var(--blue-50); } }
 .chip {
   font-size: 13.5px; color: var(--ink); background: #fff;
   border: 1px solid var(--line-2); border-radius: 999px; padding: 6px 12px;
@@ -385,8 +388,8 @@ code, kbd {
 .limits { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px 32px; margin-top: 18px; list-style: none; }
 .limits li { position: relative; padding-left: 28px; color: var(--text); }
 .limits li::before {
-  content: ""; position: absolute; left: 0; top: 5px; width: 16px; height: 16px; border-radius: 50%;
-  border: 2px solid var(--steel-200);
+  content: ""; position: absolute; left: 3px; top: 12px; width: 10px; height: 2px; border-radius: 1px;
+  background: var(--steel);
 }
 
 /* ─── Privacy ──────────────────────────────────────────────── */
@@ -709,4 +712,35 @@ code, kbd {
   @keyframes gs-tick-1 { 0%, 28% { opacity: 0; transform: scale(.4); } 36%, 100% { opacity: 1; transform: none; } }
   @keyframes gs-tick-2 { 0%, 61% { opacity: 0; transform: scale(.4); } 69%, 100% { opacity: 1; transform: none; } }
   @keyframes gs-tick-3 { 0%, 94% { opacity: 0; transform: scale(.4); } 100% { opacity: 1; transform: none; } }
+}
+
+/* Landing on an answer from a hero question: a Caddie Blue ring that fades out. */
+.read-demo, .example, .quote-line { position: relative; }
+.landed::after {
+  content: ""; position: absolute; inset: -6px; border: 2px solid var(--blue); border-radius: 16px;
+  pointer-events: none; opacity: 0; animation: landed-ring 1200ms ease-out;
+}
+@keyframes landed-ring { 0% { opacity: 1; } 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .landed::after { animation: none; } }
+
+/* On a phone, the download button is a copy-link note, since the installer is for a Windows PC. */
+.phone-note { display: none; margin-top: 14px; font-size: 14px; color: #B3C3CF; }
+.copy-link {
+  font: 600 13px var(--font); color: var(--ink); background: var(--paper); border: 0; border-radius: 8px;
+  padding: 6px 12px; margin-left: 6px; cursor: pointer; touch-action: manipulation;
+  transition: transform 160ms var(--ease-out);
+}
+.copy-link:active { transform: scale(.97); }
+@media (hover: none) and (pointer: coarse) { .phone-note { display: block; } }
+
+/* Phones: the real answers become a swipe row instead of six stacked cards. */
+@media (max-width: 640px) {
+  .examples {
+    display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+    margin: 0 -16px; padding: 0 16px 10px; scrollbar-width: none; overscroll-behavior-x: contain;
+  }
+  .examples::-webkit-scrollbar { display: none; }
+  .example { flex: 0 0 85%; scroll-snap-align: center; }
+  .reveal-on .example[data-reveal]:not(.in) { opacity: 1; transform: none; }
+  .reveal-on .example:not(.in) .bubble-ai { opacity: 1; transform: none; }
 }

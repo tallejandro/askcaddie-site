@@ -53,3 +53,31 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+// Hero questions jump to their answers; the answer gets a brief blue ring as you land on it.
+(function () {
+  document.querySelectorAll('a.chip[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      t.classList.remove('landed');
+      setTimeout(function () { t.classList.add('landed'); }, 350);
+      setTimeout(function () { t.classList.remove('landed'); }, 1900);
+    });
+  });
+})();
+
+// Phones: copy the page's link so it can be opened on the Windows PC.
+(function () {
+  var btn = document.querySelector('[data-copy-link]');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var url = location.origin + location.pathname;
+    function done() { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy link'; }, 2000); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done, function () { if (navigator.share) navigator.share({ url: url }); });
+    } else if (navigator.share) {
+      navigator.share({ url: url });
+    }
+  });
+})();

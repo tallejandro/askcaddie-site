@@ -17,10 +17,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16.png">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
   <meta name="theme-color" content="#FCFAF4">
+  <meta name="color-scheme" content="light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=14">
+  <link rel="stylesheet" href="css/site.css?v=15">
 </head>
 <body>
 
@@ -65,11 +66,11 @@
       <div class="try">
         <div class="try-label">Questions it answers from your model</div>
         <div class="chips">
-          <span class="chip">Why won't this part rebuild?</span>
-          <span class="chip">What blank size do I need for this part?</span>
-          <span class="chip">Will this part still rebuild if the main dimensions change?</span>
+          <a class="chip" href="#how-demo">Why won't this part rebuild?</a>
+          <a class="chip" href="#ex-blank">What blank size do I need for this part?</a>
+          <a class="chip" href="#ex-intent">Will this part still rebuild if the main dimensions change?</a>
           <span class="chip">Which parts in this assembly can still move?</span>
-          <span class="chip">Model this bracket from the attached drawing.</span>
+          <a class="chip" href="#from-image">Model this bracket from the attached drawing.</a>
         </div>
       </div>
     </div>
@@ -135,7 +136,7 @@
         </div>
       </div>
 
-      <div class="read-demo">
+      <div class="read-demo" id="how-demo">
         <div class="card packet">
           <div class="card-label">What Caddie read</div>
           <div class="packet-rows">
@@ -224,7 +225,7 @@
           <li>Says what it assumed, so you can correct it</li>
           <li>You approve each step before it's built</li>
         </ul>
-        <div class="quote-line">
+        <div class="quote-line" id="from-image">
           <p><span class="q-label">Asked, with the drawing attached</span><span class="q-ask">Model this bracket from the attached drawing.</span></p>
           <p><span class="q-label">Caddie</span>“The bracket is ready to build with the R8 inside corner and three through-holes. I assumed the undimensioned hole positions are symmetric, as drawn. The material is SolidWorks’ 6061 Alloy; the drawing doesn’t specify a temper.”</p>
         </div>
@@ -261,7 +262,7 @@
       <p class="lead">Unedited answers from Caddie's test runs on sample models. Each one names the feature and the number, and says what's worth checking.</p>
     </div>
     <div class="examples">
-      <article class="card example" data-reveal style="--d:0ms">
+      <article id="ex-blank" class="card example" data-reveal style="--d:0ms">
         <div class="ex-top"><span class="tag steel">Sheet metal</span><span class="ex-model">Cover.SLDPRT</span></div>
         <div class="bubble bubble-user">What blank size do I need for this part?</div>
         <div class="bubble bubble-ai"><p>The flat blank is 182.6 × 95 mm in 1.5 mm AISI 304 sheet.</p><p>That size uses the model’s K-factor of 0.44, so confirm the bend allowance with your fabricator before cutting.</p></div>
@@ -281,7 +282,7 @@
         <div class="bubble bubble-user">My mass is far higher than the expected answer. What did I miss?</div>
         <div class="bubble bubble-ai"><p>Your material is the issue: Part1 is assigned Plain Carbon Steel instead of the specified 6061 Alloy. Steel is much denser, and your model’s volume matches the practice part, so the geometry isn’t what’s driving the high mass.</p></div>
       </article>
-      <article class="card example" data-reveal style="--d:90ms">
+      <article id="ex-intent" class="card example" data-reveal style="--d:90ms">
         <div class="ex-top"><span class="tag">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
         <div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div>
         <div class="bubble bubble-ai"><p>Not reliably: Mounting Hole fails when the 40 mm Base Profile dimension is reduced by 20%. The other five driving dimensions rebuilt at both 20% larger and smaller, and all values are restored.</p><p>I couldn’t inspect the hole’s references, but I’d first check whether its position leaves enough material when the plate narrows.</p></div>
@@ -366,7 +367,7 @@
       </div>
     </div>
     <div class="soon">
-      <span class="tag">New in 0.3.1</span>
+      <span class="tag">Stress test</span>
       <p><b>A design intent stress test.</b> Ask "Will this part still rebuild if the main dimensions change?" Caddie makes each driving dimension 20% bigger, then 20% smaller, rebuilds, tells you exactly what breaks, and puts every value back. On a test part it checked 17 dimensions in under 7 seconds.</p>
     </div>
     <a class="more" href="docs/design-intent.html" style="display:inline-block;margin-top:22px;font-weight:600">Design intent, explained →</a>
@@ -533,6 +534,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>
         Download CaddieSetup.exe
       </a>
+      <p class="phone-note">On your phone? Copy the link and open it on your Windows PC. <button type="button" class="copy-link" data-copy-link>Copy link</button></p>
       <p class="download-meta">v0.3.5 · about 3.4 MB · Windows 10 and 11, 64-bit · SolidWorks 2022 and newer</p>
     </div>
     <div class="install">
@@ -558,6 +560,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=3"></script>
+<script src="js/site.js?v=4"></script>
 </body>
 </html>
