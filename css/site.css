@@ -44,10 +44,19 @@
   --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --display: "Plus Jakarta Sans", "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
   --mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  /* Motion: one strong ease-out for everything that enters or responds. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+html {
+  scroll-padding-top: 80px;
+  -webkit-tap-highlight-color: transparent; /* taps get our own :active states instead of a grey flash */
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 body {
   font-family: var(--font);
   font-size: 16px;
@@ -59,8 +68,7 @@ body {
 }
 img, svg { max-width: 100%; display: block; }
 img { height: auto; }
-a { color: var(--blue); text-decoration: none; }
-a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a { color: var(--blue); text-decoration: none; text-underline-offset: 3px; }
 strong { color: var(--ink); font-weight: 650; }
 ::selection { background: var(--gold-100); color: var(--ink); }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
@@ -85,25 +93,23 @@ code, kbd {
   border-radius: 11px;
   border: 1.5px solid transparent;
   cursor: pointer;
-  transition: background .15s, border-color .15s, transform .15s, box-shadow .15s, color .15s;
+  /* Colour changes ease; the press responds at once and settles fast. */
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, color 150ms ease, transform 160ms var(--ease-out);
   white-space: nowrap;
+  touch-action: manipulation;
+  -webkit-user-select: none; user-select: none;
 }
-.btn:hover { text-decoration: none; transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
 /* The one "do this now" colour: Flag gold with ink text. */
 .btn-primary {
   background: var(--gold); color: var(--ink);
   box-shadow: inset 0 -2px 0 rgba(8, 41, 65, .16), 0 8px 18px -10px rgba(227, 162, 44, .9);
 }
-.btn-primary:hover { background: var(--gold-600); }
 .btn-ghost { background: #fff; color: var(--ink); border-color: rgba(8, 41, 65, .22); }
-.btn-ghost:hover { border-color: var(--ink); }
 .btn-lg { font-size: 16px; padding: 15px 24px; border-radius: 13px; }
 .btn svg { width: 18px; height: 18px; }
 
 /* ─── Logo ─────────────────────────────────────────────────── */
 .brand { display: flex; align-items: center; gap: 10px; font: 800 21px/1 var(--display); color: var(--ink); letter-spacing: -.02em; }
-.brand:hover { text-decoration: none; }
 .brand img { width: 35px; height: 40px; }
 /* On dark backgrounds the mascot sits on a paper disc, so its ink outline still shows. */
 .brand-disc { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); }
@@ -120,7 +126,7 @@ code, kbd {
 .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 24px; height: 66px; display: flex; align-items: center; gap: 28px; }
 .nav-links { display: flex; align-items: center; gap: 24px; margin-left: auto; list-style: none; }
 .nav-links a { color: var(--steel-700); font-weight: 550; font-size: 14.5px; }
-.nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--ink); text-decoration: none; }
+.nav-links a[aria-current="page"] { color: var(--ink); }
 .nav-links .btn { color: var(--ink); padding: 10px 16px 10px 14px; font-size: 14px; border-radius: 10px; gap: 7px; }
 .nav-links .btn svg { width: 16px; height: 16px; }
 .nav-toggle { display: none; margin-left: auto; width: 42px; height: 42px; border: 1px solid var(--line-2); border-radius: 10px; background: #fff; cursor: pointer; }
@@ -129,7 +135,6 @@ code, kbd {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 .nav-mobile { display: none; border-top: 1px solid var(--line); background: var(--paper); padding: 8px 24px 18px; }
-.nav-mobile.open { display: block; }
 .nav-mobile a { display: block; padding: 11px 0; color: var(--ink); font-weight: 600; border-bottom: 1px solid var(--line); }
 .nav-mobile a.btn { display: flex; margin-top: 14px; border: none; color: var(--ink); }
 
@@ -168,7 +173,8 @@ code, kbd {
           mask-image: radial-gradient(ellipse 75% 70% at 65% 35%, #000 25%, transparent 80%);
   pointer-events: none;
 }
-.hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; padding: 72px 0 88px; }
+/* padding-block, so .container keeps its side padding */
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center; padding-block: 72px 88px; }
 .badge {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 13px; font-weight: 600; color: var(--ink);
@@ -258,6 +264,23 @@ code, kbd {
 .who-user { text-align: right; }
 .arrow-down { display: grid; place-items: center; color: var(--steel); }
 .arrow-down svg { width: 22px; height: 22px; }
+
+/* The demo plays once when it scrolls into view (site.js sets data-play; without it, it's simply shown):
+   Caddie reads the rows, finds the Fillet1 error, then answers. Ends at about 0.98 s. */
+.read-demo[data-play] .packet-row,
+.read-demo[data-play] .convo > div:last-child { transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out); }
+.read-demo[data-play="pending"] .packet-row { opacity: 0; transform: translateY(6px); }
+.read-demo[data-play="pending"] .packet-row.err { background: var(--steel-50); }
+.read-demo[data-play="pending"] .packet-row.err .v { color: var(--muted); }
+.read-demo[data-play="pending"] .arrow-down { opacity: 0; }
+.read-demo[data-play="pending"] .convo > div:last-child { opacity: 0; transform: translateY(8px); }
+.read-demo[data-play="run"] .packet-row:nth-child(2) { transition-delay: 70ms; }
+.read-demo[data-play="run"] .packet-row.err {
+  transition: opacity 360ms var(--ease-out) 120ms, transform 360ms var(--ease-out) 120ms, background-color 280ms ease 400ms;
+}
+.read-demo[data-play="run"] .packet-row.err .v { transition: color 280ms ease 400ms; }
+.read-demo[data-play="run"] .arrow-down { transition: opacity 200ms ease 480ms; }
+.read-demo[data-play="run"] .convo > div:last-child { transition: opacity 420ms var(--ease-out) 560ms, transform 420ms var(--ease-out) 560ms; }
 
 /* ─── Feature rows ─────────────────────────────────────────── */
 .feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; padding: 56px 0; }
@@ -375,8 +398,7 @@ code, kbd {
 /* ─── Guides grid ──────────────────────────────────────────── */
 .guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .guide-grid.two { grid-template-columns: repeat(2, 1fr); }
-.guide-card { display: flex; flex-direction: column; padding: 22px; color: inherit; transition: border-color .15s, transform .15s, box-shadow .15s; }
-.guide-card:hover { text-decoration: none; border-color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow); }
+.guide-card { display: flex; flex-direction: column; padding: 22px; color: inherit; transition: border-color 150ms ease, box-shadow 150ms ease, transform 160ms var(--ease-out); touch-action: manipulation; }
 .guide-card .kicker { font-size: 12px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); }
 .guide-card h3 { font: 700 18.5px/1.3 var(--display); color: var(--ink); margin: 6px 0; letter-spacing: -.01em; }
 .guide-card p { font-size: 14.5px; color: var(--muted); flex: 1; }
@@ -393,10 +415,28 @@ code, kbd {
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: ""; position: absolute; right: 2px; top: 50%; width: 9px; height: 9px; margin-top: -6px;
-  border-right: 2px solid var(--steel); border-bottom: 2px solid var(--steel); transform: rotate(45deg); transition: transform .2s;
+  border-right: 2px solid var(--steel); border-bottom: 2px solid var(--steel);
+  transform: rotate(45deg); transition: transform 240ms var(--ease-out);
 }
-.faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.faq details[open] summary::after { transform: translateY(4px) rotate(-135deg); }
 .faq details p { padding: 0 0 18px; color: var(--muted); }
+/* The answer opens instead of appearing: 240 ms open, 180 ms close. Browsers without
+   ::details-content and interpolate-size (Safari, Firefox today) open it instantly, as before. */
+@supports (interpolate-size: allow-keywords) {
+  .faq { interpolate-size: allow-keywords; }
+  .faq details::details-content {
+    block-size: 0; overflow-y: clip;
+    transition: block-size 180ms var(--ease-out), content-visibility 180ms allow-discrete;
+  }
+  .faq details[open]::details-content {
+    block-size: auto;
+    transition: block-size 240ms var(--ease-out), content-visibility 240ms allow-discrete;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .faq details::details-content, .faq details[open]::details-content { transition: none; }
+  .faq summary::after, .doc-toc summary::after { transition: none; }
+}
 
 /* ─── Download ─────────────────────────────────────────────── */
 .download {
@@ -415,7 +455,7 @@ code, kbd {
   -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%);
           mask-image: linear-gradient(180deg, #000, transparent 85%);
 }
-.download-grid { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; padding: 88px 0; }
+.download-grid { position: relative; display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: center; padding-block: 88px; }
 .download h2 { color: var(--paper); font: 800 clamp(30px, 4vw, 46px)/1.08 var(--display); letter-spacing: -.03em; }
 .download p { color: #B3C3CF; font-size: 17px; margin-top: 14px; max-width: 540px; }
 .download .btn-primary { margin-top: 28px; box-shadow: inset 0 -2px 0 rgba(8, 41, 65, .2), 0 10px 26px -10px rgba(242, 181, 68, .55); }
@@ -446,8 +486,27 @@ code, kbd {
 .doc-sidebar .group { margin-bottom: 22px; }
 .doc-sidebar .group-label { font-size: 11.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
 .doc-sidebar a { display: block; color: var(--muted); padding: 6px 10px; border-radius: 8px; font-weight: 500; }
-.doc-sidebar a:hover { color: var(--ink); background: var(--bg-alt); text-decoration: none; }
 .doc-sidebar a[aria-current="page"] { color: var(--ink); background: var(--blue-50); box-shadow: inset 3px 0 0 var(--blue); font-weight: 650; }
+/* On narrow screens the sidebar folds into one row; on wide screens this row doesn't exist. */
+.doc-toc { display: none; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); }
+.doc-toc summary {
+  list-style: none; cursor: pointer; position: relative; min-height: 48px; padding: 12px 44px 12px 16px;
+  display: flex; flex-direction: column; justify-content: center; gap: 1px; font-weight: 650; line-height: 1.35; color: var(--ink);
+  touch-action: manipulation; -webkit-user-select: none; user-select: none;
+}
+.doc-toc summary::-webkit-details-marker { display: none; }
+.doc-toc summary::after {
+  content: ""; position: absolute; right: 20px; top: 50%; width: 9px; height: 9px; margin-top: -6px;
+  border-right: 2px solid var(--steel); border-bottom: 2px solid var(--steel);
+  transform: rotate(45deg); transition: transform 240ms var(--ease-out);
+}
+.doc-toc[open] summary::after { transform: translateY(4px) rotate(-135deg); }
+.doc-toc summary span { font-size: 11.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); }
+.doc-toc nav { padding: 4px 8px 12px; border-top: 1px solid var(--line); }
+.doc-toc .group { margin-top: 10px; }
+.doc-toc .group-label { font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint); padding: 0 8px 2px; }
+.doc-toc a { display: block; padding: 9px 8px; border-radius: 8px; color: var(--muted); font-weight: 500; }
+.doc-toc a[aria-current="page"] { color: var(--ink); background: var(--blue-50); box-shadow: inset 3px 0 0 var(--blue); font-weight: 650; }
 .doc-main { max-width: 760px; }
 .breadcrumb { font-size: 13.5px; color: var(--faint); margin-bottom: 14px; }
 .breadcrumb a { color: var(--muted); }
@@ -483,16 +542,32 @@ code, kbd {
 .doc-main .chips { margin: 14px 0; }
 .doc-next { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
 .doc-next a { display: block; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); color: var(--ink); font: 700 15.5px/1.35 var(--display); }
-.doc-next a:hover { border-color: var(--ink); text-decoration: none; }
 .doc-next a span { display: block; font: 600 12.5px var(--font); color: var(--faint); margin-bottom: 2px; }
 .doc-next a.next { text-align: right; }
 .doc-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
 .doc-table th, .doc-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .doc-table th { color: var(--muted); font-size: 13px; font-weight: 650; background: var(--bg-alt); }
 
+/* ─── Hover (mouse only) ───────────────────────────────────── */
+/* Touch screens fake :hover on tap and leave it stuck, so every hover lives here. */
+@media (hover: hover) and (pointer: fine) {
+  a:hover { text-decoration: underline; }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .btn-primary:hover { background: var(--gold-600); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .brand:hover { text-decoration: none; }
+  .nav-links a:hover { color: var(--ink); text-decoration: none; }
+  .guide-card:hover { text-decoration: none; border-color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .doc-sidebar a:hover { color: var(--ink); background: var(--bg-alt); text-decoration: none; }
+  .doc-next a:hover { border-color: var(--ink); text-decoration: none; }
+}
+/* Press feedback for mouse and touch. After the hover block, so a press wins over the hover lift. */
+.btn:active { transform: scale(.97); }
+.guide-card:active { transform: scale(.99); }
+
 /* ─── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1020px) {
-  .hero-grid { grid-template-columns: 1fr; padding: 56px 0 72px; }
+  .hero-grid { grid-template-columns: 1fr; padding-block: 56px 72px; }
   .hero-art { height: 580px; max-width: 560px; width: 100%; margin: 0 auto; }
   .how-grid, .feature-row, .download-grid { grid-template-columns: 1fr; gap: 36px; }
   .feature-row.reverse .feature-media { order: 0; }
@@ -501,18 +576,33 @@ code, kbd {
   .exams { grid-template-columns: 1fr; }
   .privacy-grid { grid-template-columns: 1fr 1fr; }
   .stat-row { grid-template-columns: 1fr 1fr; }
-  .doc-layout { grid-template-columns: 1fr; gap: 24px; }
-  .doc-sidebar { position: static; display: flex; flex-wrap: wrap; gap: 6px 18px; border-bottom: 1px solid var(--line); padding-bottom: 14px; }
-  .doc-sidebar .group { margin: 0; }
-  .doc-sidebar .group-label { display: none; }
-  .doc-sidebar a { display: inline-block; padding: 4px 8px; }
+  .doc-layout { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+  .doc-sidebar { display: none; }
+  .doc-toc { display: block; }
 }
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .nav-toggle { display: block; }
+  /* The phone menu drops down from the bar over the page: 240 ms open, 160 ms close.
+     visibility keeps the closed links out of the tab order once the close has finished. */
+  .nav-mobile {
+    display: block; position: absolute; top: 100%; left: 0; right: 0;
+    border-bottom: 1px solid var(--line); box-shadow: 0 18px 30px -22px rgba(8, 41, 65, .35);
+    visibility: hidden; opacity: 0; clip-path: inset(0 0 100% 0);
+    transition: clip-path 160ms var(--ease-out), opacity 160ms ease, visibility 0s linear 160ms;
+  }
+  .nav-mobile.open {
+    visibility: visible; opacity: 1; clip-path: inset(0 0 -40px 0);
+    transition: clip-path 240ms var(--ease-out), opacity 240ms ease, visibility 0s;
+  }
   .proof-inner { grid-template-columns: 1fr 1fr; }
   .proof-item:nth-child(3) { border-left: none; }
   .proof-item:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 860px) and (prefers-reduced-motion: reduce) {
+  .nav-mobile, .nav-mobile.open { clip-path: none; transition: opacity 150ms ease, visibility 0s linear 150ms; }
+  .nav-mobile.open { transition: opacity 150ms ease, visibility 0s; }
+  .nav-toggle span { transition: none; }
 }
 @media (max-width: 640px) {
   .container, .nav-inner, .doc-layout, .footer-inner { padding-left: 16px; padding-right: 16px; }
@@ -531,4 +621,18 @@ code, kbd {
   .packet-row .k { min-width: 0; }
   .soon { flex-direction: column; gap: 10px; }
   .btn { white-space: normal; }
+  /* The comparison table stacks: each row is a question, Caddie's answer, then the general chat's. */
+  .compare-wrap { overflow: visible; }
+  .compare, .compare tbody { display: block; min-width: 0; }
+  .compare thead { display: none; }
+  .compare tr { display: flex; flex-direction: column; gap: 10px; padding: 16px; border-bottom: 1px solid var(--line); }
+  .compare tr:last-child { border-bottom: none; }
+  .compare th, .compare td { display: block; width: auto; padding: 0; border: none; }
+  .compare tbody th { width: auto; font: 700 16px/1.3 var(--display); }
+  .compare td.us { order: 1; padding: 10px 12px; border-left: 3px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .compare td:not(.us) { order: 2; padding: 0 12px 0 15px; font-size: 14px; }
+  .compare td::before {
+    content: attr(data-label); display: block; margin-bottom: 2px;
+    font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--faint);
+  }
 }
