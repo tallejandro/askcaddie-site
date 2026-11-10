@@ -744,3 +744,5 @@ a.chip:active { transform: scale(.97); }
   .reveal-on .example[data-reveal]:not(.in) { opacity: 1; transform: none; }
   .reveal-on .example:not(.in) .bubble-ai { opacity: 1; transform: none; }
 }
+
+.shot-video video { display: block; width: 100%; height: auto; background: #fff; }
