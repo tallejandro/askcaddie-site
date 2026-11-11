@@ -781,3 +781,6 @@ a.chip:active { transform: scale(.97); }
 @media (prefers-reduced-motion: reduce) {
   .tour-cam img, .tour-cursor, .tour-dots i { transition: none; }
 }
+
+/* The download is offline for now: a plain label, not a link. */
+.btn-off { background: rgba(252, 250, 244, .12); color: #C3D0D9; box-shadow: none; cursor: default; pointer-events: none; }
