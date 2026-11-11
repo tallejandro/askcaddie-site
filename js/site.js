@@ -135,7 +135,7 @@
       requestAnimationFrame(tick);
     });
   }
-  function view(r) { var f = narrow() ? 0.85 : 1, w = r.w * f; var x = r.x + r.w >= FW - 4 ? FW - w : (r.x <= 4 ? 0 : r.x + (r.w - w) / 2); return { x: Math.max(0, Math.min(FW - w, x)), y: r.y, w: w }; }
+  function view(r) { var f = narrow() ? 0.92 : 1, w = r.w * f; var x = r.x + r.w >= FW - 4 ? FW - w : (r.x <= 4 ? 0 : r.x + (r.w - w) / 2); return { x: Math.max(0, Math.min(FW - w, x)), y: r.y, w: w }; }
   function moveCam(target, ms, my) {
     var a = { x: rect.x, y: rect.y, w: rect.w }, b = view(target);
     return tween(ms, my, function (e) {
@@ -167,7 +167,7 @@
       reset();
       if (!(await wait(500, my))) return;
       caption(0);
-      if (!(await moveCam({ x: 1560, y: 150, w: 360 }, 1000, my))) return;
+      if (!(await moveCam({ x: 1560, y: 172, w: 360 }, 1000, my))) return;
       if (!(await wait(1900, my))) return;
       caption(1);
       if (!(await moveCam({ x: 1560, y: 800, w: 360 }, 900, my))) return;
