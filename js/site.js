@@ -135,7 +135,7 @@
       requestAnimationFrame(tick);
     });
   }
-  function view(r) { var f = narrow() ? 0.8 : 1; var cx = r.x + r.w / 2, w = r.w * f; return { x: Math.max(0, Math.min(FW - w, cx - w / 2)), y: r.y, w: w }; }
+  function view(r) { var f = narrow() ? 0.85 : 1, w = r.w * f; var x = r.x + r.w >= FW - 4 ? FW - w : (r.x <= 4 ? 0 : r.x + (r.w - w) / 2); return { x: Math.max(0, Math.min(FW - w, x)), y: r.y, w: w }; }
   function moveCam(target, ms, my) {
     var a = { x: rect.x, y: rect.y, w: rect.w }, b = view(target);
     return tween(ms, my, function (e) {
@@ -157,7 +157,7 @@
     frame('a'); cursor.classList.remove('show'); caption(0); paint();
   }
   function showEnd() {
-    frame('c'); rect = view({ x: 300, y: 440, w: 420 }); pos = { x: 500, y: 548 };
+    frame('c'); rect = view({ x: 200, y: 430, w: 620 }); pos = { x: 500, y: 548 };
     cursor.classList.add('show'); caption(4); paint();
   }
 
@@ -167,26 +167,26 @@
       reset();
       if (!(await wait(500, my))) return;
       caption(0);
-      if (!(await moveCam({ x: 1650, y: 195, w: 270 }, 1000, my))) return;
+      if (!(await moveCam({ x: 1560, y: 150, w: 360 }, 1000, my))) return;
       if (!(await wait(1900, my))) return;
       caption(1);
-      if (!(await moveCam({ x: 1650, y: 850, w: 270 }, 900, my))) return;
+      if (!(await moveCam({ x: 1560, y: 800, w: 360 }, 900, my))) return;
       if (!(await wait(1700, my))) return;
       caption(2);
       pos = { x: 700, y: 260 }; cursor.classList.add('show');
-      if (!(await moveCam({ x: 0, y: 0, w: 440 }, 1000, my))) return;
+      if (!(await moveCam({ x: 0, y: 0, w: 640 }, 1000, my))) return;
       if (!(await moveCursor(266, 16, 800, my))) return;
       click(); frame('b');
       if (!(await wait(900, my))) return;
       caption(3);
-      var cp = moveCam({ x: 150, y: 420, w: 420 }, 900, my);
+      var cp = moveCam({ x: 120, y: 380, w: 560 }, 900, my);
       if (!(await wait(250, my))) return;
       if (!(await moveCursor(300, 546, 800, my))) return;
       await cp;
       click(); frame('c');
       if (!(await wait(900, my))) return;
       caption(4);
-      cp = moveCam({ x: 300, y: 440, w: 420 }, 800, my);
+      cp = moveCam({ x: 200, y: 430, w: 620 }, 800, my);
       if (!(await moveCursor(480, 547, 900, my))) return;
       await cp;
       click();
