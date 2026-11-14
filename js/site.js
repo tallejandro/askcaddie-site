@@ -174,7 +174,8 @@
       if (!(await wait(1700, my))) return;
       caption(2);
       pos = { x: 700, y: 260 }; cursor.classList.add('show');
-      if (!(await moveCam({ x: 0, y: 0, w: 640 }, 1000, my))) return;
+      if (!(await moveCam({ x: 0, y: 0, w: FW }, 600, my))) return;
+      if (!(await moveCam({ x: 0, y: 0, w: 640 }, 800, my))) return;
       if (!(await moveCursor(266, 16, 800, my))) return;
       click(); frame('b');
       if (!(await wait(900, my))) return;

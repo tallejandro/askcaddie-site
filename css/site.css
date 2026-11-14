@@ -784,3 +784,8 @@ a.chip:active { transform: scale(.97); }
 
 /* The download is offline for now: a plain label, not a link. */
 .btn-off { background: rgba(252, 250, 244, .12); color: #C3D0D9; box-shadow: none; cursor: default; pointer-events: none; }
+
+/* Wordmark: "Ask" in Steel, "Caddie" in the text color; on the dark footer "Ask" is lighter. */
+.wm-ask { color: var(--steel); }
+.footer .wm-ask { color: #AFC0CD; }
+.brand { white-space: nowrap; }
