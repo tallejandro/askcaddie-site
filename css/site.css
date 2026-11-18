@@ -789,3 +789,8 @@ a.chip:active { transform: scale(.97); }
 .wm-ask { color: var(--steel); }
 .footer .wm-ask { color: #AFC0CD; }
 .brand { white-space: nowrap; }
+
+/* Private alpha notes in the download band */
+.download .alpha-note { font-size: 14.5px; color: #B3C3CF; margin-top: 12px; max-width: 520px; }
+.download .alpha-note a { color: var(--gold); }
+.download .btn-primary svg { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; }
