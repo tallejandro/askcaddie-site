@@ -222,3 +222,21 @@
     });
   }, { threshold: 0.45, rootMargin: '200px 0px 200px 0px' }).observe(tour);
 })();
+
+/* Case-file videos: play muted when mostly in view, pause when not; reduced motion keeps them still. */
+(function () {
+  var vids = document.querySelectorAll('.case video');
+  if (!vids.length || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      var v = e.target;
+      if (e.isIntersecting) { v.preload = 'auto'; if (!v.dataset.done) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+      else v.pause();
+    });
+  }, { threshold: 0.6 });
+  vids.forEach(function (v) {
+    v.addEventListener('ended', function () { v.dataset.done = '1'; });
+    io.observe(v);
+  });
+})();

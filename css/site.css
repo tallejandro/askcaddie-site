@@ -794,3 +794,20 @@ a.chip:active { transform: scale(.97); }
 .download .alpha-note { font-size: 14.5px; color: #B3C3CF; margin-top: 12px; max-width: 520px; }
 .download .alpha-note a { color: var(--gold); }
 .download .btn-primary svg { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; }
+
+/* Case files: real recordings with the typed question and the answer beside them */
+.case { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: start; margin-top: 56px; }
+.case:first-of-type { margin-top: 40px; }
+.case-media video { display: block; width: 100%; aspect-ratio: 1920 / 1040; background: #F3F1EA; border: 1px solid var(--border, rgba(8, 41, 65, .14)); border-radius: 14px; box-shadow: 0 18px 40px -22px rgba(8, 41, 65, .35); }
+.case-cap { margin-top: 10px; font-size: 13px; color: var(--steel-700, #3F5A6E); }
+.case-text h3 { font: 800 clamp(20px, 2.2vw, 26px)/1.2 var(--display); letter-spacing: -.02em; margin-top: 14px; }
+.case-text > p { margin-top: 10px; color: var(--steel-700, #3F5A6E); }
+.case-text .bubble { margin-top: 14px; }
+.case-text .bubble ul { margin: 8px 0 8px 18px; }
+.case-text .bubble p + p { margin-top: 8px; }
+.case:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
+.case:nth-of-type(even) .case-media { order: 2; }
+@media (max-width: 860px) {
+  .case, .case:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; }
+  .case:nth-of-type(even) .case-media { order: 0; }
+}

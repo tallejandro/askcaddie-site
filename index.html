@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=21">
+  <link rel="stylesheet" href="css/site.css?v=22">
 </head>
 <body>
 
@@ -152,6 +152,68 @@
   </div>
 </section>
 
+<!-- ─── Case files (real recordings) ───────────────────────── -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Case files</span>
+      <h2 class="h2">Three real sessions, recorded in SOLIDWORKS.</h2>
+      <p class="lead">Screen recordings of Ask Caddie on sample parts we made. The questions are typed as shown and the answers are what it replied. They are not edited, apart from the one marked speed-up.</p>
+    </div>
+    <article class="case" id="case-check" data-reveal>
+      <div class="case-media">
+        <video controls muted playsinline preload="none" poster="video/case-check-poster.jpg" aria-label="Recording: Ask Caddie checks the open part, Support Plate, and lists four findings with measured values.">
+          <source src="video/case-check.mp4" type="video/mp4">
+          <source src="video/case-check.webm" type="video/webm">
+        </video>
+        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window.</p>
+      </div>
+      <div class="case-text">
+        <div class="ex-top"><span class="tag steel">Check my model</span><span class="ex-model">Support Plate.SLDPRT</span></div>
+        <h3>It measures the model, then tells you what a shop would ask about.</h3>
+        <p>One click on Check my model. Each finding names a feature and a number.</p>
+        <div class="bubble bubble-user">Check my model</div>
+        <div class="bubble bubble-ai"><p>The model rebuilds without errors, but I found four things worth addressing before manufacture:</p><ul><li>Edge Hole leaves 2 mm to the plate edge. If it takes a fastener, move it inward to reduce breakout risk.</li><li>Pocket leaves a 0.8 mm wall, which may be difficult to machine without damage. Reduce its depth if the function allows.</li><li>Pocket has four sharp inside corners. A milling cutter will leave radii there; otherwise, they need a process such as EDM.</li><li>Floating Block is a separate body, 2 mm from the plate. If this is meant to be one piece, it needs to join the plate.</li></ul><p>I checked hole depths, spacing, edge distance and drilling, plus wall thickness, pockets and body quality. Material, loading, tolerances and manufacturing process still need confirmation; no material is assigned, so the displayed mass isn’t meaningful.</p></div>
+        
+      </div>
+    </article>
+    <article class="case" id="case-rebuild" data-reveal>
+      <div class="case-media">
+        <video controls muted playsinline preload="none" poster="video/case-rebuild-poster.jpg" aria-label="Recording: Ask Caddie tests a bracket with a plus and minus 20 percent change to each driving dimension and reports that Stop Fillet fails.">
+          <source src="video/case-rebuild.mp4" type="video/mp4">
+          <source src="video/case-rebuild.webm" type="video/webm">
+        </video>
+        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window.</p>
+      </div>
+      <div class="case-text">
+        <div class="ex-top"><span class="tag steel">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
+        <h3>It tests whether the part survives a change before you change it.</h3>
+        <p>Caddie changes each driving dimension by 20 percent, up and down, rebuilds, and puts every value back.</p>
+        <div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div>
+        <div class="bubble bubble-ai"><p>Not reliably. In a ±20% test, Stop Fillet failed when each of three Stop Profile anchor dimensions was reduced, and when its 5.8 mm radius was increased. The other five driving dimensions held up; all values were restored afterward.</p><p>The fillet likely runs out of room. A smaller radius, tied to the stop’s controlling size, would give it more room to change.</p><p>Also, Mounting Hole leaves only 0.271 mm to a Base Plate face, so it needs attention independently of rebuild stability.</p></div>
+        
+      </div>
+    </article>
+    <article class="case" id="case-fix" data-reveal>
+      <div class="case-media">
+        <video controls muted playsinline preload="none" poster="video/case-fix-undo-poster.jpg" aria-label="Recording: Ask Caddie proposes reducing the Rib Fillet radius from 6 mm to 1 mm, the change is approved and the rebuild error clears, then Undo restores the error.">
+          <source src="video/case-fix-undo.mp4" type="video/mp4">
+          <source src="video/case-fix-undo.webm" type="video/webm">
+        </video>
+        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window, sped up 40 times where marked on screen (the wait for the click on Do it).</p>
+      </div>
+      <div class="case-text">
+        <div class="ex-top"><span class="tag steel">Fix it, then undo</span><span class="ex-model">Guide Block.SLDPRT</span></div>
+        <h3>It shows the change first, makes it after you say yes, and can undo it.</h3>
+        <p>Rib Fillet has a rebuild error. Caddie proposes one change; nothing happens until Do it is clicked, and Undo puts the error back.</p>
+        <div class="bubble bubble-user">What’s wrong with my part?</div>
+        <div class="bubble bubble-ai"><p>Reduce Rib Fillet from 6 mm to 1 mm to give the fillet room on the 3 mm thick rib.</p><p>Rib Fillet was failing because its 6 mm radius was too large for the selected geometry. Reducing it to 1 mm fixed the rebuild.</p><p>Also, no material is assigned, so the reported mass isn’t meaningful yet.</p><p>After Undo: “Undone: Rib Fillet is back as it was, including its rebuild error.”</p></div>
+        
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ─── What it does ───────────────────────────────────────── -->
 <section class="section section-alt" id="features">
   <div class="container">
@@ -162,10 +224,6 @@
 
     <div class="feature-row" data-reveal>
       <div class="feature-media">
-        <figure>
-          <div class="tour" data-tour><div class="tour-stage" role="img" aria-label="A walk through SOLIDWORKS: Caddie's guide rings the Tools menu, then Evaluate, then Measure, and the cursor clicks each one."><img class="tour-fallback" src="img/tour-c.jpg" width="1920" height="1042" alt="" loading="lazy"><div class="tour-cam"><img data-f="a" data-src="img/tour-a.jpg" alt="" width="1920" height="1042"><img data-f="b" data-src="img/tour-b.jpg" alt="" width="1920" height="1042"><img data-f="c" data-src="img/tour-c.jpg" alt="" width="1920" height="1042"></div><span class="tour-ripple"></span><span class="tour-cursor"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M4 3v17l4.6-4.2 3.2 7 3-1.4-3.2-6.9H18z" fill="#fff" stroke="#082941" stroke-width="1.6" stroke-linejoin="round"/></svg></span></div><div class="tour-cap"><span class="tour-dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="tour-cap-text">The guide names the step: open Measure from the Tools menu.</span></div></div>
-          <figcaption>Caddie highlighting Tools › Evaluate › Measure in SOLIDWORKS 2026.</figcaption>
-        </figure>
         <div class="card guide-anim" data-reveal>
           <div class="gs-head"><span class="card-label">Guide: measure a distance</span><span class="gs-count">3 steps</span></div>
           <div class="gs-bar" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -555,6 +613,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=14"></script>
+<script src="js/site.js?v=15"></script>
 </body>
 </html>
