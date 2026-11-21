@@ -223,17 +223,57 @@
   }, { threshold: 0.45, rootMargin: '200px 0px 200px 0px' }).observe(tour);
 })();
 
-/* Case-file videos: play muted (looping) while mostly in view, pause when not; reduced motion keeps them still. */
+/* Feature explorer: tabs (arrow keys too), one visible stage, only the visible clip plays, and only while mostly on screen. */
 (function () {
-  var vids = document.querySelectorAll('.case video');
-  if (!vids.length || !('IntersectionObserver' in window)) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      var v = e.target;
-      if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-      else v.pause();
+  var root = document.querySelector('[data-explorer]');
+  if (!root) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+  var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var onScreen = false;
+  function vid(p) { return p && p.querySelector('video'); }
+  function play(v) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
+  function sync() {
+    panels.forEach(function (p) {
+      var v = vid(p); if (!v) return;
+      if (!p.hidden && onScreen && !reduce && !v.dataset.userPaused) play(v);
+      else { v.pause(); if (p.hidden) { try { v.currentTime = 0; } catch (e) {} } }
     });
-  }, { threshold: 0.55 });
-  vids.forEach(function (v) { io.observe(v); });
+  }
+  function select(i, focus) {
+    tabs.forEach(function (t, j) { t.setAttribute('aria-selected', j === i ? 'true' : 'false'); t.tabIndex = j === i ? 0 : -1; });
+    panels.forEach(function (p, j) { p.hidden = j !== i; });
+    if (focus) tabs[i].focus();
+    if (window.matchMedia('(max-width: 960px)').matches) {
+      var bar = tabs[i].parentNode;
+      bar.scrollTo({ left: tabs[i].offsetLeft - 16, behavior: reduce ? 'auto' : 'smooth' });
+    }
+    sync();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(i, false); });
+    t.addEventListener('keydown', function (e) {
+      var n = tabs.length, k = e.key, j = -1;
+      if (k === 'ArrowDown' || k === 'ArrowRight') j = (i + 1) % n;
+      else if (k === 'ArrowUp' || k === 'ArrowLeft') j = (i - 1 + n) % n;
+      else if (k === 'Home') j = 0;
+      else if (k === 'End') j = n - 1;
+      if (j >= 0) { e.preventDefault(); select(j, true); }
+    });
+  });
+  panels.forEach(function (p) {
+    var v = vid(p); if (!v) return;
+    var wrap = v.parentNode, bar = wrap.querySelector('.frame-progress i'), btn = wrap.querySelector('.frame-play');
+    v.addEventListener('timeupdate', function () { if (bar && v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')'; });
+    v.addEventListener('pause', function () { wrap.classList.add('is-paused'); });
+    v.addEventListener('play', function () { wrap.classList.remove('is-paused'); });
+    wrap.classList.add('is-paused');
+    if (btn) btn.addEventListener('click', function () {
+      if (v.paused) { delete v.dataset.userPaused; play(v); }
+      else { v.dataset.userPaused = '1'; v.pause(); }
+    });
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(root.querySelector('.x-stage'));
+  }
 })();
