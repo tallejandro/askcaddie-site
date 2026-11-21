@@ -98,7 +98,7 @@
   var CAPS = [
     'Ask in plain words. Caddie reads the part and starts a guide.',
     'The guide names the step: open Measure from the Tools menu.',
-    'Caddie rings Tools in SolidWorks. You make the click.',
+    'Caddie rings Tools in SOLIDWORKS. You make the click.',
     'Next, Evaluate.',
     'Then Measure. You make every click yourself.'
   ];
@@ -223,7 +223,7 @@
   }, { threshold: 0.45, rootMargin: '200px 0px 200px 0px' }).observe(tour);
 })();
 
-/* Case-file videos: play muted when mostly in view, pause when not; reduced motion keeps them still. */
+/* Case-file videos: play muted (looping) while mostly in view, pause when not; reduced motion keeps them still. */
 (function () {
   var vids = document.querySelectorAll('.case video');
   if (!vids.length || !('IntersectionObserver' in window)) return;
@@ -231,12 +231,9 @@
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       var v = e.target;
-      if (e.isIntersecting) { v.preload = 'auto'; if (!v.dataset.done) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+      if (e.isIntersecting) { v.preload = 'auto'; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
       else v.pause();
     });
-  }, { threshold: 0.6 });
-  vids.forEach(function (v) {
-    v.addEventListener('ended', function () { v.dataset.done = '1'; });
-    io.observe(v);
-  });
+  }, { threshold: 0.55 });
+  vids.forEach(function (v) { io.observe(v); });
 })();

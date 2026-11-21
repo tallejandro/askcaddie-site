@@ -795,24 +795,44 @@ a.chip:active { transform: scale(.97); }
 .download .alpha-note a { color: var(--gold); }
 .download .btn-primary svg { width: 20px; height: 20px; margin-right: 8px; vertical-align: -4px; }
 
-/* Case files: real recordings with the typed question and the answer beside them */
-.case { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px; align-items: start; margin-top: 56px; }
-.case:first-of-type { margin-top: 40px; }
-.case-media video { display: block; width: 100%; aspect-ratio: 1920 / 1040; background: #F3F1EA; border: 1px solid var(--border, rgba(8, 41, 65, .14)); border-radius: 14px; box-shadow: 0 18px 40px -22px rgba(8, 41, 65, .35); }
-.case-cap { margin-top: 10px; font-size: 13px; color: var(--steel-700, #3F5A6E); }
-.case-text h3 { font: 800 clamp(20px, 2.2vw, 26px)/1.2 var(--display); letter-spacing: -.02em; margin-top: 14px; }
-.case-text > p { margin-top: 10px; color: var(--steel-700, #3F5A6E); }
-.case-text .bubble { margin-top: 14px; }
-.case-text .bubble ul { margin: 8px 0 8px 18px; }
-.case-text .bubble p + p { margin-top: 8px; }
-.case:nth-of-type(even) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); }
-.case:nth-of-type(even) .case-media { order: 2; }
+/* Case files: wide edited clip, then the chat as a transcript below it */
+.case { margin-top: 72px; }
+.case:first-of-type { margin-top: 44px; }
+.case-head { max-width: 780px; }
+.case-head h3 { font: 800 clamp(22px, 2.6vw, 30px)/1.18 var(--display); letter-spacing: -.025em; margin-top: 12px; }
+.case-lede { margin-top: 10px; font-size: 17px; line-height: 1.55; color: var(--steel-700, #3F5A6E); }
+.case-media { margin-top: 24px; }
+.case-media video { display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--ink-deep, #061F31); border-radius: 18px; box-shadow: 0 30px 60px -30px rgba(8, 41, 65, .55); }
+.case-cap { margin-top: 12px; font-size: 13.5px; line-height: 1.5; color: var(--steel-700, #3F5A6E); }
+.case-chat { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.9fr); gap: 28px; align-items: start; margin-top: 24px; padding: 24px; background: var(--bg-alt, #F5F3EC); border: 1px solid var(--line, rgba(8, 41, 65, .12)); border-radius: 18px; }
+.chat-label { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font: 800 12px/1 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--steel-700, #3F5A6E); }
+.chat-label-ai { color: var(--blue-600, #175B8C); }
+.chat-label-ai img { display: block; }
+.chat-label-steps { margin-top: 24px; }
+.case-chat .bubble { font-size: 15.5px; }
+.case-chat .bubble-user { justify-self: stretch; font-size: 18px; font-weight: 700; line-height: 1.4; padding: 14px 16px; background: var(--blue-50); }
+.case-chat .bubble-ai { background: #fff; }
+.case-chat .bubble ul { margin: 8px 0 8px 18px; }
+.case-chat .bubble li + li { margin-top: 6px; }
+.case-chat .bubble p + p, .case-chat .bubble ul + p { margin-top: 10px; }
+.case-steps { margin: 0; padding-left: 20px; font-size: 14.5px; line-height: 1.5; color: var(--steel-700, #3F5A6E); }
+.case-steps li + li { margin-top: 4px; }
+.case-note { margin-top: 12px; font-size: 13.5px; line-height: 1.5; color: var(--steel-700, #3F5A6E); }
 @media (max-width: 860px) {
-  .case, .case:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; }
-  .case:nth-of-type(even) .case-media { order: 0; }
+  .case { margin-top: 56px; }
+  .case-media video { border-radius: 12px; }
+  .case-chat { grid-template-columns: 1fr; gap: 20px; padding: 16px; }
+  .chat-label-steps { margin-top: 18px; }
 }
 
-.case-part { margin: 14px 0 0; }
-.case-part img { display: block; width: 100%; max-width: 300px; height: auto; border: 1px solid rgba(8, 41, 65, .12); border-radius: 12px; background: #fff; }
-.case-part figcaption, .case-note { margin-top: 6px; font-size: 13px; color: var(--steel-700, #3F5A6E); }
-.case-note { margin-top: 12px; }
+.case-head .ex-top { justify-content: flex-start; gap: 12px; }
+.chat-q { grid-column: 1; grid-row: 1; }
+.chat-s { grid-column: 1; grid-row: 2; }
+.chat-a { grid-column: 2; grid-row: 1 / span 2; }
+.chat-label-steps { margin-top: 4px; }
+@media (max-width: 860px) {
+  .chat-q, .chat-s, .chat-a { grid-column: 1; grid-row: auto; }
+  .chat-q { order: 1; } .chat-a { order: 2; } .chat-s { order: 3; }
+}
+.case-chat { grid-template-rows: auto 1fr; }
+.chat-s { align-self: start; }
