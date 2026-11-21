@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=22">
+  <link rel="stylesheet" href="css/site.css?v=23">
 </head>
 <body>
 
@@ -158,56 +158,59 @@
     <div class="section-head" data-reveal>
       <span class="eyebrow">Case files</span>
       <h2 class="h2">Three real sessions, recorded in SOLIDWORKS.</h2>
-      <p class="lead">Screen recordings of Ask Caddie on sample parts we made. The questions are typed as shown and the answers are what it replied. They are not edited, apart from the one marked speed-up.</p>
+      <p class="lead">Screen recordings of Ask Caddie on sample parts of our own design. The questions are typed as shown and the answers are what it replied. They are not edited or sped up; the frame is cropped to the SOLIDWORKS window.</p>
     </div>
     <article class="case" id="case-check" data-reveal>
       <div class="case-media">
-        <video controls muted playsinline preload="none" poster="video/case-check-poster.jpg" aria-label="Recording: Ask Caddie checks the open part, Support Plate, and lists four findings with measured values.">
+        <video controls muted playsinline preload="none" poster="video/case-check-poster.jpg" aria-label="Recording: Ask Caddie checks the open part, a bearing housing, and lists measured findings.">
           <source src="video/case-check.mp4" type="video/mp4">
           <source src="video/case-check.webm" type="video/webm">
         </video>
-        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window.</p>
+        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window, not sped up.</p>
       </div>
       <div class="case-text">
-        <div class="ex-top"><span class="tag steel">Check my model</span><span class="ex-model">Support Plate.SLDPRT</span></div>
-        <h3>It measures the model, then tells you what a shop would ask about.</h3>
-        <p>One click on Check my model. Each finding names a feature and a number.</p>
+        <div class="ex-top"><span class="tag steel">Check my model</span><span class="ex-model">Bearing Housing.SLDPRT</span></div>
+        <h3>It measures the model and reports what it found.</h3>
+        <p>One click on Check my model. These are the findings it reported for this housing.</p>
+        <figure class="case-part"><img src="img/part-bearing-housing.jpg" width="720" loading="lazy" alt="Preview of Bearing Housing, the sample part in this recording."><figcaption>Bearing Housing: gray cast iron, our own sample design.</figcaption></figure>
         <div class="bubble bubble-user">Check my model</div>
-        <div class="bubble bubble-ai"><p>The model rebuilds without errors, but I found four things worth addressing before manufacture:</p><ul><li>Edge Hole leaves 2 mm to the plate edge. If it takes a fastener, move it inward to reduce breakout risk.</li><li>Pocket leaves a 0.8 mm wall, which may be difficult to machine without damage. Reduce its depth if the function allows.</li><li>Pocket has four sharp inside corners. A milling cutter will leave radii there; otherwise, they need a process such as EDM.</li><li>Floating Block is a separate body, 2 mm from the plate. If this is meant to be one piece, it needs to join the plate.</li></ul><p>I checked hole depths, spacing, edge distance and drilling, plus wall thickness, pockets and body quality. Material, loading, tolerances and manufacturing process still need confirmation; no material is assigned, so the displayed mass isn’t meaningful.</p></div>
-        
+        <div class="bubble bubble-ai"><p>The model rebuilds without errors, but three manufacturing details need attention:</p><ul><li>Mounting Hole Left leaves 2.94 mm between the Ø18 mm counterbore and a base face. Consider moving the hole inward or widening the base, subject to the mounting layout.</li><li>Lube Port has only 2 mm of drill depth below its 8 mm thread. A common guideline is at least 2.5 mm; shortening the thread or adding material for a deeper drill would give the tap more room.</li><li>Seventeen faces have no draft along the likely pull direction. If this housing will be cast, confirm the actual parting direction and add draft where the foundry needs it.</li><li>Lube Cap is a separate solid body, 2 mm from the housing. That may be intentional for a removable cap, but its position needs checking.</li></ul><p>I checked hole depths, edge distances, spacing and drilling, wall thickness, draft, and model quality. Bearing fits, tolerances, loading and the foundry’s requirements still need review.</p></div>
+        <p class="case-note">These are the findings Ask Caddie reported in this recording. They are not a complete list of everything that could be wrong with the part.</p>
       </div>
     </article>
     <article class="case" id="case-rebuild" data-reveal>
       <div class="case-media">
-        <video controls muted playsinline preload="none" poster="video/case-rebuild-poster.jpg" aria-label="Recording: Ask Caddie tests a bracket with a plus and minus 20 percent change to each driving dimension and reports that Stop Fillet fails.">
+        <video controls muted playsinline preload="none" poster="video/case-rebuild-poster.jpg" aria-label="Recording: Ask Caddie tests a motor mount bracket with its dimensions changed by 20 percent and reports which features break.">
           <source src="video/case-rebuild.mp4" type="video/mp4">
           <source src="video/case-rebuild.webm" type="video/webm">
         </video>
-        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window.</p>
+        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window, not sped up.</p>
       </div>
       <div class="case-text">
-        <div class="ex-top"><span class="tag steel">Design intent</span><span class="ex-model">Bracket.SLDPRT</span></div>
+        <div class="ex-top"><span class="tag steel">Design intent</span><span class="ex-model">Motor Mount Bracket.SLDPRT</span></div>
         <h3>It tests whether the part survives a change before you change it.</h3>
-        <p>Caddie changes each driving dimension by 20 percent, up and down, rebuilds, and puts every value back.</p>
+        <p>Caddie rebuilds the part with its driving dimensions changed by 20 percent and reports what breaks.</p>
+        <figure class="case-part"><img src="img/part-motor-mount.jpg" width="720" loading="lazy" alt="Preview of Motor Mount Bracket, the sample part in this recording."><figcaption>Motor Mount Bracket: AISI 1020 steel, our own sample design.</figcaption></figure>
         <div class="bubble bubble-user">Will this part still rebuild if the main dimensions change?</div>
-        <div class="bubble bubble-ai"><p>Not reliably. In a ±20% test, Stop Fillet failed when each of three Stop Profile anchor dimensions was reduced, and when its 5.8 mm radius was increased. The other five driving dimensions held up; all values were restored afterward.</p><p>The fillet likely runs out of room. A smaller radius, tied to the stop’s controlling size, would give it more room to change.</p><p>Also, Mounting Hole leaves only 0.271 mm to a Base Plate face, so it needs attention independently of rebuild stability.</p></div>
+        <div class="bubble bubble-ai"><p>Not reliably. In SOLIDWORKS rebuild tests at ±20%, reducing the Base Plate thickness broke Pocket Floor Fillet, and reducing the Upright Profile height broke Motor Bolt Hole and Motor Bolt Pattern.</p><p>The pocket is 8 mm deep in a 10 mm base, so it runs out of floor when the base gets thinner. I’d link its depth to the base thickness and retain a defined floor thickness. The motor-hole placement also needs a more robust reference or a minimum upright height.</p><p>Changes to individual Slot Profile anchor dimensions also produced warnings or split the part into two bodies. Fifteen of the 20 dimensions tested held up; nine remaining dimensions weren’t tested. All values were restored.</p></div>
         
       </div>
     </article>
     <article class="case" id="case-fix" data-reveal>
       <div class="case-media">
-        <video controls muted playsinline preload="none" poster="video/case-fix-undo-poster.jpg" aria-label="Recording: Ask Caddie proposes reducing the Rib Fillet radius from 6 mm to 1 mm, the change is approved and the rebuild error clears, then Undo restores the error.">
+        <video controls muted playsinline preload="none" poster="video/case-fix-undo-poster.jpg" aria-label="Recording: Ask Caddie proposes reducing the Port Boss Rounds radius from 15 mm to 2 mm, the change is approved and the rebuild error clears, then Undo restores the error.">
           <source src="video/case-fix-undo.mp4" type="video/mp4">
           <source src="video/case-fix-undo.webm" type="video/webm">
         </video>
-        <p class="case-cap">Recorded 19 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window, sped up 40 times where marked on screen (the wait for the click on Do it).</p>
+        <p class="case-cap">Recorded 20 November 2026, Ask Caddie 0.3.6, SOLIDWORKS 2026, cropped to the SOLIDWORKS window, not sped up.</p>
       </div>
       <div class="case-text">
-        <div class="ex-top"><span class="tag steel">Fix it, then undo</span><span class="ex-model">Guide Block.SLDPRT</span></div>
+        <div class="ex-top"><span class="tag steel">Fix it, then undo</span><span class="ex-model">Pump Housing.SLDPRT</span></div>
         <h3>It shows the change first, makes it after you say yes, and can undo it.</h3>
-        <p>Rib Fillet has a rebuild error. Caddie proposes one change; nothing happens until Do it is clicked, and Undo puts the error back.</p>
-        <div class="bubble bubble-user">What’s wrong with my part?</div>
-        <div class="bubble bubble-ai"><p>Reduce Rib Fillet from 6 mm to 1 mm to give the fillet room on the 3 mm thick rib.</p><p>Rib Fillet was failing because its 6 mm radius was too large for the selected geometry. Reducing it to 1 mm fixed the rebuild.</p><p>Also, no material is assigned, so the reported mass isn’t meaningful yet.</p><p>After Undo: “Undone: Rib Fillet is back as it was, including its rebuild error.”</p></div>
+        <p>Port Boss Rounds has a rebuild error. Caddie proposes one change; nothing happens until Do it is clicked, and Undo puts the error back.</p>
+        <figure class="case-part"><img src="img/part-pump-housing.jpg" width="720" loading="lazy" alt="Preview of Pump Housing, the sample part in this recording."><figcaption>Pump Housing: gray cast iron, our own sample design.</figcaption></figure>
+        <div class="bubble bubble-user">What's wrong with my part?</div>
+        <div class="bubble bubble-ai"><p>Reduce Port Boss Rounds from 15 mm to 2 mm so the fillet fits the port boss.</p><p>Port Boss Rounds failed because its 15 mm radius was too large for the port geometry. I reduced it to 2 mm, and the part rebuilt without errors.</p><p>Also, 13 faces on Port Bosses, Rib, and Rib Pattern have no draft along the likely casting pull direction. Confirm the pull direction and draft requirements with the foundry.</p><p>After Undo: “Undone: Port Boss Rounds is back as it was, including its rebuild error.”</p></div>
         
       </div>
     </article>

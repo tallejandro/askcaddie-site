@@ -811,3 +811,8 @@ a.chip:active { transform: scale(.97); }
   .case, .case:nth-of-type(even) { grid-template-columns: 1fr; gap: 20px; }
   .case:nth-of-type(even) .case-media { order: 0; }
 }
+
+.case-part { margin: 14px 0 0; }
+.case-part img { display: block; width: 100%; max-width: 300px; height: auto; border: 1px solid rgba(8, 41, 65, .12); border-radius: 12px; background: #fff; }
+.case-part figcaption, .case-note { margin-top: 6px; font-size: 13px; color: var(--steel-700, #3F5A6E); }
+.case-note { margin-top: 12px; }
