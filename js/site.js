@@ -230,13 +230,12 @@
   var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
   var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var onScreen = false;
   var vids = Array.prototype.slice.call(root.querySelectorAll('video'));
   function play(v) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
   function sync() {
     vids.forEach(function (v) {
       var hidden = !!v.closest('[hidden]');
-      if (!hidden && onScreen && !reduce && !v.dataset.userPaused) play(v);
+      if (!hidden && v._on && !reduce && !v.dataset.userPaused) play(v);
       else { v.pause(); if (hidden) { try { v.currentTime = 0; } catch (e) {} } }
     });
   }
@@ -281,6 +280,7 @@
     });
   });
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { onScreen = es[0].isIntersecting; sync(); }, { threshold: 0.4 }).observe(root.querySelector('.x-stage'));
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target._on = e.isIntersecting; }); sync(); }, { threshold: 0.5 });
+    vids.forEach(function (v) { io.observe(v); });
   }
 })();
