@@ -844,12 +844,24 @@ a.chip:active { transform: scale(.97); }
 .x-pair { margin-top: 28px; display: grid; gap: 12px; }
 .case-cap { font-size: 13.5px; line-height: 1.5; color: var(--steel-700); }
 .x-foot { margin-top: 32px; text-align: center; }
+.g-how { max-width: 680px; }
+.g-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.g-chip { display: flex; flex-direction: column; gap: 6px; padding: 5px 5px 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff; font: 600 13px/1.25 var(--display); color: var(--ink); text-align: left; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease; }
+.g-chip img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
+.g-chip span { padding: 0 4px; }
+.g-chip[aria-pressed="true"] { border-color: var(--blue); box-shadow: 0 0 0 2px var(--blue); }
+@media (hover: hover) { .g-chip:hover { border-color: var(--blue); } }
+.g-item[hidden] { display: none; }
+.g-model { margin-top: 20px; }
+.g-steps { margin: 0; padding-left: 22px; }
+.g-steps li + li { margin-top: 6px; }
 @media (prefers-reduced-motion: no-preference) {
   .x-panel:not([hidden]) { animation: x-in 240ms var(--ease-out) both; }
   @keyframes x-in { from { opacity: 0; } }
 }
 @media (max-width: 960px) {
-  .explorer { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+  .explorer { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 32px; }
+  .x-stage, .x-tabs { min-width: 0; }
   .x-tabs { position: static; flex-direction: row; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; padding: 0 16px 6px; margin: 0 -16px; scrollbar-width: none; }
   .x-tabs::-webkit-scrollbar { display: none; }
   .x-tab { flex: none; display: flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--line-2); border-radius: 999px; scroll-snap-align: start; }
@@ -859,7 +871,9 @@ a.chip:active { transform: scale(.97); }
   .frame-ver { display: none; }
   .frame-note { margin-left: 0; font-size: 12px; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .frame { margin-inline: -16px; border-radius: 0; border-inline: 0; }
-  .x-chat { grid-template-columns: 1fr; gap: 20px; }
+  .x-chat { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .g-chips { display: flex; overflow-x: auto; margin-inline: -16px; padding: 2px 16px 6px; scrollbar-width: none; scroll-snap-type: x proximity; }
+  .g-chip { flex: none; width: 150px; scroll-snap-align: start; }
   .x-guide { grid-template-columns: 1fr; }
   .x-guide img { width: 120px; }
 }

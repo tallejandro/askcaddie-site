@@ -231,13 +231,13 @@
   var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var onScreen = false;
-  function vid(p) { return p && p.querySelector('video'); }
+  var vids = Array.prototype.slice.call(root.querySelectorAll('video'));
   function play(v) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
   function sync() {
-    panels.forEach(function (p) {
-      var v = vid(p); if (!v) return;
-      if (!p.hidden && onScreen && !reduce && !v.dataset.userPaused) play(v);
-      else { v.pause(); if (p.hidden) { try { v.currentTime = 0; } catch (e) {} } }
+    vids.forEach(function (v) {
+      var hidden = !!v.closest('[hidden]');
+      if (!hidden && onScreen && !reduce && !v.dataset.userPaused) play(v);
+      else { v.pause(); if (hidden) { try { v.currentTime = 0; } catch (e) {} } }
     });
   }
   function select(i, focus) {
@@ -261,8 +261,7 @@
       if (j >= 0) { e.preventDefault(); select(j, true); }
     });
   });
-  panels.forEach(function (p) {
-    var v = vid(p); if (!v) return;
+  vids.forEach(function (v) {
     var wrap = v.parentNode, bar = wrap.querySelector('.frame-progress i'), btn = wrap.querySelector('.frame-play');
     v.addEventListener('timeupdate', function () { if (bar && v.duration) bar.style.transform = 'scaleX(' + (v.currentTime / v.duration) + ')'; });
     v.addEventListener('pause', function () { wrap.classList.add('is-paused'); });
@@ -271,6 +270,14 @@
     if (btn) btn.addEventListener('click', function () {
       if (v.paused) { delete v.dataset.userPaused; play(v); }
       else { v.dataset.userPaused = '1'; v.pause(); }
+    });
+  });
+  var chips = Array.prototype.slice.call(root.querySelectorAll('.g-chip'));
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (o) { o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
+      root.querySelectorAll('.g-item').forEach(function (it) { it.hidden = it.id !== 'g-' + c.dataset.g; });
+      sync();
     });
   });
   if ('IntersectionObserver' in window) {

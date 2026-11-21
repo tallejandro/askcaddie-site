@@ -172,18 +172,78 @@
       </div>
       <div class="x-stage">
     <div class="x-panel" role="tabpanel" id="x-p-guide" aria-labelledby="x-t-guide" tabindex="0">
-      <div class="x-top"><span class="tag steel">Guided walkthrough</span><span class="ex-model">Bearing Housing.SLDPRT</span></div>
+      <div class="x-top"><span class="tag steel">Guided walkthroughs</span><span class="ex-model">Six guides, our own parts</span></div>
       <h3 class="x-h">See exactly where to click, and do it yourself.</h3>
-      <figure class="frame">
+      <p class="x-how g-how">Ask Caddie starts a short guide that highlights the real button, menu or field for each step. It moves on when SOLIDWORKS shows the step is done, and you make every click.</p>
+      <div class="g-chips" role="group" aria-label="Choose a guide"><button class="g-chip" type="button" data-g="measure" aria-pressed="true"><img src="video/guide-measure-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Open Measure</span></button><button class="g-chip" type="button" data-g="sketch" aria-pressed="false"><img src="video/guide-edit-sketch-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Edit a sketch</span></button><button class="g-chip" type="button" data-g="feature" aria-pressed="false"><img src="video/guide-edit-feature-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Change a depth</span></button><button class="g-chip" type="button" data-g="step" aria-pressed="false"><img src="video/guide-step-export-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Export STEP</span></button><button class="g-chip" type="button" data-g="section" aria-pressed="false"><img src="video/guide-section-view-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Section view</span></button><button class="g-chip" type="button" data-g="fix" aria-pressed="false"><img src="video/guide-fix-error-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Fix a red feature</span></button></div>
+      <div class="g-item" id="g-measure">
+        <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
+        <figure class="frame">
           <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits trimmed &middot; 20 November 2026</span></div>
           <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-measure-poster.jpg" aria-label="Recording: a guide opens in Ask Caddie. Rings point at Tools, then Evaluate, then Measure in SOLIDWORKS. Each is clicked, and the step ticks off with All done."><source src="video/guide-measure.mp4" type="video/mp4"><source src="video/guide-measure.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
         </figure>
-      <div class="x-chat">
-        <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Open the Measure tool&rdquo;</div><p class="x-how">Ask Caddie starts a short guide that highlights the real button, menu or field for each step. It moves on when SOLIDWORKS shows the step is done, and you make every click.</p></div>
-        <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie showed</span><div class="bubble bubble-ai"><p><b>Open the Measure tool.</b> Open Tools, Evaluate, Measure.</p><p><b>After the last click:</b> All done.</p></div></div>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Open the Measure tool&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>Open Tools, Evaluate, Measure.</li></ol><p><b>After the last click:</b> All done.</p></div></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-sketch" hidden>
+        <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 1.7× &middot; 21 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-edit-sketch-poster.jpg" aria-label="Recording: a three-step guide expands Housing, opens Housing Profile in Edit Sketch, then exits the sketch. Each step ticks off by itself."><source src="video/guide-edit-sketch.mp4" type="video/mp4"><source src="video/guide-edit-sketch.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Edit the housing’s sketch&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>Expand Housing in the FeatureManager tree.</li><li>Right-click Housing Profile and choose Edit Sketch.</li><li>Click Exit Sketch.</li></ol></div></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-feature" hidden>
+        <p class="g-model"><span class="ex-model">Motor Mount Bracket.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 1.4× &middot; 21 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-edit-feature-poster.jpg" aria-label="Recording: a three-step guide edits the Base Plate feature, 12 is typed in the Depth box, and the green check is clicked."><source src="video/guide-edit-feature.mp4" type="video/mp4"><source src="video/guide-edit-feature.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Make the base plate thicker&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>Right-click Base Plate and choose Edit Feature.</li><li>Change the Depth to 12 mm.</li><li>Click the green check.</li></ol></div><p class="case-note">The last step ticks only when the depth dimension is 12.</p></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-step" hidden>
+        <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 1.4× &middot; 21 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-step-export-poster.jpg" aria-label="Recording: a three-step guide opens Save As, picks STEP AP214 from the type list, and clicks Save."><source src="video/guide-step-export.mp4" type="video/mp4"><source src="video/guide-step-export.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Export the bearing housing as STEP&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>File > Save As.</li><li>Choose STEP AP214 in Save as type.</li><li>Click Save.</li></ol></div><p class="case-note">The real STEP file the guide wrote is kept with the recordings.</p></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-section" hidden>
+        <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 1.1× &middot; 21 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-section-view-poster.jpg" aria-label="Recording: a guide selects Right Plane, clicks Section View, and accepts with the green check, leaving the part cut in half on screen."><source src="video/guide-section-view.mp4" type="video/mp4"><source src="video/guide-section-view.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;how do i see inside the part, like cut it in half on screen&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>Select Right Plane in the FeatureManager.</li><li>Click Section View on the View toolbar.</li><li>Click the green check.</li></ol></div><p class="case-note">Ask Caddie wrote this guide for that question on 20 November. The clip replays it and starts at the guide.</p></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-fix" hidden>
+        <p class="g-model"><span class="ex-model">Clevis Bracket.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 1.4× &middot; 21 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-fix-error-poster.jpg" aria-label="Recording: a four-step guide edits Lug Edge Rounds, changes the radius from 10 mm to 3 mm, accepts, and rebuilds. The rebuild error clears."><source src="video/guide-fix-error.mp4" type="video/mp4"><source src="video/guide-fix-error.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;something is red in the tree, how do i fix it myself&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide&rsquo;s steps</span><div class="bubble bubble-ai"><ol class="g-steps"><li>Right-click Lug Edge Rounds and choose Edit Feature.</li><li>Change the fillet radius from 10 mm to 3 mm.</li><li>Accept with the green check.</li><li>Press Ctrl+Q.</li></ol></div><p class="case-note">Ask Caddie wrote this guide for that question on 20 November. The clip replays it and starts at the guide. The red error clears.</p></div>
+        </div>
       </div>
       <div class="x-guide"><img src="img/panel-guide.png" width="760" height="1200" loading="lazy" alt="The Chat tab after the question below: Caddie explains the rebuild error and opens a step-by-step guide."><div><span class="chat-label">Guides can start from a question</span><div class="bubble bubble-user">&ldquo;Walk me through fixing the Fillet1 rebuild error myself.&rdquo;</div><p class="x-small">The guide card reads &ldquo;Fix Fillet1, Step 1 of 3: Right-click Fillet1 and choose Edit Feature.&rdquo; Screenshot from a test run.</p></div></div>
-      <p class="x-limit">This guide is built in, so it starts without a typed question. Guides that point at something on your own model need a screen lookup. This demo uses a menu path.</p>
+      <p class="x-limit">Recorded on a development build of Ask Caddie 0.3.6 with guide fixes that are not in the installer yet. Guides that point at something on your own model need a screen lookup, so some demos use a menu path.</p>
     </div>
     <div class="x-panel" role="tabpanel" id="x-p-fix" aria-labelledby="x-t-fix" tabindex="0" hidden>
       <div class="x-top"><span class="tag steel">Fix it, then undo</span><span class="ex-model">Pump Housing.SLDPRT</span></div>
