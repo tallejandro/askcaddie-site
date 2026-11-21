@@ -230,7 +230,7 @@
   var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
   var panels = Array.prototype.slice.call(root.querySelectorAll('[role="tabpanel"]'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var vids = Array.prototype.slice.call(root.querySelectorAll('video'));
+  var vids = Array.prototype.slice.call(document.querySelectorAll('.frame video'));
   function play(v) { v.preload = 'auto'; var pr = v.play(); if (pr && pr.catch) pr.catch(function () {}); }
   function sync() {
     vids.forEach(function (v) {
