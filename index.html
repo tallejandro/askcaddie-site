@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=30">
+  <link rel="stylesheet" href="css/site.css?v=31">
 </head>
 <body>
 
@@ -312,12 +312,12 @@
     <div class="x-panel" role="tabpanel" id="x-p-drawing" aria-labelledby="x-t-drawing" tabindex="0" hidden>
       <div class="x-top"><span class="tag steel">Attach an image</span><span class="ex-model">Angle bracket</span></div>
       <h3 class="x-h">Turn a drawing, sketch or photo into a part, step by step.</h3>
-      <div class="x-shotrow"><figure class="shot-card">
-          <div class="shot-img"><img src="img/panel-image.png" width="760" height="1600" loading="lazy" alt="The user attached a drawing of an angle bracket and asked Caddie to model it. Caddie proposes a side profile sketch, an 80 mm extrude, the three holes and 6061 Alloy, with Do it and Not now buttons."></div>
-          <figcaption><img src="img/caddie-head.svg" width="16" height="16" alt=""><span>Panel screenshot from a test run. Not a recording.</span></figcaption>
-        </figure><div class="x-right"><div class="x-q"><span class="chat-label">Typed in Ask Caddie, with the drawing attached</span><div class="bubble bubble-user">&ldquo;Model this bracket from the attached drawing.&rdquo;</div><p class="x-how">You attach an image. Ask Caddie works out the shape and dimensions, says what it assumed, and proposes the build in steps you approve. Or it guides you through building it yourself.</p></div><div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>The bracket is ready to build with the R8 inside corner and three through-holes. I assumed the undimensioned hole positions are symmetric, as drawn. The material is SolidWorks’ 6061 Alloy; the drawing doesn’t specify a temper.</p></div></div></div></div>
-      
-      <p class="x-limit">This is a screenshot from a test run on a sample drawing of our own. A recording of it is still to come.</p>
+      <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up and marked &middot; 22 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/case-drawing-poster.jpg" aria-label="Recording: a drawing of an angle bracket is attached in Ask Caddie. Ask Caddie proposes the build in stages, each approved with Do it, and the bracket appears in SOLIDWORKS with its holes."><source src="video/case-drawing.mp4" type="video/mp4"><source src="video/case-drawing.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure><div class="x-chat"><div class="x-q"><span class="chat-label">Sent in Ask Caddie, with the drawing attached</span><div class="bubble bubble-user">&ldquo;Build this part from the drawing.&rdquo;</div><p class="x-how">You attach an image. Ask Caddie works out the shape and dimensions, says what it assumed, and proposes the build in stages you approve with Do it. It can also guide you through building it yourself.</p></div><div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>Built the bracket in SOLIDWORKS with the R8 inside fillet, two Ø10 base holes, one Ø16 upright hole, and 6061 Alloy assigned.</p><p>I assumed the holes are symmetric across the width, as shown. The model also passed a 10% dimension-change test.</p></div><p class="case-note">The recording starts with a new empty part. Ask Caddie built it in four stages, each approved with Do it. One stage was rolled back by Ask Caddie&rsquo;s own check and redone. The part was not saved. Recorded on a development build of Ask Caddie 0.3.6 with fixes that are not in the installer yet.</p></div></div>
+      <div class="x-guide"><img src="img/angle-drawing.png" width="908" height="803" loading="lazy" alt="The drawing that was attached: an aluminum angle bracket with an R8 inside bend, two Ø10 base holes and one Ø16 hole in the upright."><div><span class="chat-label">The drawing that was attached</span><p class="x-small">Our own drawing of a 6061 aluminum angle bracket: 80 mm wide, 8 mm legs, R8 inside bend, two Ø10 holes in the base and one Ø16 hole in the upright.</p></div></div>
+      <p class="x-limit">Recorded on a sample drawing of our own. Ask Caddie states what it assumed, and the stages are built only when you approve them.</p>
     </div>
     <div class="x-panel" role="tabpanel" id="x-p-shop" aria-labelledby="x-t-shop" tabindex="0" hidden>
       <div class="x-top"><span class="tag steel">Sheet metal and weldments</span><span class="ex-model">Cover.SLDPRT, Frame.SLDPRT</span></div>
@@ -748,6 +748,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=21"></script>
+<script src="js/site.js?v=22"></script>
 </body>
 </html>
