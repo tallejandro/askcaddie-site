@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=28">
+  <link rel="stylesheet" href="css/site.css?v=29">
 </head>
 <body>
 
@@ -173,10 +173,10 @@
       </div>
       <div class="x-stage">
     <div class="x-panel" role="tabpanel" id="x-p-guide" aria-labelledby="x-t-guide" tabindex="0">
-      <div class="x-top"><span class="tag steel">Guided walkthroughs</span><span class="ex-model">Six guides, our own parts</span></div>
+      <div class="x-top"><span class="tag steel">Guided walkthroughs</span><span class="ex-model">Eight guides, our own parts</span></div>
       <h3 class="x-h">See exactly where to click, and do it yourself.</h3>
       <p class="x-how g-how">Ask Caddie starts a short guide that highlights the real button, menu or field for each step. It moves on when SOLIDWORKS shows the step is done, and you make every click.</p>
-      <div class="g-chips" role="group" aria-label="Choose a guide"><button class="g-chip" type="button" data-g="measure" aria-pressed="true"><img src="video/guide-measure-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Open Measure</span></button><button class="g-chip" type="button" data-g="sketch" aria-pressed="false"><img src="video/guide-edit-sketch-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Edit a sketch</span></button><button class="g-chip" type="button" data-g="feature" aria-pressed="false"><img src="video/guide-edit-feature-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Change a depth</span></button><button class="g-chip" type="button" data-g="step" aria-pressed="false"><img src="video/guide-step-export-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Export STEP</span></button><button class="g-chip" type="button" data-g="section" aria-pressed="false"><img src="video/guide-section-view-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Section view</span></button><button class="g-chip" type="button" data-g="fix" aria-pressed="false"><img src="video/guide-fix-error-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Fix a red feature</span></button></div>
+      <div class="g-chips" role="group" aria-label="Choose a guide"><button class="g-chip" type="button" data-g="measure" aria-pressed="true"><img src="video/guide-measure-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Open Measure</span></button><button class="g-chip" type="button" data-g="sketch" aria-pressed="false"><img src="video/guide-edit-sketch-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Edit a sketch</span></button><button class="g-chip" type="button" data-g="feature" aria-pressed="false"><img src="video/guide-edit-feature-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Change a depth</span></button><button class="g-chip" type="button" data-g="step" aria-pressed="false"><img src="video/guide-step-export-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Export STEP</span></button><button class="g-chip" type="button" data-g="section" aria-pressed="false"><img src="video/guide-section-view-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Section view</span></button><button class="g-chip" type="button" data-g="fix" aria-pressed="false"><img src="video/guide-fix-error-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Fix a red feature</span></button><button class="g-chip" type="button" data-g="fillet" aria-pressed="false"><img src="video/guide-fillet-edge-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Round an edge</span></button><button class="g-chip" type="button" data-g="hole" aria-pressed="false"><img src="video/guide-hole-wizard-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Add a tapped hole</span></button></div>
       <div class="g-item" id="g-measure">
         <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
         <figure class="frame">
@@ -241,6 +241,28 @@
         <div class="x-chat">
           <div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;something is red in the tree, how do i fix it myself&rdquo;</div></div>
           <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide card said</span><div class="bubble bubble-ai"><p><b>Fix Lug Edge Rounds</b></p><ol class="g-steps"><li>Right-click Lug Edge Rounds and choose Edit Feature.</li><li>Change the fillet radius from 10 mm to 3 mm as a starting value.</li><li>Accept the fillet with the green checkmark.</li></ol></div><p class="case-note">Ask Caddie wrote this guide for that question on 20 November. The clip replays it and starts at the guide. The guide has a fourth step, which ticks off by itself when the part rebuilds clean. The red error clears.</p></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-fillet" hidden>
+        <p class="g-model"><span class="ex-model">Bearing Housing.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 2× &middot; 22 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-fillet-edge-poster.jpg" aria-label="Recording: a three-step guide clicks Fillet on the Features tab, a line is drawn along the base's front top edge, and the radius is set to 2 mm before OK. The steps tick off by themselves."><source src="video/guide-fillet-edge.mp4" type="video/mp4"><source src="video/guide-fillet-edge.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Guide started</span><div class="bubble bubble-user">&ldquo;Round the base edge&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide card said</span><div class="bubble bubble-ai"><p><b>Round the base edge</b></p><ol class="g-steps"><li>On the Features tab, click Fillet.</li><li>Select the long top edge along the front of the base.</li><li>Set the radius to 2 mm and click OK.</li></ol></div><p class="case-note">Ask Caddie found the edge with one screen lookup and drew it as a line along the edge. The fillet was made in a test copy that was closed without saving.</p></div>
+        </div>
+      </div>
+      <div class="g-item" id="g-hole" hidden>
+        <p class="g-model"><span class="ex-model">Motor Mount Bracket.SLDPRT</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live, waits sped up 2.2× &middot; 22 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/guide-hole-wizard-poster.jpg" aria-label="Recording: an eight-step guide opens Hole Wizard, picks the tapped type, ISO and M6, then the Positions tab, the top face and a hole center, and accepts with the green check. The hole appears."><source src="video/guide-hole-wizard.mp4" type="video/mp4"><source src="video/guide-hole-wizard.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat">
+          <div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;How do I add a tapped M6 hole to the top of the base plate? I&rsquo;d like to do it myself.&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">The guide card said</span><div class="bubble bubble-ai"><p><b>Add a tapped M6 hole to the base plate</b></p><ol class="g-steps"><li>Click Hole Wizard on the Features tab.</li><li>Choose the straight tapped hole type under Hole Type.</li><li>Set Standard to ISO.</li><li>Set Size to M6.</li><li>Click the Positions tab.</li><li>Click the top face of Base Plate to start the placement sketch.</li><li>Click a clear spot on that top face to place one hole center, away from the pocket, slots, gussets and plate edges.</li><li>Click the green check to create the hole.</li></ol></div><p class="case-note">Ask Caddie wrote this guide for that question. Afterward it checked the model and replied that the hole is an ISO M6 tapped through-hole and the part rebuilt without errors.</p></div>
         </div>
       </div>
       <div class="x-guide"><img src="img/panel-guide.png" width="760" height="1200" loading="lazy" alt="The Chat tab after the question below: Caddie explains the rebuild error and opens a step-by-step guide."><div><span class="chat-label">Guides can start from a question</span><div class="bubble bubble-user">&ldquo;Walk me through fixing the Fillet1 rebuild error myself.&rdquo;</div><p class="x-small">The guide card reads &ldquo;Fix Fillet1, Step 1 of 3: Right-click Fillet1 and choose Edit Feature.&rdquo; Screenshot from a test run.</p></div></div>
@@ -715,6 +737,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=19"></script>
+<script src="js/site.js?v=20"></script>
 </body>
 </html>

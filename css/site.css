@@ -854,7 +854,7 @@ a.chip:active { transform: scale(.97); }
 .case-cap { font-size: 13.5px; line-height: 1.5; color: var(--steel-700); }
 .x-foot { margin-top: 32px; text-align: center; }
 .g-how { max-width: 680px; }
-.g-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+.g-chips { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
 .g-chip { display: flex; flex-direction: column; gap: 6px; padding: 5px 5px 8px; border: 1px solid var(--line); border-radius: 12px; background: #fff; font: 600 13px/1.25 var(--display); color: var(--ink); text-align: left; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease; }
 .g-chip img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; }
 .g-chip span { padding: 0 4px; }
