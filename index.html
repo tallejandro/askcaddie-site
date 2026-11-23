@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=32">
+  <link rel="stylesheet" href="css/site.css?v=33">
 </head>
 <body>
 
@@ -320,11 +320,14 @@
       <p class="x-limit">Recorded on a sample drawing of our own. Ask Caddie states what it assumed, and the stages are built only when you approve them.</p>
     </div>
     <div class="x-panel" role="tabpanel" id="x-p-shop" aria-labelledby="x-t-shop" tabindex="0" hidden>
-      <div class="x-top"><span class="tag steel">Sheet metal and weldments</span><span class="ex-model">Cover.SLDPRT, Frame.SLDPRT</span></div>
+      <div class="x-top"><span class="tag steel">Sheet metal and weldments</span><span class="ex-model">Channel Bracket.SLDPRT</span></div>
       <h3 class="x-h">Get the shop’s numbers straight from the model.</h3>
-      <div class="x-chat"><div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;What blank size do I need for this part?&rdquo;</div><p class="x-how">Ask Caddie reads sheet metal settings, weldment cut lists and Hole Wizard details from the features themselves. The answer is only as right as the settings in the model.</p></div><div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>The flat blank is 182.6 × 95 mm in 1.5 mm AISI 304 sheet.</p><p>That size uses the model’s K-factor of 0.44, so confirm the bend allowance with your fabricator before cutting.</p></div></div></div>
+      <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.6</span><span class="frame-note">Recorded live &middot; 22 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/case-shop-poster.jpg" aria-label="Recording: the question about the blank size and cut list is asked on a sheet metal channel bracket, and the reply gives a 141.42 by 120 mm blank and the cut list."><source src="video/case-shop.mp4" type="video/mp4"><source src="video/case-shop.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure><div class="x-chat"><div class="x-q"><span class="chat-label">Typed in Ask Caddie</span><div class="bubble bubble-user">&ldquo;What size blank do I need to cut for this part, and what does the cut list say?&rdquo;</div><p class="x-how">Ask Caddie reads sheet metal settings, weldment cut lists and Hole Wizard details from the features themselves. The answer is only as right as the settings in the model.</p></div><div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>Cut a blank <strong>141.42 × 120 mm</strong> from 2 mm AISI 1020 sheet. That’s the SOLIDWORKS flat-pattern bounding size, based on the model’s K-factor of 0.5; confirm the bend allowance with your fabricator.</p><p>The cut list, Sheet&lt;1&gt;, calls for one body with two cutouts and two bends at a 2 mm inside radius. It reports a finished mass of 267.09 g.</p></div><p class="case-note">The part is our own Channel Bracket: a 2 mm U-channel, 80 mm wide with 30 mm legs. Recorded on a development build of Ask Caddie 0.3.6.</p></div></div>
       <div class="x-pair"><span class="chat-label">A second question, on a weldment frame</span><div class="bubble bubble-user">&ldquo;What’s the cut list for the square tubing?&rdquo;</div><div class="bubble bubble-ai"><p>The square tubing cut list for 30 × 30 × 2.60 mm tube is:</p><ul><li>4 pieces at 630 mm, with 45° cuts at both ends</li><li>4 pieces at 970 mm, with square cuts at both ends</li></ul></div></div>
-      <p class="x-limit">These are replies from test runs on sample parts of our own. A recording of this one is still to come.</p>
+      <p class="x-limit">The first reply is from the recording; the second is from a test run on a sample weldment of our own. Check the bend allowance with your fabricator before cutting.</p>
     </div>
     <div class="x-panel" role="tabpanel" id="x-p-practice" aria-labelledby="x-t-practice" tabindex="0" hidden>
       <div class="x-top"><span class="tag steel">Certification practice</span><span class="ex-model">Learn tab</span></div>
@@ -748,6 +751,6 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=23"></script>
+<script src="js/site.js?v=24"></script>
 </body>
 </html>
