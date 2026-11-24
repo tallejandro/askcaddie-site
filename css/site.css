@@ -888,3 +888,8 @@ a.chip:active { transform: scale(.97); }
   .x-guide { grid-template-columns: 1fr; }
   .x-guide img { width: 120px; }
 }
+.x-chat-stack { display: block; }
+.x-chat-stack > * { max-width: 720px; }
+.x-chat-stack > * + * { margin-top: 16px; }
+.x-chat-stack .bubble-user { font-size: 15px; line-height: 1.5; font-weight: 500; }
+.x-chat-stack .x-q .bubble-user { max-width: 100%; }

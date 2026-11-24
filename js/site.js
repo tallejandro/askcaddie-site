@@ -274,8 +274,9 @@
   var chips = Array.prototype.slice.call(root.querySelectorAll('.g-chip'));
   chips.forEach(function (c) {
     c.addEventListener('click', function () {
-      chips.forEach(function (o) { o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
-      root.querySelectorAll('.g-item').forEach(function (it) { it.hidden = it.id !== 'g-' + c.dataset.g; });
+      var pn = c.closest('.x-panel') || root;
+      pn.querySelectorAll('.g-chip').forEach(function (o) { o.setAttribute('aria-pressed', o === c ? 'true' : 'false'); });
+      pn.querySelectorAll('.g-item').forEach(function (it) { it.hidden = it.id !== 'g-' + c.dataset.g; });
       sync();
     });
   });
