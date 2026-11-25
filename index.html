@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ask Caddie: the AI expert inside SOLIDWORKS</title>
-  <meta name="description" content="Ask Caddie is a free add-in for SOLIDWORKS that reads the model you have open and answers with your feature names. It shows you where to click, makes fixes you approve, models from drawings and runs checked CSWA and CSWP practice.">
+  <meta name="description" content="Ask Caddie is a free add-in for SOLIDWORKS that reads the model you have open and answers with your feature names. It shows you where to click, makes fixes you approve, builds assemblies and drawings, models from drawings and runs checked CSWA and CSWP practice.">
   <link rel="canonical" href="https://askcaddie.app/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://askcaddie.app/">
@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/site.css?v=35">
+  <link rel="stylesheet" href="css/site.css?v=36">
 </head>
 <body>
 
@@ -171,6 +171,7 @@
       <button class="x-tab" role="tab" type="button" id="x-t-shop" aria-selected="false" aria-controls="x-p-shop" tabindex="-1"><span class="x-num">06</span><span class="x-name">Sheet metal, cut lists</span><span class="x-desc">Shop numbers from the model itself.</span></button>
       <button class="x-tab" role="tab" type="button" id="x-t-practice" aria-selected="false" aria-controls="x-p-practice" tabindex="-1"><span class="x-num">07</span><span class="x-name">Practice parts</span><span class="x-desc">CSWA, CSWP and Sheet Metal practice.</span></button>
       <button class="x-tab" role="tab" type="button" id="x-t-build" aria-selected="false" aria-controls="x-p-build" tabindex="-1"><span class="x-num">08</span><span class="x-name">Build a part</span><span class="x-desc">From a typed request to a parametric part.</span></button>
+      <button class="x-tab" role="tab" type="button" id="x-t-assemblies" aria-selected="false" aria-controls="x-p-assemblies" tabindex="-1"><span class="x-num">09</span><span class="x-name">Assemblies</span><span class="x-desc">Mates, a collision check and a fully defined assembly.</span></button>
       </div>
       <div class="x-stage">
     <div class="x-panel" role="tabpanel" id="x-p-guide" aria-labelledby="x-t-guide" tabindex="0">
@@ -404,6 +405,37 @@
       
       <p class="x-limit">Recorded on a development build of Ask Caddie 0.3.6. In the bracket, no material was assigned and the gussets are not filleted; in the carrier, no material was assigned and the spline is an approximation; in the duct, it is a sheet-metal-style solid, not flattenable sheet metal; in the impeller, the blades are circular arcs, not airfoils; in the housing, there is no draft and no fillets. In each, Ask Caddie said on screen that no material is assigned. It can’t yet make true involute splines, draft features, threads or surfaces. You approve each stage, and the result still needs your review.</p>
     </div>
+    <div class="x-panel" role="tabpanel" id="x-p-assemblies" aria-labelledby="x-t-assemblies" tabindex="0" hidden>
+      <div class="x-top"><span class="tag steel">New in 0.3.7</span><span class="ex-model">Examples on parts we made for the test</span></div>
+      <h3 class="x-h">Put parts together. Check what can move.</h3>
+      <p class="x-how g-how">Ask Caddie inserts parts, adds mates, checks the result for interference and undoes the change if the assembly would break. It can also measure how far a part can travel before it touches another.</p>
+      <div class="g-chips" role="group" aria-label="Choose an example"><button class="g-chip" type="button" data-g="mates" aria-pressed="true"><img src="video/asm-mates-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Assemble three parts</span></button><button class="g-chip" type="button" data-g="collision" aria-pressed="false"><img src="video/asm-collision-poster.jpg" width="160" height="90" loading="lazy" alt=""><span>Check clearance</span></button></div>
+      <div class="g-item" id="g-mates">
+        <p class="g-model"><span class="ex-model">Base Plate, Dowel Pin and Slide Block</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.7 development build</span><span class="frame-note">Recorded live, waits sped up and marked &middot; 24 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/asm-mates-poster.jpg" aria-label="Recording: a request to assemble a plate, a dowel pin and a slide block is typed with the plate open. Ask Caddie starts an assembly, inserts the three parts, inspects them, adds six mates in one stage, and checks for interference."><source src="video/asm-mates.mp4" type="video/mp4"><source src="video/asm-mates.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat x-chat-stack">
+          <div class="x-q"><span class="chat-label">Typed with the plate open</span><div class="bubble bubble-user">&ldquo;Put this plate together with the dowel pin and the slide block from the same folder. The pin goes in the left hole, standing on the plate, and the block sits on top in the middle.&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>The assembly is complete in SOLIDWORKS: the pin is in the left hole, with its bottom flush to the plate underside, and the block is centered on top.</p><p>All components are fully mated, and the interference check found no clashes.</p></div></div>
+          <p class="case-note">The parts are simple shapes made for this test. Ask Caddie read &ldquo;standing on the plate&rdquo; as the pin passing through the hole, flush underneath; check that reading against your design. This was the third take: the first two failed because of two bugs that have since been fixed. The assembly ended fully defined, checked outside the recording.</p>
+        </div>
+      </div><div class="g-item" id="g-collision" hidden>
+        <p class="g-model"><span class="ex-model">Pin Plate Assembly.SLDASM</span></p>
+        <figure class="frame">
+          <div class="frame-bar"><img src="img/caddie-head.svg" width="20" height="20" alt=""><span class="frame-ver">Ask Caddie 0.3.7 development build</span><span class="frame-note">Recorded live, recorded at normal speed &middot; 24 November 2026</span></div>
+          <div class="frame-media"><video loop muted playsinline preload="none" poster="video/asm-collision-poster.jpg" aria-label="Recording: a question about how far a block can slide toward a pin is typed with the assembly open. Ask Caddie checks the clearance and answers 15.1 mm, noting that the block's centering mate prevents it from sliding."><source src="video/asm-collision.mp4" type="video/mp4"><source src="video/asm-collision.webm" type="video/webm"></video><span class="frame-progress" aria-hidden="true"><i></i></span><button class="frame-play" type="button" aria-label="Pause or play the recording"></button></div>
+        </figure>
+        <div class="x-chat x-chat-stack">
+          <div class="x-q"><span class="chat-label">Typed with the assembly open</span><div class="bubble bubble-user">&ldquo;How much room does the block have to slide toward the pin before they hit?&rdquo;</div></div>
+          <div class="x-a"><span class="chat-label chat-label-ai"><img src="img/caddie-head.svg" width="22" height="22" alt="">Ask Caddie replied</span><div class="bubble bubble-ai"><p>Slide Block-1 has 15.1 mm of clearance before it touches Dowel Pin-1.</p><p>That&rsquo;s the geometric travel in SOLIDWORKS with mates ignored. The block is currently fully defined, so its centering mate prevents it from actually sliding.</p></div></div>
+          <p class="case-note">The first take of this test counted the block resting on the plate as already touching; that bug was fixed before this recording. The number is the travel with mates ignored, as the reply says.</p>
+        </div>
+      </div>
+      
+      <p class="x-limit">Recorded on a development build that became Ask Caddie 0.3.7. No width mate yet, and replacing a component that has mates is refused. Assemblies have had only light testing with the real AI so far. It is tested on SOLIDWORKS 2026 only, and the result still needs your review.</p>
+    </div>
       </div>
     </div>
     <p class="case-cap x-foot">Ask Caddie can be wrong. Check anything that matters before it reaches a drawing or a shop.</p>
@@ -459,7 +491,9 @@
         <ul class="ticks">
           <li>Sketches, extrudes and cuts, fillets, chamfers, shells, mirrors and patterns</li>
           <li>Dimensions, materials, names, suppression and custom properties</li>
-          <li>If any step fails, everything is put back</li>
+          <li>Assemblies: inserts parts, adds or changes mates (including symmetric), replaces an unmated component and checks how far a part can move before it hits another</li>
+          <li>Drawings: views, sections, details, a parts list, balloons, and PDF, DXF or DWG export</li>
+          <li>If any step fails, everything is put back and you get one plain sentence. SOLIDWORKS also stays smoother while Ask Caddie is open</li>
         </ul>
         <div class="quote-line">
           <p><span class="q-label">Asked</span><span class="q-ask">Sketch2 is over-defined. Find the conflicting relation and fix it.</span></p>
@@ -496,7 +530,7 @@
       <div class="feature-text">
         <span class="tag steel">Certification practice</span>
         <h3>Practice exams that check your work.</h3>
-        <p>The Learn tab has 12 original practice parts in the style of SOLIDWORKS' certification exams: the Associate (CSWA), the Professional (CSWP) and the advanced Sheet Metal exam. Model the part from its drawing and check your answer, or let Caddie read your model and tell you what's off without giving the answer away.</p>
+        <p>The Learn tab has 12 original practice parts, plus three practice assemblies with a Build the answer button, in the style of SOLIDWORKS' certification exams: the Associate (CSWA), the Professional (CSWP) and the advanced Sheet Metal exam. Model the part from its drawing and check your answer, or let Caddie read your model and tell you what's off without giving the answer away.</p>
         <ul class="ticks">
           <li>A drawing, a timer and new dimensions every attempt</li>
           <li>Hints that find the missing feature or the wrong material</li>
@@ -657,8 +691,8 @@
     <h3 class="limits-title">What it can't do yet</h3>
     <ul class="limits">
       <li>Read Simulation or Flow Simulation studies. It can explain how to set one up</li>
-      <li>Add or edit assembly mates. It reads them and explains problems</li>
-      <li>Create drawings. It reads drawing sheets and views</li>
+      <li>Add a width mate or a hole table. It refuses to replace a component that already has mates</li>
+      <li>Promise assemblies and drawings are as proven as parts. They have had only light testing with the real AI, and bringing a part&rsquo;s dimensions onto a drawing may fall back to a guide</li>
       <li>Read very small dimensions from a low-resolution drawing. It asks for a closer image</li>
       <li>Work offline, or with CAD other than SOLIDWORKS</li>
       <li>Promise it works on other versions yet. It is tested on SOLIDWORKS 2026 and Windows 11</li>
@@ -791,7 +825,8 @@
       <a href="CaddieSetup.exe" class="btn btn-primary btn-lg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 20h16"/></svg>Download (private alpha)</a>
       <p class="alpha-note">Private alpha: you need an invite code to use it. Windows will warn that the installer is unsigned: click More info, then Run anyway.</p>
       <p class="alpha-note"><b>Need a code?</b> Email <a href="mailto:hello@askcaddie.app">hello@askcaddie.app</a> and say how you would use Ask Caddie.</p>
-      <p class="download-meta">Free during the alpha · tested on Windows 11 (64-bit) and SOLIDWORKS 2026 only; Windows 10 not yet tested</p>
+      <p class="alpha-note">New in 0.3.7: assemblies and mates, a collision check, drawings with views, sections, details, a parts list and PDF export, practice assemblies in Learn, calmer error messages and less lag.</p>
+      <p class="download-meta">Version 0.3.7 &middot; Free during the alpha · tested on Windows 11 (64-bit) and SOLIDWORKS 2026 only; Windows 10 not yet tested</p>
     </div>
     <div class="install">
       <div class="install-step"><div class="n">1</div><div><b>Run the installer</b><span>Windows will warn that it is unsigned: click More info, then Run anyway. It asks for administrator rights to register the add-in.</span></div></div>
